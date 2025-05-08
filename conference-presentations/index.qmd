@@ -1,0 +1,44 @@
+---
+title: Conference Presentations
+layout: full
+toc: false
+---
+
+# Conference Presentations
+
+Welcome to our collection of conference presentations focusing on educational technology and development tools. These presentations cover various aspects of modern software development, automated testing, and educational technology implementation.
+
+## Available Presentations
+
+1. [Automated and Configurable Programming Project Checking with Chasten](slides/chasten/index.qmd)
+   - Learn about automated project checking and configuration
+   - Understand how to implement efficient project validation
+   - Explore best practices for automated testing
+
+2. [Up and Running with GitHub, GitHub Classroom, and GitHub Actions](slides/github-workflow/index.qmd)
+   - Master GitHub workflow integration
+   - Set up GitHub Classroom for educational purposes
+   - Implement automated workflows with GitHub Actions
+
+3. [ExecExam: A Tool to Facilitate Effective Executable Examinations in Python](slides/execexam/index.qmd)
+   - Discover tools for creating executable examinations
+   - Learn about Python-based testing frameworks
+   - Implement effective examination strategies
+
+4. [Building and Deploying Course Websites with Python, Quarto, and Mkdocs](slides/course-websites/index.qmd)
+   - Create modern course websites
+   - Implement documentation with Mkdocs
+   - Deploy and maintain educational content
+
+## Getting Started
+
+Each presentation is available in the [slides section](slides/index.qmd). You can navigate through the presentations using the navigation menu above. Each presentation includes:
+
+- Detailed slides with code examples
+- Implementation guides
+- Best practices and recommendations
+- Additional resources and references
+
+## Contributing
+
+These presentations are open source and available for educational purposes. Feel free to use and modify them according to your needs. If you find any issues or have suggestions for improvements, please contribute through our GitHub repository. 

@@ -1,0 +1,40 @@
+project:
+  type: website
+  preview:
+    port: 5550
+    browser: false
+    watch-inputs: true
+    navigate: false
+
+website:
+  title: "Conference Presentations"
+  search:
+    location: navbar
+  reader-mode: false
+  back-to-top-navigation: true
+  page-navigation: true
+  favicon: "icons/presentation.png"
+  open-graph: true
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - slides/index.qmd
+
+  page-footer:
+    left: '© 2024 Conference Presentations'
+    right:
+      - text: "{{< iconify fa github size=18px >}}"
+        href: https://github.com/yourusername/conference-presentations/
+
+format:
+  html:
+    mainfont: Inter
+    monofont: Ubuntu Mono
+    fontsize: 1.25em
+    theme: zephyr
+    highlight-style: github
+    css: css/styles.css
+
+execute:
+  freeze: auto 

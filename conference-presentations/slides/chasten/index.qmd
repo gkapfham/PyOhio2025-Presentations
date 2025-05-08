@@ -1,0 +1,73 @@
+---
+title: "Automated and Configurable Programming Project Checking with Chasten"
+format: 
+  revealjs:
+    theme: default
+    slide-number: true
+    incremental: true
+    code-fold: true
+    code-tools: true
+    code-link: true
+    highlight-style: github
+    footer: "Conference Presentations"
+    css: ../../css/styles.css
+---
+
+## Abstract
+
+Instructors who invite their students to complete programming assignments often
+need automated tools to confirm that a submission meets the stated requirements.
+Although it is possible to use regular expressions or abstract syntax tree
+parsing to perform these types of checks, these approaches are often either
+error-prone or time-consuming to build. This talk presents Chasten, a Python
+tool that offers an elegant solution by leveraging XPath expressions to search
+Python's abstract syntax tree, making static code analysis both powerful and
+accessible.
+
+## Key Takeaways
+
+- Learn how Chasten fits into a workflow for project-centric learning
+- Create custom linting rules through a simple YAML configuration
+- Practical examples of enforcing code standards on documentation and code
+- Ways to analyze results through interactive dashboards with Datasette
+- How to integrate Chasten into GitHub Classroom and GitHub Actions
+
+## Introduction: The Problem with Static Analysis
+
+- The limitations of regex for code analysis
+- The complexity of traditional AST analysis frameworks
+- What makes Chasten different: comparison to Ruff and Pylint
+
+## Understanding AST Analysis
+
+- What is an Abstract Syntax Tree (AST)
+- XPath basics for programmers
+- Using XPath to search the AST
+
+## Getting Started with Chasten
+
+- Installation and basic setup
+- Understanding the configuration files
+- Concrete examples of linting rules:
+    - Finding missing docstrings
+    - Detecting improper nesting of control structures
+    - Enforcing type annotations
+    - Identifying complex code patterns
+
+## Analyzing Chasten's Results
+
+- Saving and integrating results
+- Using the Datasette dashboard
+- Interpreting the findings
+
+## Integration into Workflows
+
+- Using Chasten in CI/CD pipelines
+- Incorporating into development practices
+- How to use Chasten for educational purposes
+
+## Resources
+
+- GitHub Repository: [https://github.com/AstuteSource/chasten](https://github.com/AstuteSource/chasten)
+- Documentation and Examples
+- Community Support 
