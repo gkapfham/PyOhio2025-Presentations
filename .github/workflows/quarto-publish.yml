@@ -1,0 +1,37 @@
+name: Quarto Publish
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: '1.7.30'
+          tinytex: true
+
+      - name: Install Quarto Dependencies
+        run: |
+          quarto install tinytex
+          quarto install chromote
+
+      - name: Render Quarto Site
+        run: quarto render
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: _site
+          branch: gh-pages 
