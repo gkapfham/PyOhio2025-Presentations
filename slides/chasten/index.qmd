@@ -30,9 +30,26 @@ format:
 A Python program that uses XPATH expressions to find patterns in the abstract syntax tree (AST) of a Python program
 
 ## What is an AST?
+**Abstract Syntax Tree (AST)** = structured representation of code 
+
+x = 1 + 2
+
+```scss
+Assign
+ ├── Name(x)
+ └── BinOp(+)
+      ├── Constant(1)
+      └── Constant(2)
+```
 
 ## Why XPATH?
+- ✅ Perfect for navigating ASTs
+- ✅ Easy to write and understand
 
+```xpath
+/FunctionDef/body//If[ancestor::If and not(parent::orelse)]
+```
+--> Matches function with double nested if
 
 
 ## Features
@@ -74,44 +91,23 @@ A Python program that uses XPATH expressions to find patterns in the abstract sy
 |----------------------------|----------------------------------------|-------------------------------|------------------------------|
 | **Interactive Exploration**| ✅ Datasette dashboards (SQLite-ready) | ❌ None                        | ❌ None                       |
 
+## Chasten Workflow
+
 ## Key Takeaways
 
-- Learn how Chasten fits into a workflow for project-centric learning
-- Create custom linting rules through a simple YAML configuration
-- Practical examples of enforcing code standards on documentation and code
-- Ways to analyze results through interactive dashboards with Datasette
-- How to integrate Chasten into GitHub Classroom and GitHub Actions
 
-## Introduction: The Problem with Static Analysis
+- ✅ **Declarative rule-writing with XPath**  
+  Easily define grading criteria and static analysis checks — no need to write Python plugins.
 
-- The limitations of regex for code analysis
-- The complexity of traditional AST analysis frameworks
-- What makes Chasten different: comparison to Ruff and Pylint
+- 🧠 **Teachable insights into code structure**  
+  Helps students understand Abstract Syntax Trees (ASTs) and how code is interpreted structurally.
 
-## Understanding AST Analysis
+- 📊 **Structured, explorable outputs**  
+  Export results to SQLite and use Datasette to visualize errors, coverage, and student patterns.
 
-- What is an Abstract Syntax Tree (AST)
-- XPath basics for programmers
-- Using XPath to search the AST
+- 🧪 **Supports research and pedagogy**  
+  Useful for analyzing coding behavior at scale, detecting common anti-patterns in student code.
 
-## Getting Started with Chasten
+- 📚 **Integrates into grading pipelines**  
+  Run Chasten on student submissions to check for required docstrings, type hints, nested logic, etc.
 
-- Installation and basic setup
-- Understanding the configuration files
-- Concrete examples of linting rules:
-    - Finding missing docstrings
-    - Detecting improper nesting of control structures
-    - Enforcing type annotations
-    - Identifying complex code patterns
-
-## Analyzing Chasten's Results
-
-- Saving and integrating results
-- Using the Datasette dashboard
-- Interpreting the findings
-
-## Integration into Workflows
-
-- Using Chasten in CI/CD pipelines
-- Incorporating into development practices
-- How to use Chasten for educational purposes
