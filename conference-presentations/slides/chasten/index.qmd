@@ -116,3 +116,8 @@ Assign
   - Not optimized for speed or massive-scale projects 
   - Doesn't enforce fixed rule sets - it won't tell you what's "correct", depends on your familiarity with ASTs and XPath
 
+  ## Future limitation 
+  - Have hints/ automatic fixing of the code 
+  - LSP integration or IDE integration
+  - Should be a default set of rules that let examiners pick and choose to run the projects on 
+
