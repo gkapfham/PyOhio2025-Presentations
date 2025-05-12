@@ -1,6 +1,6 @@
 project:
   type: website
-  output-dir: _site
+  output-dir: .
   preview:
     port: 5550
     browser: false
