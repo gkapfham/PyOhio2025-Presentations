@@ -53,6 +53,7 @@ Assign
 
 
 ## Features
+(questions: these features are listed on the Chasten repo - I just listed some notable features here )
 - ✨ Easy-to-configure, automated analysis of a Python program's abstract syntax tree
 - 📃 Flexible and easy-to-use YAML-based configuration file for describing analyses and checks
 - 🚀 Configurable saving of analysis results in the JSON, CSV, or SQLite formats
