@@ -29,11 +29,50 @@ format:
 ## Chasten
 A Python program that uses XPATH expressions to find patterns in the abstract syntax tree (AST) of a Python program
 
+## What is an AST?
+
+## Why XPATH?
+
+
+
 ## Features
 - ✨ Easy-to-configure, automated analysis of a Python program's abstract syntax tree
 - 📃 Flexible and easy-to-use YAML-based configuration file for describing analyses and checks
 - 🚀 Configurable saving of analysis results in the JSON, CSV, or SQLite formats
 - 🌄 Interactive results analysis through the use of a locally running datasette server
+
+## Comparison for Education & Research 
+
+## Comparison for Education & Research
+
+| **Feature**                | **Chasten**                           | **Ruff**                      | **Pylint**                   |
+|----------------------------|----------------------------------------|-------------------------------|------------------------------|
+| **Custom Rule Creation**   | ✅ Write in YAML with XPath — no coding | ❌ Hard-coded; not extensible | ⚠️ Requires Python plugin     |
+
+
+## Comparison for Education & Research
+
+| **Feature**                | **Chasten**                           | **Ruff**                      | **Pylint**                   |
+|----------------------------|----------------------------------------|-------------------------------|------------------------------|
+| **Learning AST Concepts**  | ✅ Transparent — great for teaching ASTs | ❌ Abstracted away             | ⚠️ Indirect via rule behavior |
+
+## Comparison for Education & Research
+
+| **Feature**                | **Chasten**                           | **Ruff**                      | **Pylint**                   |
+|----------------------------|----------------------------------------|-------------------------------|------------------------------|
+| **Research Use**           | ✅ Structured output + pattern mining  | ❌ Not suited for deep analysis | ⚠️ Output not researcher-friendly |
+
+## Comparison for Education & Research
+
+| **Feature**                | **Chasten**                           | **Ruff**                      | **Pylint**                   |
+|----------------------------|----------------------------------------|-------------------------------|------------------------------|
+| **Output Formats**         | ✅ JSON, CSV, SQLite (queryable)       | Text, JSON                    | Text, JSON                   |
+
+## Comparison for Education & Research
+
+| **Feature**                | **Chasten**                           | **Ruff**                      | **Pylint**                   |
+|----------------------------|----------------------------------------|-------------------------------|------------------------------|
+| **Interactive Exploration**| ✅ Datasette dashboards (SQLite-ready) | ❌ None                        | ❌ None                       |
 
 ## Key Takeaways
 
