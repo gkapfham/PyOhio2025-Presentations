@@ -111,3 +111,8 @@ Assign
 - 📚 **Integrates into grading pipelines**  
   Run Chasten on student submissions to check for required docstrings, type hints, nested logic, etc.
 
+  ## Current limitations
+  - Chasten is best used alongside other linters - it doesn't cover style, formatting, or pre-defined PEP8 rules
+  - Not optimized for speed or massive-scale projects 
+  - Doesn't enforce fixed rule sets - it won't tell you what's "correct", depends on your familiarity with ASTs and XPath
+
