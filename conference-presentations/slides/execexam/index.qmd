@@ -1,5 +1,6 @@
 ---
 title: "ExecExam: A Tool to Facilitate Effective Executable Examinations in Python"
+subtitle: Pallas-Athena Cain, Gregory Kapfhammer
 format: 
   revealjs:
     theme: default
@@ -9,7 +10,7 @@ format:
     code-tools: true
     code-link: true
     highlight-style: github
-    footer: "ExecExam"
+    footer: "Allegheny College"
     css: styles.css
 ---
 
@@ -27,8 +28,69 @@ An executable examinations invites a learner to write, modify, and/or execute Py
 - Create a more equitable evaluation process through consistent automated grading
 - Learn how to use local and cloud-based LLMs to provide context-aware feedback
 
-## Resources
+## Introduction: What is an Execuatable Examination?
 
-- GitHub Repository: TODO
-- Documentation and Examples
-- Community Support 
+**Assessing real programming ability**
+
+  - A student writes, modifies, and runs code to solve a real problem
+  - Graded via automated tests (e.g. Pytest)
+  - Unlike static exams, this tests:
+    - Programming logic
+    - Debugging ability
+    - Tool use (editor, terminal, Git)
+
+🎯 It’s like a take-home project — but precise, consistent, and scalable
+
+## The Problem
+
+**Why do we need better assessments?**
+
+- Manual grading is slow and inconsistent
+- Students often don’t know why their code fails
+- Feedback is shallow or missing altogether
+
+🚫 “Test failed” isn’t enough.
+
+## What is ExecExam?
+
+**Scalable, feedback-rich assessment**
+
+- Runs Pytest on student code
+- Explains why a test failed
+- Suggests how to fix it
+- Utilizes LLMs for even better feedback
+
+## Key Features
+
+**Why use ExecExam?**
+
+- 🧪 Full Pytest coverage, Streamlines assessment
+- 🧠 AI-powered failure analysis
+- ⚙️ GitHub integration, easy CI/CD
+- 🔁 Enhance the learning experience by offering actionable insights
+
+## For Teachers
+
+**How to adopt it**
+
+- Design scaffolded coding tasks
+- Write tests
+- Deploy with GitHub Actions or CLI
+- Grade fairly, at scale
+
+🧰 Lightweight setup—just Python, Git, and your test cases
+
+## Takeaways
+
+**Better exam grading, better learning**
+
+- Helps students debug and learn
+- Saves teachers time
+- More fair + consistent grading
+- Scales to large classes
+
+## Try ExecExam
+
+- 🔗 GitHub Repository: [https://github.com/GatorEducator/execexam](https://github.com/GatorEducator/execexam)
+- 🤝 Reach out or contribute
+- 🚀 Let’s build smarter CS assessments
