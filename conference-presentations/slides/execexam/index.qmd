@@ -67,9 +67,10 @@ An executable examinations invites a learner to write, modify, and/or execute Py
 - 🧪 Full Pytest coverage, Streamlines assessment
 - 🧠 AI-powered failure analysis
 - ⚙️ GitHub integration, easy CI/CD
-- 🔁 Enhance the learning experience by offering actionable insights
+- 💻 Local & cloud LLM support
+- 🔁 Enhance the learning experience by offering actionable insights throughout the coding process
 
-## For Teachers
+## For Instructors
 
 **How to adopt it**
 
@@ -79,6 +80,24 @@ An executable examinations invites a learner to write, modify, and/or execute Py
 - Grade fairly, at scale
 
 🧰 Lightweight setup—just Python, Git, and your test cases
+
+## Future Work
+
+**What’s next for ExecExam?**
+
+🧪 Progress Tracking & Learning Analytics
+   - Store test outcomes and feedback over time
+   - Visualize student debugging and improvement paths
+   - Enable instructors to spot misconceptions early
+
+🧠 Adaptive Feedback Loops
+   - Tailor feedback complexity to student performance
+   - Suggest additional scaffolded tasks based on error patterns
+
+📊 Analytics & Instructor Features
+   - Build tools for tracking student progress over time
+   - Log LLM interactions to evaluate effectiveness
+   - Hold out hidden test cases for instructor-only grading
 
 ## Takeaways
 
