@@ -28,11 +28,10 @@ jobs:
           quarto install chromote
 
       - name: Render Quarto Site
-        working-directory: conference-presentations
         run: quarto render
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: conference-presentations/_site
+          folder: _site
           branch: gh-pages 
