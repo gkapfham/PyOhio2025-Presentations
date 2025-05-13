@@ -4,9 +4,10 @@ layout: full
 toc: false
 ---
 
-# Conference Presentations
-
-Welcome to our collection of conference presentations focusing on educational technology and development tools. These presentations cover various aspects of modern software development, automated testing, and educational technology implementation.
+Welcome to our collection of conference presentations focusing on educational
+technology and development tools. These presentations cover various aspects of
+modern software development, automated testing, and educational technology
+implementation.
 
 ## Available Presentations
 
