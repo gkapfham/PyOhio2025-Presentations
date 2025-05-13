@@ -1,0 +1,293 @@
+---
+title: "Up and Running with GitHub, GitHub Classroom, and GitHub Actions"
+subtitle: "Hemani Alaparthi"
+format: 
+  revealjs:
+    theme: default
+    slide-number: true
+    incremental: true
+    code-fold: true
+    code-tools: true
+    code-link: true
+    highlight-style: github
+    footer: "GatorEducator"
+    css: ../../css/styles.css
+---
+
+## The Challenge of Programming Assignments
+
+- Distribution of starter code
+- Collection of submissions 
+- Providing automated feedback
+- Managing final assessment
+- Coordinating all these tasks efficiently
+
+## Traditional Assignment Workflow Challenges
+
+- Email submission creates version chaos
+- Manual testing is time-consuming and error-prone
+- Limited visibility into student progress
+- Feedback is often delayed and disconnected from code
+
+## Enter GitHub, GitHub Classroom, and GitHub Actions
+
+A complete ecosystem for programming education that:
+
+- Leverages industry-standard tools
+- Promotes good development practices
+- Automates tedious tasks
+- Provides immediate feedback
+- Creates a portfolio for students
+
+## Benefits for Students
+
+- Learn professional version control practices
+- Get immediate feedback on their code
+- Clear indication of what to complete (TODOs)
+- Work in a real development environment
+- Build a portfolio of completed projects
+- Prepare for collaborative development
+
+## Benefits for Instructors
+
+- Automated distribution of assignments
+- Centralized submission collection
+- Automated testing and grading assistance
+- Clear visibility into student progress
+- Consistent environment for all students
+- Rich feedback options (issues, PRs, comments)
+
+## Getting Started: The Workflow
+
+1. Create solution repository with tests
+2. Create starter repository with TODOs
+3. Set up GitHub Classroom
+4. Create and distribute assignments
+5. Monitor student progress
+6. Provide feedback through GitHub
+7. Assess completed work
+
+## Step 1: Creating the Solution Repository
+
+```bash
+# Create new repository with complete solution
+git init solution-repo
+cd solution-repo
+# Add your complete solution code
+```
+
+- Include a comprehensive test suite with pytest
+- Set up linting with flake8/pylint
+- Create a GitHub Actions workflow
+- Ensure all tests pass with your solution
+
+## Solution Repository Structure
+
+```
+solution-repo/
+├── src/
+│   └── solution.py
+├── tests/
+│   └── test_solution.py
+├── .github/
+│   └── workflows/
+│       └── python-checks.yml
+├── requirements.txt
+└── README.md
+```
+
+## GitHub Actions Workflow Example
+
+```yaml
+name: Python Checks
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pytest flake8
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Lint with flake8
+      run: flake8 src tests
+    - name: Test with pytest
+      run: pytest
+```
+
+## Step 2: Implementation Ablation - Creating the Starter
+
+What is implementation ablation?
+
+- Systematically remove implementation details from your solution
+- Replace with well-documented TODOs
+- Leave structure intact for students to complete
+- Keep tests to guide students
+
+## Example of Implementation Ablation
+
+Solution code:
+```python
+def calculate_grade(scores):
+    total = sum(scores)
+    average = total / len(scores)
+    
+    if average >= 90:
+        return 'A'
+    elif average >= 80:
+        return 'B'
+    elif average >= 70:
+        return 'C'
+    elif average >= 60:
+        return 'D'
+    else:
+        return 'F'
+```
+
+## Example of Implementation Ablation
+
+Starter code:
+```python
+def calculate_grade(scores):
+    # TODO: Calculate the average score
+    # Hint: You'll need to find the sum and divide by the count
+    
+    # TODO: Determine the letter grade based on the average
+    # A: 90+, B: 80-89, C: 70-79, D: 60-69, F: below 60
+    
+    return None  # Replace with your implementation
+```
+
+## Step 3: Setting Up GitHub Classroom
+
+1. Create a GitHub organization for your class
+2. Authorize GitHub Classroom
+3. Create a new classroom linked to your organization
+4. Invite teaching assistants as organization admins
+
+<!-- should we add an image here? -->
+
+## Step 4: Creating an Assignment
+
+1. Select "New Assignment" in GitHub Classroom
+2. Choose individual or group assignment
+3. Name your assignment
+4. Set deadline and visibility options
+5. Import your starter repository
+6. Enable automated testing
+
+<!-- an image here? -->
+
+## Step 5: Distributing the Assignment
+
+1. Generate invitation link
+2. Share with students
+3. Students click link and accept assignment
+4. GitHub automatically creates private student repositories
+5. Students clone locally and start working
+
+## Student Experience
+
+1. Accept assignment through unique link
+2. Repository created with starter code
+3. Clone repository locally
+4. Complete TODOs guided by tests
+5. Push changes to GitHub
+6. Get immediate feedback from GitHub Actions
+
+## Automated Feedback with GitHub Actions
+
+- Tests run automatically on every push
+- Students see red ❌ or green ✅ status checks
+- Detailed feedback in Actions tab
+- Testing failures highlight what's still incomplete
+
+## Comprehensive Feedback Options
+
+GitHub provides multiple feedback channels:
+
+- In-line comments on specific code lines
+- Issue creation for general feedback
+- Pull request reviews for detailed assessment
+- Automated checks for immediate technical feedback
+
+## Example: Issue-Based Feedback
+
+<!-- This is to explain how issues can be used for feedback. IRL pictures would be nice -->
+
+```markdown
+## Algorithm Efficiency
+
+Your solution works but uses O(n²) time complexity when 
+an O(n) solution is possible. Consider using a hash map 
+instead of nested loops.
+
+## Code Structure
+
+Great job breaking down the problem into functions!
+Your solution is well-organized and easy to follow.
+```
+
+## Optional: Integrating with External Tools
+
+GitHub Actions can integrate with:
+
+- Pytest for test coverage
+- Flake8/Pylint for style checking
+- Chasten for AST-based pattern checking
+- Custom grading tool such as ExecExam
+- And many more!
+
+## Example: Integration with Chasten
+
+```yaml
+- name: Check with Chasten
+  run: |
+    pip install chasten
+    chasten check --config .chasten.yml src/
+```
+
+## Practical Tips from Experience
+
+- Start with simple assignments to build familiarity
+- Create clear README files with setup instructions
+- Include CI badges in README to show test status
+- Use descriptive commit messages for teaching moments
+- Consider a practice assignment for GitHub onboarding
+
+## Common Challenges and Solutions
+
+| Challenges | Solutions |
+|-----------|----------|
+| Git confusion | Provide cheat sheet and office hours |
+| Merge conflicts | Teach basic conflict resolution |
+| Test failures | Make test output student-friendly |
+| Missing setup | Include detailed environment setup |
+| Privacy concerns | Use private repositories |
+
+## Limitations to Be Aware Of
+
+- Learning curve for Git and GitHub
+- Setup time for first assignments
+- Need for internet access
+- Managing organization permissions
+
+## Key Takeaways
+
+- GitHub Classroom creates realistic development workflows
+- Automated feedback saves instructor time
+- Students learn industry-standard tools and practices
+- Implementation ablation guides student learning
+- Comprehensive feedback through multiple channels
+
+## Questions?
+
+Thank you for your attention!
