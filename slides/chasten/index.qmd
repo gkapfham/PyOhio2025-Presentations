@@ -86,9 +86,9 @@ instructors to scan for arbitrary code patterns without AST detailed knowledge
 
 :::
 
-## Chasten to the Rescue
+## Chasten to the Rescue!
 
-::: {.incremental}
+::: {.incremental style="font-size: 0.9em; margin-top: -0.25em;"}
 
 - {{< iconify mdi:search-code >}} Uses XPath to search Python's AST
 
@@ -100,16 +100,21 @@ instructors to scan for arbitrary code patterns without AST detailed knowledge
 
 :::
 
-::: {.fragment .fade .boxed-content style="font-size: 1em;"}
-{{< iconify fa6-solid lightbulb >}} Result: Instructors define checks once and apply them at scale across all submissions
+::: {.fragment .fade style="font-size: 0.9em; margin-top: -0.25em; margin-bottom: 0.45em;"}
+
+{{< iconify fa6-solid lightbulb >}} **Result**: Instructors define checks once
+and use Chasten to easily apply them at scale across all student submissions
+
 :::
 
 :::fragment
+
 ```yaml
 - name: "nested-loops"
   code: "PERF001"
   pattern: "//For[descendant::For]"
   description: "Detects doubly nested for-loops (e.g. O(n²))"
+
 ```
 :::
 
