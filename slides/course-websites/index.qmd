@@ -1,11 +1,14 @@
 ---
 title: "Building and Deploying Course Websites with Python, Quarto, and Mkdocs"
-subtitle: "Alish Chhetri and Gregory M. Kapfhammer"
-format: 
-  revealjs:
+description: "Building interactive course websites with modern tools"
+date: "2025-05-15"
+date-format: long
+author: "Alish Chhetri and Gregory M. Kapfhammer"
+format:
+  live-revealjs:
+    completion: true
     theme: default
     slide-number: false
-    incremental: true
     code-fold: true
     code-tools: true
     code-link: true
@@ -17,8 +20,192 @@ format:
     css: ../../css/styles.css
 ---
 
-## Course Websites are Nice with Quarto!
+## What Problem Are We Solving?
 
-- Executable examinations
-- Python program
-- Uses Pytest
+::: {.incremental style="margin-top: -0.15em;"}
+
+- Course sites as **static archives** rather than **living resources**
+- Students view materials as **products to consume** not **projects to
+contribute to**, limiting learning and engagement
+- Interactive examples require **separate tools** or **platforms**
+- Content becomes **quickly outdated** without a sustainable update process that
+leverages **industry-standard tools**
+
+:::
+
+::: {.fragment .fade .boxed-content style="margin-top: -0.05em; font-size: 0.9em;"}
+
+{{< iconify fa6-solid lightbulb >}} **Ultimate Goal**: Introduce how using
+packages like Quarto make it possible to create **interactive** and
+**maintainable** course websites
+
+:::
+
+## Building and Deploying with Quarto
+
+::: fragment
+
+- **Quarto**: Accessible markdown-based framework
+- **Python + WebAssembly**: Easily run Python in the browser
+- **GitHub**: Version control and collaborative workflows
+- **GitHub Actions**: Automated testing and deployment
+
+:::
+
+::: {.fragment .fade .tight-boxed-content style="margin-top: -0.05em; margin-bottom: -0.25em; font-size: 0.8em;"}
+
+- {{< iconify fa6-solid lightbulb >}} **Ultimate Goal**: Build content-focused,
+interactive, collaborative course sites that instructors can maintain with
+minimal effort
+- {{< iconify fa6-solid diagram-project >}} **Next Steps**: Give examples of
+content you can immediately use! See `https://github.com/GatorEducator/PyCon2025-EducationAndTypingSummit-Presentations` for more details!
+
+:::
+
+## Explore Use of the `LinkedList`
+
+```{pyodide}
+#| autorun: true
+#| max-lines: 10
+class ListNode:
+    def __init__(self, data, link = None):
+        self.data = data
+        self.link = link
+
+class LinkedList:
+    def __init__(self):
+        self._head = None
+
+    def addfirst(self, item):
+        self._head = ListNode(item, self._head)
+
+    def addlast(self, item):
+        if self._head is None:
+            self.addfirst(item)
+        else:
+            currentnode = self._head
+            while currentnode.link is not None:
+                currentnode = currentnode.link
+            currentnode.link = ListNode(item)
+
+    def removefirst(self):
+        item = self._head.data
+        self._head = self._head.link
+        return item
+
+    def removelast(self):
+        if self._head.link is None:
+            return self.removefirst()
+        else:
+            currentnode = self._head
+            while currentnode.link.link is not None:
+                currentnode = currentnode.link
+            item = currentnode.link.data
+            currentnode.link = None
+            return item
+
+LL = LinkedList()
+LL.addfirst(3)
+LL.addfirst(5)
+print(LL.removefirst() == 5)
+LL.addlast(9)
+LL.addlast(13)
+print(LL.removefirst() == 3)
+print(LL.removefirst() == 9)
+print(LL.removelast() == 13)
+```
+
+::: {.fragment style="margin-top: -0.25em; font-size: 0.775em;"}
+
+- {{< iconify fa6-solid robot >}} **Task**: Visualize `ListNode` and
+`LinkedList` and explain the `True` outputs!
+
+:::
+
+## Setting Up the Course Infrastructure
+
+::: incremental
+
+1. Create a GitHub repository with Quarto structure
+2. Configure navigation, styling, and organization in `_quarto.yml`
+3. Set up GitHub Actions for automated deployment
+4. Create templates for student contributions
+5. Publish to GitHub Pages or Netlify
+
+:::
+
+## The Instructor's Role
+
+::: {.fragment .fade-right}
+
+- Create core course content and structure
+- Establish contribution guidelines
+- Review and provide feedback on student submissions
+- Guide collaborative knowledge building
+
+:::
+
+## How Students Contribute
+
+::: incremental
+
+- Fork the repository and create content in their assigned folder
+- Write reflections and examples in simple Markdown with code
+- Submit a Pull Request for review and feedback
+- Content is automatically published when approved
+
+:::
+
+## Real World Example
+
+::: {.fragment .fade-right}
+
+- [Algorithmology.org](https://algorithmology.org/)
+- [Algorithmology GitHub repository](https://github.com/Algorithmology/www.algorithmology.org)
+
+:::
+
+## Educational Benefits
+
+::: incremental
+
+- **Learn by Contributing**: Students practice real-world technical documentation
+- **Code + Context**: Code always presented with educational context
+- **Literate Programming**: Encourages explaining code, not just writing it
+- **Continuous Improvement**: Course materials evolve each semester
+
+:::
+
+## Technical Advantages
+
+::: {.fragment .fade-right}
+
+- **Low Barrier to Entry**: Markdown is easier than HTML/CSS/JS
+- **Focus on Content**: Technical details are abstracted away
+- **Interactive Examples**: Code runs in the browser without installation
+- **Full-Text Search**: Find anything across all course materials
+- **Developer Workflow**: Students learn how to collaborate using industry-standard tools
+
+:::
+
+## Future Improvements
+
+::: {.fragment .fade-right}
+
+- Full browser-based IDE experience
+- Better error messages for WebAssembly Python
+- Implementation of a note taking tool, allowing students to take notes in the browser by commenting on the slides
+
+:::
+
+## Why You Should Consider This Approach
+
+::: incremental
+
+- **Student Ownership**: Contributions create investment in the course
+- **Living Knowledge Base**: Materials improve rather than decay over time
+- **Practical Skills**: Industry tools in an educational context
+- **Transparency**: Public materials encourage higher quality work
+- **Scalability**: Works for any course size, from small seminars to large lectures
+
+:::
