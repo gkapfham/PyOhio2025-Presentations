@@ -57,63 +57,35 @@ packages like Quarto make it possible to create **interactive** and
 
 :::
 
-## Explore Use of the `LinkedList`
+## Interactive Fibonacci Sequence
 
 ```{pyodide}
 #| autorun: true
 #| max-lines: 10
-class ListNode:
-    def __init__(self, data, link = None):
-        self.data = data
-        self.link = link
+def fibonacci(n):
+    """Calculate the Fibonacci sequence up to n terms."""
+    fib_sequence = [0, 1]
+    
+    if n <= 0:
+        return []
+    if n == 1:
+        return [0]
+    
+    # Generate Fibonacci sequence
+    for i in range(2, n):
+        fib_sequence.append(fib_sequence[i-1] + fib_sequence[i-2])
+        
+    return fib_sequence
 
-class LinkedList:
-    def __init__(self):
-        self._head = None
+# Calculate and display first 10 Fibonacci numbers
+fib_10 = fibonacci(10)
+print(f"First 10 Fibonacci numbers: {fib_10}")
 
-    def addfirst(self, item):
-        self._head = ListNode(item, self._head)
-
-    def addlast(self, item):
-        if self._head is None:
-            self.addfirst(item)
-        else:
-            currentnode = self._head
-            while currentnode.link is not None:
-                currentnode = currentnode.link
-            currentnode.link = ListNode(item)
-
-    def removefirst(self):
-        item = self._head.data
-        self._head = self._head.link
-        return item
-
-    def removelast(self):
-        if self._head.link is None:
-            return self.removefirst()
-        else:
-            currentnode = self._head
-            while currentnode.link.link is not None:
-                currentnode = currentnode.link
-            item = currentnode.link.data
-            currentnode.link = None
-            return item
-
-LL = LinkedList()
-LL.addfirst(3)
-LL.addfirst(5)
-print(LL.removefirst() == 5)
-LL.addlast(9)
-LL.addlast(13)
-print(LL.removefirst() == 3)
-print(LL.removefirst() == 9)
-print(LL.removelast() == 13)
 ```
 
 ::: {.fragment style="margin-top: -0.25em; font-size: 0.775em;"}
 
-- {{< iconify fa6-solid robot >}} **Task**: Visualize `ListNode` and
-`LinkedList` and explain the `True` outputs!
+- {{< iconify fa6-solid lightbulb >}} **Task**: Try modifying the code to calculate more terms or implement a different algorithm!
 
 :::
 
@@ -158,6 +130,33 @@ print(LL.removelast() == 13)
 :::
 :::
 
+## Real World Examples
+
+::: {.columns}
+::: {.column width="48%"}
+### Course Website
+
+::: {.fragment .fade-right}
+#### [Algorithmology.org](https://algorithmology.org/)
+
+![QR Code for Algorithmology.org](algorithmology_website.png){width=150 fig-align="center"}
+:::
+:::
+
+::: {.column width="4%"}
+:::
+
+::: {.column width="48%"}
+### GitHub Repository
+
+::: {.fragment .fade-left}
+#### [www.algorithmology.org](https://github.com/Algorithmology/www.algorithmology.org)
+
+![QR Code for GitHub Repository](algorithmology_repo.png){width=150 fig-align="center"}
+:::
+:::
+:::
+
 ## Technical Advantages & Future Improvements
 
 ::: {.columns}
@@ -174,7 +173,7 @@ print(LL.removelast() == 13)
 :::
 
 ::: {.column width="40%"}
-### Future Improveme
+### Future Improvements
 
 ::: {.fragment .fade-left}
 - Full browser-based IDE experience
