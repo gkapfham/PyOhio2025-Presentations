@@ -24,7 +24,7 @@ format:
 ::: {.incremental}
 
 - Students struggle to write **efficient, readable code**
-- Instructors spend hours **manually reviewing submissions** for structural issues
+- Manual project review is **time-consuming** and **error-prone**
 - Existing tools focus on **style**, not **semantic structure**
 - Regex is **brittle**, and AST tools are **hard to prototype**
 
