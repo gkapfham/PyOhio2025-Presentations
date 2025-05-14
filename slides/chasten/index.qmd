@@ -1,11 +1,12 @@
 ---
 title: "Automated and Configurable Programming Project Checking with Chasten"
 subtitle: "Daniel Bekele, Chi (Jaclyn) Pham, and Gregory M. Kapfhammer"
+date: "2025-05-15"
+date-format: long
 format: 
   revealjs:
     theme: default
     slide-number: true
-    incremental: true
     code-fold: true
     code-tools: true
     code-link: true
