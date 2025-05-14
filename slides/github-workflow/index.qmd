@@ -15,22 +15,29 @@ format:
     highlight-style: github
     footer: "PyCon Education Summit 2025"
     css: ../../css/styles.css
+    width: 1280
+    height: 720
+    code-block-font-size: 0.7em
 ---
 
-## The Challenge of Programming Assignments
+# The Problem with Traditional Assignments
 
-- Distribution of starter code
-- Collection of submissions 
-- Providing automated feedback
-- Managing final assessment
-- Coordinating all these tasks efficiently
+::: {.fragment style="margin-top: -0.15em; font-size: 0.6em;"}
 
-## Traditional Assignment Workflow Challenges
+- {{< iconify fa6-solid lightbulb >}} **Inefficient workflows lead to:**
+  - Version chaos via email submissions
+  - Time-consuming manual testing
+  - Delayed feedback disconnected from code
+  - Limited visibility into student progress
+  - Unrealistic development practices
 
-- Email submission creates version chaos
-- Manual testing is time-consuming and error-prone
-- Limited visibility into student progress
-- Feedback is often delayed and disconnected from code
+:::
+
+::: {.fragment .fade .boxed-content style="margin-top: 0.25em; font-size: 0.8em;"}
+
+{{< iconify fa6-solid microscope >}} How can we create a workflow that **automates repetitive tasks**, provides **immediate feedback**, and teaches **industry-standard practices**?
+
+:::
 
 ## Enter GitHub, GitHub Classroom, and GitHub Actions
 
@@ -42,91 +49,50 @@ A complete ecosystem for programming education that:
 - Provides immediate feedback
 - Creates a portfolio for students
 
-## Benefits for Students
+## GitHub Classroom Benefits
 
-- Learn professional version control practices
-- Get immediate feedback on their code
-- Clear indication of what to complete (TODOs)
-- Work in a real development environment
-- Build a portfolio of completed projects
-- Prepare for collaborative development
+:::: {.columns}
 
-## Benefits for Instructors
+::: {.column width="48%"}
+### For Students
+- Professional version control
+- Immediate feedback
+- Clear guidance with TODOs
+- Portfolio building
+- Real development environment
+:::
 
-- Automated distribution of assignments
-- Centralized submission collection
-- Automated testing and grading assistance
-- Clear visibility into student progress
-- Consistent environment for all students
-- Rich feedback options (issues, PRs, comments)
+::: {.column width="4%"}
+:::
 
-## Getting Started: The Workflow
+::: {.column width="48%"}
+### For Instructors
+- Automated distribution
+- Centralized collection
+- Automated testing
+- Progress visibility
+- Consistent environments
+:::
 
-1. Create solution repository with tests
-2. Create starter repository with TODOs
-3. Set up GitHub Classroom
-4. Create and distribute assignments
-5. Monitor student progress
-6. Provide feedback through GitHub
-7. Assess completed work
+::::
 
-## Step 1: Creating the Solution Repository
+## Implementation Workflow
 
-```bash
-# Create new repository with complete solution
-git init solution-repo
-cd solution-repo
-# Add your complete solution code
-```
+::: {.incremental style="margin-top: -0.15em; font-size: 0.95em;"}
 
-- Include a comprehensive test suite with pytest
-- Set up linting with flake8/pylint
-- Create a GitHub Actions workflow
-- Ensure all tests pass with your solution
+- {{< iconify fa6-solid gear >}} **Create solution & starter repositories**
+  - Write full solution with tests
+  - Apply "implementation ablation"
+  - Set up CI/CD pipeline
+- {{< iconify fa6-solid gear >}} **Configure GitHub Classroom**
+  - Link organization and repositories
+  - Set deadlines and visibility
+- {{< iconify fa6-solid lightbulb >}} **Monitor, provide feedback, assess**
 
-## Solution Repository Structure
+:::
 
-```
-solution-repo/
-├── src/
-│   └── solution.py
-├── tests/
-│   └── test_solution.py
-├── .github/
-│   └── workflows/
-│       └── python-checks.yml
-├── requirements.txt
-└── README.md
-```
 
-## GitHub Actions Workflow Example
-
-```yaml
-name: Python Checks
-
-on: [push]
-
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.10'
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install pytest flake8
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Lint with flake8
-      run: flake8 src tests
-    - name: Test with pytest
-      run: pytest
-```
-
-## Step 2: Implementation Ablation - Creating the Starter
+## Implementation Ablation
 
 What is implementation ablation?
 
@@ -137,109 +103,103 @@ What is implementation ablation?
 
 ## Example of Implementation Ablation
 
-Solution code:
+### Solution Code
+
 ```python
-def calculate_grade(scores):
-    total = sum(scores)
-    average = total / len(scores)
+# Solution code
+def find_duplicates(input_list):
+    seen = set()
+    duplicates = set()
     
-    if average >= 90:
-        return 'A'
-    elif average >= 80:
-        return 'B'
-    elif average >= 70:
-        return 'C'
-    elif average >= 60:
-        return 'D'
-    else:
-        return 'F'
+    for item in input_list:
+        if item in seen:
+            duplicates.add(item)
+        else:
+            seen.add(item)
+    
+    return list(duplicates)
 ```
+### Starter code with ablation
 
-## Example of Implementation Ablation
-
-Starter code:
 ```python
-def calculate_grade(scores):
-    # TODO: Calculate the average score
-    # Hint: You'll need to find the sum and divide by the count
+def find_duplicates(input_list):
+    # TODO: Use sets to track seen items and duplicates
+    # Hint: You need to keep track of what you've seen so far
     
-    # TODO: Determine the letter grade based on the average
-    # A: 90+, B: 80-89, C: 70-79, D: 60-69, F: below 60
+    # TODO: Check each item and update your tracking sets
     
-    return None  # Replace with your implementation
+    # TODO: Return the list of duplicates
+    return []
 ```
 
-## Step 3: Setting Up GitHub Classroom
+## GitHub Actions Workflow Example
 
-1. Create a GitHub organization for your class
-2. Authorize GitHub Classroom
-3. Create a new classroom linked to your organization
-4. Invite teaching assistants as organization admins
+```yaml
+name: Python Checks
+on: [push]
 
-<!-- should we add an image here? -->
-
-## Step 4: Creating an Assignment
-
-1. Select "New Assignment" in GitHub Classroom
-2. Choose individual or group assignment
-3. Name your assignment
-4. Set deadline and visibility options
-5. Import your starter repository
-6. Enable automated testing
-
-<!-- an image here? -->
-
-## Step 5: Distributing the Assignment
-
-1. Generate invitation link
-2. Share with students
-3. Students click link and accept assignment
-4. GitHub automatically creates private student repositories
-5. Students clone locally and start working
-
-## Student Experience
-
-1. Accept assignment through unique link
-2. Repository created with starter code
-3. Clone repository locally
-4. Complete TODOs guided by tests
-5. Push changes to GitHub
-6. Get immediate feedback from GitHub Actions
-
-## Automated Feedback with GitHub Actions
-
-- Tests run automatically on every push
-- Students see red ❌ or green ✅ status checks
-- Detailed feedback in Actions tab
-- Testing failures highlight what's still incomplete
-
-## Comprehensive Feedback Options
-
-GitHub provides multiple feedback channels:
-
-- In-line comments on specific code lines
-- Issue creation for general feedback
-- Pull request reviews for detailed assessment
-- Automated checks for immediate technical feedback
-
-## Example: Issue-Based Feedback
-
-<!-- This is to explain how issues can be used for feedback. IRL pictures would be nice -->
-
-```markdown
-## Algorithm Efficiency
-
-Your solution works but uses O(n²) time complexity when 
-an O(n) solution is possible. Consider using a hash map 
-instead of nested loops.
-
-## Code Structure
-
-Great job breaking down the problem into functions!
-Your solution is well-organized and easy to follow.
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install pytest mypy black
+        if [ -f pyproject.toml ]; then pip install -e .; fi
+    - name: Test with pytest
+      run: pytest
 ```
 
-## Optional: Integrating with External Tools
+::: {.fragment style="margin-top: 0.1em; font-size: 0.5em;"}
+
+- {{< iconify game-icons team-idea >}} Tests run automatically on each push
+- Status checks (✅/❌) provide immediate feedback
+- Detailed logs show exactly what failed
+
+:::
+
+## Multi-level Feedback System
+
+:::: {.columns}
+
+::: {.column width="100%"}
+
+### Automated
+
+- GitHub Actions test results
+- Code quality checks
+- Code coverage reports
+
+### Manual
+
+- In-line code comments
+- Pull request reviews
+- Issue-based feedback
+
+:::
+
+::::
+
+
+## Getting Started: Essential Steps
+
+::: {style="font-size: 0.9em;"}
+
+1. Create GitHub organization for your class
+2. Design starter code through implementation ablation
+3. Configure CI pipeline with appropriate tests
+4. Create and distribute assignment links
+5. Use GitHub's feedback tools effectively
+
+:::
+
+## Integrating with External Tools
 
 GitHub Actions can integrate with:
 
@@ -249,24 +209,18 @@ GitHub Actions can integrate with:
 - Custom grading tool such as ExecExam
 - And many more!
 
-## Example: Integration with Chasten
-
-```yaml
-- name: Check with Chasten
-  run: |
-    pip install chasten
-    chasten check --config .chasten.yml src/
-```
-
-## Practical Tips from Experience
-
-- Start with simple assignments to build familiarity
-- Create clear README files with setup instructions
-- Include CI badges in README to show test status
-- Use descriptive commit messages for teaching moments
-- Consider a practice assignment for GitHub onboarding
-
 ## Common Challenges and Solutions
+
+::: {.fragment .fade .boxed-content style="margin-top: 1em; font-size: 1em;"}
+
+{{< iconify fa6-solid rocket >}} **GitHub Classroom creates a realistic, automated workflow that benefits both students and instructors!**
+:::
+
+::: {.fragment .fade .boxed-content style="margin-top: 1em; font-size: 1em;"}
+**But there are challenges:**
+:::
+
+::: {.fragment .fade .boxed-content style="margin-top: 1em; font-size: 0.9em;"}
 
 | Challenges | Solutions |
 |-----------|----------|
@@ -276,6 +230,8 @@ GitHub Actions can integrate with:
 | Missing setup | Include detailed environment setup |
 | Privacy concerns | Use private repositories |
 
+::: 
+
 ## Limitations to Be Aware Of
 
 - Learning curve for Git and GitHub
@@ -283,14 +239,10 @@ GitHub Actions can integrate with:
 - Need for internet access
 - Managing organization permissions
 
-## Key Takeaways
-
-- GitHub Classroom creates realistic development workflows
-- Automated feedback saves instructor time
-- Students learn industry-standard tools and practices
-- Implementation ablation guides student learning
-- Comprehensive feedback through multiple channels
-
 ## Questions?
 
-Thank you for your attention!
+::: {.fragment .fade .boxed-content style="margin-top: 1em; font-size: 2.1.8em;"}
+
+{{< iconify fa6-solid comment >}} Thank you for your attention! We are happy to answer any questions you may have.
+
+:::
