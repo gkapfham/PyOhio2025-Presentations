@@ -52,7 +52,6 @@ packages like Quarto make it possible to create **interactive** and
 
 :::
 
-
 ::: {.fragment .fade .boxed-content style="margin-top: -0.05em; font-size: 0.9em;"}
 
 {{< iconify fa6-solid lightbulb >}} **Ultimate Goal**: Build content-focused,
