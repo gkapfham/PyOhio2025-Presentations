@@ -19,9 +19,8 @@ website:
       - href: index.qmd
         text: Home
       - slides/index.qmd
-
   page-footer:
-    left: '© 2024 Conference Presentations'
+    left: "© 2025 Allegheny College's PyCon 2025 Team"
     right:
       - text: "{{< iconify fa github size=18px >}}"
         href: https://github.com/yourusername/conference-presentations/
