@@ -17,12 +17,12 @@ format:
     css: ../../css/styles.css
     width: 1280
     height: 720
-    code-block-font-size: 0.7em
+    code-block-font-size: 0.5em
 ---
 
-# The Problem with Traditional Assignments
+## Traditional Assignment Challenges
 
-::: {.fragment style="margin-top: -0.15em; font-size: 0.6em;"}
+::: {.fragment style="margin-top: -0.15em"}
 
 - {{< iconify fa6-solid lightbulb >}} **Inefficient workflows lead to:**
   - Version chaos via email submissions
@@ -43,11 +43,12 @@ format:
 
 A complete ecosystem for programming education that:
 
-- Leverages industry-standard tools
-- Promotes good development practices
-- Automates tedious tasks
-- Provides immediate feedback
-- Creates a portfolio for students
+- **Industry-standard tools** (Git, CI/CD, code review)
+- **Good practices** (commit messages, branching, reviews)
+- **Task automation** (testing, style checks, assignment distribution)
+- **Immediate feedback** (pass/fail checks)
+- **Student portfolios** (real-world projects)
+
 
 ## GitHub Classroom Benefits
 
@@ -76,21 +77,54 @@ A complete ecosystem for programming education that:
 
 ::::
 
+::: {.fragment .fade .boxed-content style="margin-top: 0.5em; font-size: 0.8em;"}
+{{< iconify fa6-solid star >}} **Summary:** GitHub Classroom bridges the gap between classroom learning and professional development while saving time for both students and instructors.
+:::
+
 ## Implementation Workflow
 
-::: {.incremental style="margin-top: -0.15em; font-size: 0.95em;"}
+:::: {.columns}
 
-- {{< iconify fa6-solid gear >}} **Create solution & starter repositories**
-  - Write full solution with tests
-  - Apply "implementation ablation"
-  - Set up CI/CD pipeline
-- {{< iconify fa6-solid gear >}} **Configure GitHub Classroom**
-  - Link organization and repositories
-  - Set deadlines and visibility
-- {{< iconify fa6-solid lightbulb >}} **Monitor, provide feedback, assess**
+::: {.column width="48%"}
+
+### {{< iconify material-symbols:check-rounded >}} **Setup Repositories**  
+- Write full solution with tests  
+- Apply implementation ablation  
+- Set up CI/CD pipeline  
 
 :::
 
+::: {.column width="48%"}
+
+### {{< iconify material-symbols:check-rounded >}} **Configure GitHub Classroom**  
+- Link organization and repositories  
+- Set deadlines and visibility  
+
+:::
+
+::::
+
+:::: {.columns}
+
+::: {.column width="48%"}
+
+### {{< iconify material-symbols:check-rounded >}} **Feedback & Assessment**  
+- Track progress via GitHub insights  
+- Targeted code reviews via pull requests  
+- Assignment clarifications via issues  
+
+:::
+
+::: {.column width="48%"}
+
+### {{< iconify material-symbols:check-rounded >}} **Monitor Progress**  
+- Automated test results (✅/❌)  
+- Detailed logs for error diagnosis  
+- Student feedback and code review  
+
+:::
+
+::::
 
 ## Implementation Ablation
 
@@ -103,11 +137,13 @@ What is implementation ablation?
 
 ## Example of Implementation Ablation
 
-### Solution Code
+### Starter code with ablation
 
 ```python
-# Solution code
+# Starter code with ablation
 def find_duplicates(input_list):
+    # TODO: Use sets to track seen items and duplicates
+    # Hint: You need to keep track of what you've seen so far
     seen = set()
     duplicates = set()
     
@@ -118,18 +154,6 @@ def find_duplicates(input_list):
             seen.add(item)
     
     return list(duplicates)
-```
-### Starter code with ablation
-
-```python
-def find_duplicates(input_list):
-    # TODO: Use sets to track seen items and duplicates
-    # Hint: You need to keep track of what you've seen so far
-    
-    # TODO: Check each item and update your tracking sets
-    
-    # TODO: Return the list of duplicates
-    return []
 ```
 
 ## GitHub Actions Workflow Example
@@ -148,15 +172,12 @@ jobs:
       with:
         python-version: '3.11'
     - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        python -m pip install pytest mypy black
-        if [ -f pyproject.toml ]; then pip install -e .; fi
+      run: pip install pytest mypy ruff
     - name: Test with pytest
       run: pytest
 ```
 
-::: {.fragment style="margin-top: 0.1em; font-size: 0.5em;"}
+::: {.fragment style="margin-top: -0.1em; font-size: 0.6em;"}
 
 - {{< iconify game-icons team-idea >}} Tests run automatically on each push
 - Status checks (✅/❌) provide immediate feedback
@@ -170,57 +191,52 @@ jobs:
 
 ::: {.column width="100%"}
 
+::: {.fragment}
 ### Automated
+:::
 
-- GitHub Actions test results
-- Code quality checks
+::: {.fragment}
+- GitHub Actions test results (pass/fail status for each test)
+- Code quality checks (PEP8 compliance with Ruff)
 - Code coverage reports
+:::
 
+::: {.fragment}
 ### Manual
+:::
 
-- In-line code comments
-- Pull request reviews
-- Issue-based feedback
+::: {.fragment}
+- In-line code comments (specific suggestions on implementation)
+- Pull request reviews (comprehensive feedback on approach)
+- Issue-based feedback (higher-level design discussions)
+:::
 
 :::
 
 ::::
-
-
-## Getting Started: Essential Steps
-
-::: {style="font-size: 0.9em;"}
-
-1. Create GitHub organization for your class
-2. Design starter code through implementation ablation
-3. Configure CI pipeline with appropriate tests
-4. Create and distribute assignment links
-5. Use GitHub's feedback tools effectively
-
-:::
 
 ## Integrating with External Tools
 
 GitHub Actions can integrate with:
 
 - Pytest for test coverage
-- Flake8/Pylint for style checking
+- Ruff for style checking
 - Chasten for AST-based pattern checking
 - Custom grading tool such as ExecExam
 - And many more!
 
+::: {.fragment .fade .boxed-content style="margin-top: 0.5em; font-size: 0.9em;"}
+{{< iconify fa6-solid puzzle-piece >}} **Integration Benefits**: Automated feedback fosters code quality, industry practices, and eases instructor workload.
+:::
+
 ## Common Challenges and Solutions
 
-::: {.fragment .fade .boxed-content style="margin-top: 1em; font-size: 1em;"}
+::: {.fragment .fade style="margin-top: -0.5em; font-size: 1em;"}
 
-{{< iconify fa6-solid rocket >}} **GitHub Classroom creates a realistic, automated workflow that benefits both students and instructors!**
+{{< iconify fa6-solid rocket >}} **GitHub Classroom creates a realistic, automated workflow that benefits both students and instructors! But there are challenges:**
 :::
 
-::: {.fragment .fade .boxed-content style="margin-top: 1em; font-size: 1em;"}
-**But there are challenges:**
-:::
-
-::: {.fragment .fade .boxed-content style="margin-top: 1em; font-size: 0.9em;"}
+::: {.fragment .fade style="margin-top: 0.5em; font-size: 0.8em; margin-bottom: 0.3em;"}
 
 | Challenges | Solutions |
 |-----------|----------|
@@ -230,19 +246,25 @@ GitHub Actions can integrate with:
 | Missing setup | Include detailed environment setup |
 | Privacy concerns | Use private repositories |
 
-::: 
+:::
 
-## Limitations to Be Aware Of
+::: {.fragment .fade .boxed-content style="margin-top: 0.4em; font-size: 0.9em;"}
+**Limitations:** There is a learning curve for Git and GitHub, initial setup time, internet access requirements, and organization permission management to consider.
+:::
 
-- Learning curve for Git and GitHub
-- Setup time for first assignments
-- Need for internet access
-- Managing organization permissions
+## Key Takeaways
 
-## Questions?
+::: {.fragment style="font-size: 0.9em;"}
 
-::: {.fragment .fade .boxed-content style="margin-top: 1em; font-size: 2.1.8em;"}
+- {{< iconify fa6-solid check-circle >}} **Streamlined workflow** from assignment creation to grading
+- {{< iconify fa6-solid check-circle >}} **Industry-relevant skills** that benefit students beyond the classroom
+- {{< iconify fa6-solid check-circle >}} **Automated testing** saves instructor time and provides immediate feedback
+- {{< iconify fa6-solid check-circle >}} **Visible progress** through commit history helps with targeted interventions
+- {{< iconify fa6-solid check-circle >}} **Reduced administrative overhead** through integrated tools and workflows
 
-{{< iconify fa6-solid comment >}} Thank you for your attention! We are happy to answer any questions you may have.
+:::
 
+::: {.fragment .fade .boxed-content style="margin-top: 0.5em; font-size: 0.9em;"}
+
+{{< iconify fa6-solid comment >}} Thank You! Questions?
 :::
