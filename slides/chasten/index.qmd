@@ -7,7 +7,7 @@ format:
   revealjs:
     theme: default
     slide-number: true
-    incremental: true
+    incremental: false 
     code-fold: true
     code-tools: true
     code-link: true
@@ -34,7 +34,7 @@ format:
 
 :::
 
-::: {.fragment .fade style="margin-top: -0.15em; font-size: 0.9em;"}
+::: {.fragment .fade style="margin-top: -0.25em; font-size: 0.9em;"}
 
 {{< iconify fa6-solid lightbulb >}} **Project Goal**: Chasten enables
 **scalable** and **structure-aware** feedback that effectively supports both
@@ -48,7 +48,7 @@ instructors and students
 ::: {.column width="50%"}
 
 ```python
-# O(n) is good
+# O(n) is acceptable
 seen = set()
 for item in items:
     if item in seen:
@@ -60,31 +60,34 @@ for item in items:
 ::: {.column width="50%"}
 
 ```python
-# O(n²) is bad
+# O(n²) is not okay
 for i in range(len(items)):
     for j in range(len(items)):
         if i != j 
-          and items[i] == items[j]:
+         and items[i] == items[j]:
             return True
 ```
 :::
 
 :::
 
-::: {.fragment .fade .boxed-content style="font-size: 0.8em;"}
+::: {.incremental .fade style="font-size: 0.9em; margin-top: 0.25em;"}
 
-{{< iconify mdi:alert-outline >}} Challenge: Ruff & Pylint can’t detect nested
-control structures like these
+- {{< iconify fa6-solid lightbulb >}} **Goal**: Automatically scan the source
+code that students submit to confirm that there are no inefficient looping
+constructs
 
-:::
+- {{< iconify mdi:alert-outline >}} **Challenge**: Linters like Ruff and Pylint
+don't have rules to detect nested control structures that either are or are not
+acceptable
 
-::: {.fragment .fade style="font-size: 2em;"}
+- {{< iconify fa6-solid gears >}} **Build**: An extensible tool allowing
+instructors to scan for arbitrary code patterns without AST detailed knowledge
 
-{{< iconify anxious-face-with-sweat >}}
-Oh no! Instructor is sad!
 :::
 
 ## Chasten to the Rescue
+
 ::: {.incremental}
 
 - {{< iconify mdi:search-code >}} Uses XPath to search Python's AST
