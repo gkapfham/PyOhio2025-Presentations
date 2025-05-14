@@ -85,7 +85,7 @@ A complete ecosystem for programming education that:
 
 :::: {.columns}
 
-::: {.column width="48%"}
+::: {.column width="50%" style="font-size: 0.8em;"}
 
 ### {{< iconify material-symbols:check-rounded >}} **Setup Repositories**  
 - Write full solution with tests  
@@ -94,7 +94,7 @@ A complete ecosystem for programming education that:
 
 :::
 
-::: {.column width="48%"}
+::: {.column width="50%" style="font-size: 0.8em;"}
 
 ### {{< iconify material-symbols:check-rounded >}} **Configure GitHub Classroom**  
 - Link organization and repositories  
@@ -106,7 +106,7 @@ A complete ecosystem for programming education that:
 
 :::: {.columns}
 
-::: {.column width="48%"}
+::: {.column width="50%" style="font-size: 0.8em;"}
 
 ### {{< iconify material-symbols:check-rounded >}} **Feedback & Assessment**  
 - Track progress via GitHub insights  
@@ -115,7 +115,7 @@ A complete ecosystem for programming education that:
 
 :::
 
-::: {.column width="48%"}
+::: {.column width="50%" style="font-size: 0.8em;"}
 
 ### {{< iconify material-symbols:check-rounded >}} **Monitor Progress**  
 - Automated test results (✅/❌)  
@@ -158,6 +158,10 @@ def find_duplicates(input_list):
 
 ## GitHub Actions Workflow Example
 
+:::: {.columns}
+
+::: {.column width="55%" style="font-size: 0.8em; float: left;"}
+
 ```yaml
 name: Python Checks
 on: [push]
@@ -177,13 +181,17 @@ jobs:
       run: pytest
 ```
 
-::: {.fragment style="margin-top: -0.1em; font-size: 0.6em;"}
+:::
 
-- {{< iconify game-icons team-idea >}} Tests run automatically on each push
-- Status checks (✅/❌) provide immediate feedback
-- Detailed logs show exactly what failed
+::: {.column width="40%" style="font-size: 0.8em; float: left;"}
+
+- {{< iconify game-icons team-idea >}} **Tests run automatically** on each push
+- ✅/❌ **Status checks** provide immediate feedback
+- 🛠️ **Detailed logs** highlight errors for quick diagnosis
 
 :::
+
+::::
 
 ## Multi-level Feedback System
 
