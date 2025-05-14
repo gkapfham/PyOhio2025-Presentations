@@ -66,11 +66,12 @@ for i in range(len(items)):
 
 :::
 
-::: {.fragment .fade .boxed-content style="font-size: 0.9em;"}
+::: {.fragment .fade .boxed-content style="font-size: 0.8em;"}
 {{< iconify mdi:alert-outline >}} Challenge: Ruff & Pylint can’t detect nested control structures like these
 :::
 
-::: {.fragment .fade .boxed-content style="font-size: 2em;"}
+::: {.fragment .fade style="font-size: 2em;"}
+
 {{< iconify anxious-face-with-sweat >}}
 Oh no! Instructor is sad!
 :::
@@ -120,7 +121,7 @@ chasten analyze lazytracker \
 
 
 ## The Result
-::: {.fragment .fade .boxed-content style="font-size: 2em;"}
+::: {.fragment .fade style="font-size: 1em;"}
 {{< iconify fluent-emoji:beaming-face-with-smiling-eyes >}}
 Yay! The Instructor is happy!
 :::
@@ -134,7 +135,7 @@ Yay! The Instructor is happy!
 ## Key Takeaways
 ::: {.incremental}
 
-- {{< iconify mdi:check-outline >}} Write declarative rules for AST-based code checks
+- {{< iconify mdi:pen >}} Write declarative rules for AST-based code checks
 
 - {{< iconify mdi:school-outline >}} Enable automated grading that aligns with learning outcomes
 
@@ -145,7 +146,7 @@ Yay! The Instructor is happy!
 :::
 
 ::: {.fragment .fade .boxed-content style="font-size: 0.85em;"}
-Chasten fills the gap between manual review and traditional linters by putting structure-first education into your workflow.
+{{< iconify fa6-solid lightbulb >}} Chasten fills the gap between manual review and traditional linters by putting structure-first education into your workflow.
 :::
 
 ## Limitations & Future Directions
