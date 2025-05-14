@@ -113,7 +113,7 @@ and use Chasten to easily apply them at scale across all student submissions
 - name: "nested-loops"
   code: "PERF001"
   pattern: "//For[descendant::For]"
-  description: "Detects doubly nested for-loops (e.g. O(n²))"
+  description: "Detects doubly nested for-loops (e.g., O(n²))"
 
 ```
 :::
@@ -192,14 +192,23 @@ detected in that file (e.g., `1` match)
 
 :::
 
-## Limitations & Future Directions
+## Limitations and Future Directions
+
 ::: {.incremental}
 
-- {{< iconify mdi:alert-circle-outline >}} Doesn't handle style, formatting, or type inference
+- **Limitations of the Chasten Tool**
+  - {{< iconify mdi:alert-circle-outline >}} Doesn't handle style, formatting, or
+  type inference
+  - {{< iconify mdi:timer-sand >}} Not optimized for fast use in continuous
+  integration
+  - {{< iconify mdi:code-not-equal-variant >}} Pattern matches through use of
+  XPath on Python's AST
 
-- {{< iconify mdi:timer-sand >}} Not optimized for high-speed CI use
-
-- {{< iconify mdi:code-not-equal-variant >}} Doesn't enforce correctness — only pattern matches
+- **Empirical Study of Chasten**
+  - {{< iconify fa6-solid scale-unbalanced-flip >}} Frequency of false positives
+  or false negatives?
+  - {{< iconify game-icons team-idea >}} How do students respond to the tool's feedback?
+  - {{< iconify fa6-solid flask >}} Differences in scores with varied feedback types?
 
 :::
 
