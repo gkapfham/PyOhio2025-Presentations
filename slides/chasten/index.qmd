@@ -121,16 +121,29 @@ chasten analyze lazytracker \
 
 
 ## The Result
+
+::: {.fragment .fade style="font-size: 0.8em;"}
+| Check ID | Check Name     | File           | Matches |
+|----------|----------------|----------------|---------|
+| PERF001  | nested-loops   | lazytracker.py | 1       |
+| PERF001  | nested-loops   | tracked.py     | 7       |
+:::
+
 ::: {.fragment .fade style="font-size: 1em;"}
 {{< iconify fluent-emoji:beaming-face-with-smiling-eyes >}}
 Yay! The Instructor is happy!
 :::
 
-### Nested-loops
-| Check ID | Check Name     | File           | Matches |
-|----------|----------------|----------------|---------|
-| PERF001  | nested-loops   | lazytracker.py | 1       |
-| PERF001  | nested-loops   | tracked.py     | 7       |
+## Limitations & Future Directions
+::: {.incremental}
+
+- {{< iconify mdi:alert-circle-outline >}} Doesn’t handle style, formatting, or type inference
+
+- {{< iconify mdi:timer-sand >}} Not optimized for high-speed CI use
+
+- {{< iconify mdi:code-not-equal-variant >}} Doesn't enforce correctness — only pattern matches
+
+:::
 
 ## Key Takeaways
 ::: {.incremental}
@@ -148,18 +161,6 @@ Yay! The Instructor is happy!
 ::: {.fragment .fade .boxed-content style="font-size: 0.85em;"}
 {{< iconify fa6-solid lightbulb >}} Chasten fills the gap between manual review and traditional linters by putting structure-first education into your workflow.
 :::
-
-## Limitations & Future Directions
-::: {.incremental}
-
-- {{< iconify mdi:alert-circle-outline >}} Doesn’t handle style, formatting, or type inference
-
-- {{< iconify mdi:timer-sand >}} Not optimized for high-speed CI use
-
-- {{< iconify mdi:code-not-equal-variant >}} Doesn't enforce correctness — only pattern matches
-
-:::
-
 
 ## Questions
 Please don't hesitate to reach out to us at 
