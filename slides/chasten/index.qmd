@@ -56,50 +56,24 @@ Assign
 
 
 ## Features
-(questions: these features are listed on the Chasten repo - I just listed some notable features here )
 - ✨ Easy-to-configure, automated analysis of a Python program's abstract syntax tree
 - 📃 Flexible and easy-to-use YAML-based configuration file for describing analyses and checks
 - 🚀 Configurable saving of analysis results in the JSON, CSV, or SQLite formats
 - 🌄 Interactive results analysis through the use of a locally running datasette server
-
-## Comparison for Education & Research 
 
 ## Comparison for Education & Research
 
 | **Feature**                | **Chasten**                           | **Ruff**                      | **Pylint**                   |
 |----------------------------|----------------------------------------|-------------------------------|------------------------------|
 | **Custom Rule Creation**   | ✅ Write in YAML with XPath — no coding | ❌ Hard-coded; not extensible | ⚠️ Requires Python plugin     |
-
-
-## Comparison for Education & Research
-
-| **Feature**                | **Chasten**                           | **Ruff**                      | **Pylint**                   |
-|----------------------------|----------------------------------------|-------------------------------|------------------------------|
 | **Learning AST Concepts**  | ✅ Transparent — great for teaching ASTs | ❌ Abstracted away             | ⚠️ Indirect via rule behavior |
-
-## Comparison for Education & Research
-
-| **Feature**                | **Chasten**                           | **Ruff**                      | **Pylint**                   |
-|----------------------------|----------------------------------------|-------------------------------|------------------------------|
 | **Research Use**           | ✅ Structured output + pattern mining  | ❌ Not suited for deep analysis | ⚠️ Output not researcher-friendly |
-
-## Comparison for Education & Research
-
-| **Feature**                | **Chasten**                           | **Ruff**                      | **Pylint**                   |
-|----------------------------|----------------------------------------|-------------------------------|------------------------------|
 | **Output Formats**         | ✅ JSON, CSV, SQLite (queryable)       | Text, JSON                    | Text, JSON                   |
-
-## Comparison for Education & Research
-
-| **Feature**                | **Chasten**                           | **Ruff**                      | **Pylint**                   |
-|----------------------------|----------------------------------------|-------------------------------|------------------------------|
 | **Interactive Exploration**| ✅ Datasette dashboards (SQLite-ready) | ❌ None                        | ❌ None                       |
 
 ## Chasten Workflow
 
 ## Key Takeaways
-
-
 - ✅ **Declarative rule-writing with XPath**  
   Easily define grading criteria and static analysis checks — no need to write Python plugins.
 
@@ -115,13 +89,13 @@ Assign
 - 📚 **Integrates into grading pipelines**  
   Run Chasten on student submissions to check for required docstrings, type hints, nested logic, etc.
 
-  ## Current limitations
-  - Chasten is best used alongside other linters - it doesn't cover style, formatting, or pre-defined PEP8 rules
-  - Not optimized for speed or massive-scale projects 
-  - Doesn't enforce fixed rule sets - it won't tell you what's "correct", depends on your familiarity with ASTs and XPath
+## Current limitations
+- Chasten is best used alongside other linters - it doesn't cover style, formatting, or pre-defined PEP8 rules
+- Not optimized for speed or massive-scale projects 
+- Doesn't enforce fixed rule sets - it won't tell you what's "correct", depends on your familiarity with ASTs and XPath
 
-  ## Future limitation 
-  - Have hints/ automatic fixing of the code 
-  - LSP integration or IDE integration
-  - Should be a default set of rules that let examiners pick and choose to run the projects on 
+## Future limitation 
+- Have hints/ automatic fixing of the code 
+- LSP integration or IDE integration
+- Should be a default set of rules that let examiners pick and choose to run the projects on 
 
