@@ -1,16 +1,19 @@
 ---
 title: "Up and Running with GitHub, GitHub Classroom, and GitHub Actions"
-subtitle: "Hemani Alaparthi"
+subtitle: "Hemani Alaparthi and Gregory M. Kapfhammer"
 format: 
   revealjs:
     theme: default
-    slide-number: true
+    slide-number: false
     incremental: true
     code-fold: true
     code-tools: true
     code-link: true
+    history: false
+    scrollable: true
+    transition: slide
     highlight-style: github
-    footer: "GatorEducator"
+    footer: "PyCon Education Summit 2025"
     css: ../../css/styles.css
 ---
 
