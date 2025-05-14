@@ -82,7 +82,7 @@ don't have rules to detect nested control structures that either are or are not
 acceptable
 
 - {{< iconify fa6-solid gears >}} **Build**: An extensible tool allowing
-instructors to scan for arbitrary code patterns without AST detailed knowledge
+instructors to scan for arbitrary code patterns without detailed AST knowledge
 
 :::
 
