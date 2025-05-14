@@ -1,6 +1,7 @@
-/* Custom styles for the conference presentations website */
+/* Custom styles for the conference presentations website on execexam */
 
 /* General styles */
+
 body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
@@ -9,6 +10,7 @@ body {
 }
 
 /* Code blocks */
+
 pre {
     border-radius: 8px;
     padding: 1em;
@@ -23,6 +25,7 @@ code {
 }
 
 /* Navigation */
+
 .navbar {
     background-color: #ff9f5c;
     color: #fff;
@@ -39,6 +42,7 @@ code {
 }
 
 /* Links */
+
 a {
     color: #ff6f3c;
     text-decoration: none;
@@ -49,6 +53,7 @@ a:hover {
 }
 
 /* Footer */
+
 .footer {
     border-top: 1px solid #ff9f5c;
     padding: 1em 0;
@@ -57,6 +62,7 @@ a:hover {
 }
 
 /* Presentation specific styles */
+
 .reveal .slides {
     text-align: left;
 }
@@ -92,6 +98,7 @@ a:hover {
 }
 
 /* Custom callout boxes */
+
 .callout {
     border-left: 4px solid #ff6f3c;
     padding: 1em;
@@ -102,6 +109,7 @@ a:hover {
 }
 
 /* Code highlighting */
+
 .hljs {
     background: #ffe6cc;
     border-radius: 4px;
