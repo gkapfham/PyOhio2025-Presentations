@@ -55,17 +55,17 @@ Implementation and Prospects". In Proceedings of 54th SIGCSE.
 
 ## What is ExecExam?
 
-**Scalable, feedback-rich assessment tool**
+{{< iconify fa6-solid gears >}} **Scalable, feedback-rich assessment tool built in Python**
 
 :::: {.columns}
 
 ::: {.column width="65%"}
 
 - Runs Pytest tests on student code
-- Reports all test failure
-- Explains why a test failed
-- Suggests how to fix it
-- Utilizes LLMs for enhanced feedback
+- Reports all test failures and context
+- Clearly explains why a test failed
+- Suggests how to fix tested function
+- Uses LLMs for enhanced feedback
 :::
 
 ::: {.column width="35%"}
