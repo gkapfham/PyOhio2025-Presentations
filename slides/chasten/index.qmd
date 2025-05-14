@@ -1,6 +1,8 @@
 ---
-title: "Automated and Configurable Programming Project Checking with Chasten"
-subtitle: "Daniel Bekele, Chi (Jaclyn) Pham, and Gregory M. Kapfhammer"
+title: "Automated and Configurable Programming Project Checking with Chasten" 
+date: "2025-05-15"
+date-format: long
+author: "Daniel Bekele, Jaclyn Pham, and Gregory M. Kapfhammer"
 format: 
   revealjs:
     theme: default
@@ -17,70 +19,95 @@ format:
     css: ../../css/styles.css
 ---
 
-## The Problem with Traditional Static Analysis
+## What Problem Are We Solving?
 
-### Regular expression (regex) ≠ code understanding
-- Fails on structural nuance
-- Hard to maintain across formatting/styles 
+::: {.incremental}
 
-## The Problem with Traditional Static Analysis
+- Students struggle to write **efficient, readable code**
+- Instructors spend hours **manually reviewing submissions** for structural issues
+- Existing tools focus on **style**, not **semantic structure**
+- Regex is **brittle**, and AST tools are **hard to prototype**
 
-### AST tools are powerful but complex
-- Require managing node types
-- Difficult to prototype new rules
+:::
 
-## Chasten
-A Python program that uses XPATH expressions to find patterns in the abstract syntax tree (AST) of a Python program
+::: {.fragment .fade .boxed-content style="margin-top: -0.05em; font-size: 0.9em;"}
 
-## What is an AST?
-**Abstract Syntax Tree (AST)** = structured representation of code 
+{{< iconify fa6-solid lightbulb >}} **Ultimate Goal**: Enable **scalable** and
+**structure-aware** feedback that support both instructors and students
 
-x = 1 + 2
+:::
 
-```scss
-Assign
- ├── Name(x)
- └── BinOp(+)
-      ├── Constant(1)
-      └── Constant(2)
+
+## The Instructor is teaching O(n²)
+::: {.columns}
+::: {.column width="50%"}
+
+```python
+# GOOD
+seen = set()
+for item in items:
+    if item in seen:
+        return True
+    seen.add(item)
 ```
+:::
 
-## Why XPATH?
-- ✅ Perfect for navigating ASTs
-- ✅ Easy to write and understand
+::: {.column width="50%"}
 
-```xpath
-/FunctionDef/body//If[ancestor::If and not(parent::orelse)]
+```python
+# BAD (O(n²))
+for i in range(len(items)):
+    for j in range(len(items)):
+        if i != j 
+          and items[i] == items[j]:
+            return True
 ```
---> Matches function with double nested if
+:::
 
+:::
 
-## Features
-- ✨ Easy-to-configure, automated analysis of a Python program's abstract syntax tree
-- 📃 Flexible and easy-to-use YAML-based configuration file for describing analyses and checks
-- 🚀 Configurable saving of analysis results in the JSON, CSV, or SQLite formats
-- 🌄 Interactive results analysis through the use of a locally running datasette server
+::: {.fragment .fade .boxed-content style="font-size: 0.9em;"}
+{{< iconify mdi:alert-outline >}} Challenge: Ruff & Pylint can’t detect nested control structures like these
+:::
 
-## Comparison for Education & Research
+::: {.fragment .fade .boxed-content style="font-size: 2em;"}
+{{< iconify anxious-face-with-sweat >}}
+Oh no! Instructor is sad!
+:::
 
-| **Feature**                | **Chasten**                           | **Ruff**                      | **Pylint**                   |
-|----------------------------|----------------------------------------|-------------------------------|------------------------------|
-| **Custom Rule Creation**   | ✅ Write in YAML with XPath — no coding | ❌ Hard-coded; not extensible | ⚠️ Requires Python plugin     |
-| **Learning AST Concepts**  | ✅ Transparent — great for teaching ASTs | ❌ Abstracted away             | ⚠️ Indirect via rule behavior |
-| **Research Use**           | ✅ Structured output + pattern mining  | ❌ Not suited for deep analysis | ⚠️ Output not researcher-friendly |
-| **Output Formats**         | ✅ JSON, CSV, SQLite (queryable)       | Text, JSON                    | Text, JSON                   |
-| **Interactive Exploration**| ✅ Datasette dashboards (SQLite-ready) | ❌ None                        | ❌ None                       |
+## Chasten to the Rescue
+::: {.incremental}
 
-## Chasten Workflow
+- {{< iconify mdi:search-code >}} Uses XPath to search Python's AST
 
-### Installation
+- {{< iconify mdi:file-code-outline >}} Rules written in simple YAML
+
+- {{< iconify mdi:file-tree-outline >}} Structure-first, not just style
+
+- {{< iconify mdi:database-outline >}} Outputs to JSON, CSV, or SQLite
+
+:::
+
+::: {.fragment .fade .boxed-content style="font-size: 1em;"}
+{{< iconify fa6-solid lightbulb >}} Result: Instructors define checks once and apply them at scale across all submissions
+:::
+
+:::fragment
+```yaml
+- name: "nested-loops"
+  code: "PERF001"
+  pattern: "//For[descendant::For]"
+  description: "Detects doubly nested for-loops (e.g. O(n²))"
+```
+:::
+
+### Let's run Chasten!
 ```bash
+# Installation
 pipx install chasten
 pipx list  # Confirm installation
 chasten --help  # View available commands
 ```
-
-## Chasten Workflow
 
 ### Using Chasten
 - List avalible commands 
@@ -88,40 +115,48 @@ chasten --help  # View available commands
 - Analyze a given project
 - Save results
 
-## Chasten Demo Video
-[Demo Chasten](https//:wwww.)
-
-## Chasten Workflow
-
 ### Common Checks
 - Finding missing docstrings
 - Detecting improper nesting of control structures
 - Enforcing type annotations
 - Identifying complex code patterns
 
+### The Result
+::: {.fragment .fade .boxed-content style="font-size: 2em;"}
+{{< iconify fluent-emoji:beaming-face-with-smiling-eyes >}}
+Yay! The Instructor is happy!
+:::
+
 ## Key Takeaways
-- ✅ **Declarative rule-writing with XPath**  
-  Easily define grading criteria and static analysis checks — no need to write Python plugins.
+::: {.incremental}
 
-- 🧠 **Teachable insights into code structure**  
-  Helps students understand Abstract Syntax Trees (ASTs) and how code is interpreted structurally.
+- {{< iconify mdi:check-outline >}} Write declarative rules for AST-based code checks
 
-- 📊 **Structured, explorable outputs**  
-  Export results to SQLite and use Datasette to visualize errors, coverage, and student patterns.
+- {{< iconify mdi:school-outline >}} Enable automated grading that aligns with learning outcomes
 
-- 🧪 **Supports research and pedagogy**  
-  Useful for analyzing coding behavior at scale, detecting common anti-patterns in student code.
+- {{< iconify mdi:chart-bar-stacked >}} Generate data-rich insights into student code patterns
 
-- 📚 **Integrates into grading pipelines**  
-  Run Chasten on student submissions to check for required docstrings, type hints, nested logic, etc.
+- {{< iconify mdi:email-check-outline >}} Focus on what the code does, not how it looks
 
-## Current limitations
-- Chasten is best used alongside other linters - it doesn't cover style, formatting, or pre-defined PEP8 rules
-- Not optimized for speed or massive-scale projects 
-- Doesn't enforce fixed rule sets - it won't tell you what's "correct", depends on your familiarity with ASTs and XPath
+:::
 
-## Future limitation 
-- Have hints/ automatic fixing of the code 
-- LSP integration or IDE integration
-- Should be a default set of rules that let examiners pick and choose to run the projects on 
+::: {.fragment .fade .boxed-content style="font-size: 0.85em;"}
+Chasten fills the gap between manual review and traditional linters by putting structure-first education into your workflow.
+:::
+
+## Limitations & Future Directions
+::: {.incremental}
+
+- {{< iconify mdi:alert-circle-outline >}} Doesn’t handle style, formatting, or type inference
+
+- {{< iconify mdi:timer-sand >}} Not optimized for high-speed CI use
+
+- {{< iconify mdi:code-not-equal-variant >}} Doesn't enforce correctness — only pattern matches
+
+:::
+
+::: {.fragment .fade .tight-boxed-content style="font-size: 0.85em;"}
+
+## Questions
+Please don't hesitate to reach out to us at 
 
