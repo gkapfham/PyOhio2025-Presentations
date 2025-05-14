@@ -1,0 +1,23 @@
+---
+title: "ExecExam: A Tool to Facilitate Effective Executable Examinations in Python"
+subtitle: "Pallas-Athen Cain, Hemani Alaparthi, and Gregory M. Kapfhammer"
+format: 
+  revealjs:
+    theme: default
+    slide-number: false
+    incremental: true
+    code-fold: true
+    code-tools: true
+    code-link: true
+    highlight-style: github
+    footer: "PyCon Education Summit 2025"
+    css: ../../css/styles.css
+---
+
+## The Challenge of Programming Assignments
+
+- Distribution of starter code
+- Collection of submissions 
+- Providing automated feedback
+- Managing final assessment
+- Coordinating all these tasks efficiently
