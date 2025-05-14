@@ -101,15 +101,25 @@ and how you can integrate them into your assessments for your own courses!
 
 ![](terminal.png)
 
-## Key Features
+## Key Features of ExecExam
 
-**Why use ExecExam?**
+::: fragment
 
-- 🧪 Full Pytest coverage, Streamlines assessment
-- 💻 Can be run throughout the student coding process
-- 🧠 AI-powered failure analysis
-- ⚙️ GitHub integration, easy CI/CD
-- 🔁 Enhance the learning experience by offering actionable insights throughout the coding process
+{{< iconify fa6-solid lightbulb >}} **Why use ExecExam for your next assessment?**
+
+:::
+
+::: incremental
+
+- 🧪 Configured Pytest runs for streamlined assessment
+- 💻 Runs on student laptop through assessment process
+- 📜 Provides contextualized, detailed test failure reports
+- ⚙️ Integrates with GitHub and GitHub Actions for CI/CD
+- 🧠 Features flexible, democratized LLM-powered debugging
+- 🔁 Offers actionable insights to instructors and students!
+- 🛠️ Open-source tool collaboratively developed on GitHub
+
+:::
 
 ## For Instructors
 
