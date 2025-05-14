@@ -90,8 +90,8 @@ either manual assessment or running only Pytest.
 
 ::: {.fragment .fade style="margin-top: -0.75em; font-size: 0.9em;"}
 
-{{< iconify fa6-solid lightbulb >}} Let's learn more about ExecExam's features
-and how you can integrate them into your assessments for your own courses!
+{{< iconify fa6-solid lightbulb >}} **Next Step**: Explore ExecExam's features
+and how teachers can integrate them into the assessments for their programming courses!
 
 :::
 
