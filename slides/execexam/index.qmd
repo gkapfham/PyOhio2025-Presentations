@@ -60,7 +60,7 @@ Implementation and Prospects". In Proceedings of 54th SIGCSE.
 
 ::: {.fragment .fade style="margin-top: -0.15em; font-size: 0.9em;"}
 
-🚫 **Test assertion failure is not enough**! ExecExam presents a compelling
+🚫 **Test assertion failure is not enough**! ExecExam is a compelling
 alternative to either manual assessment or running only Pytest.
 
 :::
