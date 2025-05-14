@@ -1,11 +1,13 @@
 ---
 title: "ExecExam: A Tool to Facilitate Effective Executable Examinations in Python"
-subtitle: "Pallas-Athen Cain, Hemani Alaparthi, and Gregory M. Kapfhammer"
+date: "2025-05-15"
+date-format: long
+author: "Pallas-Athena Cain, Hemani Alaparthi, and Gregory Kapfhammer"
 format: 
   revealjs:
     theme: default
     slide-number: false
-    incremental: true
+    incremental: false
     code-fold: true
     code-tools: true
     code-link: true
@@ -14,11 +16,146 @@ format:
     transition: slide
     highlight-style: github
     footer: "PyCon Education Summit 2025"
-    css: ../../css/styles.css
+    css: ./styles.css
 ---
 
-## Wonderful Content about ExecExam
+## What is an Executable Examination?
 
-- Executable examinations
-- Python program
-- Uses Pytest
+::: {.fragment style="margin-top: -0.15em; font-size: 0.8em;"}
+
+{{< iconify fa6-solid gears >}} **Goal: Assess a student's ability to program
+with real tools**
+
+  - A student writes, modifies, and runs code to solve a real problem
+  - Graded via automated tests that use Pytest tests and assertions
+  - Unlike static examinations an executable examination assesses:
+    - Programming logic
+    - Debugging ability
+    - Tool use (e.g., text editor, terminal, IDE, and Git)
+
+:::
+
+::: {.fragment .fade style="margin-top: -0.15em; font-size: 0.8em;"}
+
+🎯 **Like a take-home project — but precise, consistent, and scalable!**
+
+**Reference**: Chris Bourke, Yael Erez, and Orit Hazzan. 2023. "Executable Exams: Taxonomy,
+Implementation and Prospects". In Proceedings of 54th SIGCSE.
+
+:::
+
+## Problems with Computing Assessments
+
+::: fragment
+
+{{< iconify game-icons team-idea >}} **Why do we need better assessments?**
+
+- Manual grading is slow and inconsistent
+- Students often don’t know why their code fails
+- Feedback is shallow or missing altogether
+- Limited assessment of effective tool use
+- Pytest not a good fit for assessment
+
+:::
+
+::: {.fragment .fade style="margin-top: -0.15em; font-size: 0.9em;"}
+
+🚫 “Test failed” isn't enough! ExecExam presents a compelling alternative to
+either manual assessment or running only Pytest.
+
+:::
+
+## What is ExecExam?
+
+::: fragment
+
+{{< iconify fa6-solid gears >}} **Scalable, feedback-rich assessment tool built in Python**
+
+:::: {.columns}
+
+::: {.column width="65%"}
+
+- Runs Pytest tests on student code
+- Reports all test failures and context
+- Clearly explains why a test failed
+- Suggests how to fix tested function
+- Uses LLMs for enhanced feedback
+:::
+
+::: {.column width="35%" .middle}
+![](ExecExam_-_Logo_-_300.png){width="100%"}
+:::
+
+:::
+
+::: {.fragment .fade style="margin-top: -0.75em; font-size: 0.9em;"}
+
+{{< iconify fa6-solid lightbulb >}} **Next Step**: Explore ExecExam's features
+and how teachers can integrate them into the assessments for their programming courses!
+
+:::
+
+::::
+
+## Understanding ExecExam's Output
+
+![](terminal.png)
+
+## Key Features of ExecExam
+
+::: fragment
+
+{{< iconify fa6-solid lightbulb >}} **Why use ExecExam for your next assessment?**
+
+:::
+
+::: incremental
+
+- 🧪 Configured Pytest runs for streamlined assessment
+- 💻 Runs on student laptop through assessment process
+- 📜 Provides contextualized, detailed test failure reports
+- ⚙️ Integrates with GitHub and GitHub Actions for CI/CD
+- 🧠 Features flexible, democratized LLM-powered debugging
+- 🔁 Offers actionable insights to instructors and students!
+- 🛠️ Open-source tool collaboratively developed on GitHub
+
+:::
+
+## Getting Started with ExecExam
+
+{{< iconify fa6-solid gears >}} **How instructors can adopt automated assessments**
+
+::: fragment
+
+- Create a **solution repository**
+  - Design scaffolded coding tasks
+  - Write test cases using Pytest
+  - Add ExecExam as a dependency
+  - Use GatorGrader to run all checks
+- Using **solution ablation** to create a **starter repository**
+- GitHub Classroom **distributes** and **receives** examinations
+
+:::
+
+## Conclusions and Future Work
+
+::: {.fragment style="margin-top: -0.15em; font-size: 0.8em;"}
+
+- 📊 **Analytics and Instructor Features**
+  - Store test outcomes and feedback over time
+  - Visualize student debugging and improvement paths
+  - Log LLM interactions to evaluate effectiveness
+  - Hold out hidden test cases for instructor-only grading
+
+- 🧠 **Adaptive Feedback Loops**
+  - Tailor feedback complexity to student performance
+  - Allow students to rate different types of LLM feedback
+
+:::
+
+::: {.fragment style="margin-top: -0.25em; font-size: 0.8em;"}
+
+- 🔗 GitHub Repository: [https://github.com/GatorEducator/execexam](https://github.com/GatorEducator/execexam)
+- 💻 PyPI: [https://pypi.org/project/execexam/](https://pypi.org/project/execexam/)
+
+:::
