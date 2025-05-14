@@ -8,7 +8,6 @@ format:
   revealjs:
     theme: default
     slide-number: false
-    incremental: true
     code-fold: true
     code-tools: true
     code-link: true
@@ -52,11 +51,13 @@ packages like Quarto make it possible to create **interactive** and
 
 :::
 
-::: {.fragment .fade .boxed-content style="margin-top: -0.05em; font-size: 0.9em;"}
+::: {.fragment .fade .tight-boxed-content style="margin-top: -0.05em; margin-bottom: -0.25em; font-size: 0.8em;"}
 
-{{< iconify fa6-solid lightbulb >}} **Ultimate Goal**: Build content-focused,
+- {{< iconify fa6-solid lightbulb >}} **Ultimate Goal**: Build content-focused,
 interactive, collaborative course sites that instructors can maintain with
 minimal effort
+- {{< iconify fa6-solid diagram-project >}} **Next Steps**: Give examples of
+content you can immediately use! See `https://github.com/GatorEducator/PyCon2025-EducationAndTypingSummit-Presentations` for more details!
 
 :::
 
