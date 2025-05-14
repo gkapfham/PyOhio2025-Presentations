@@ -149,7 +149,7 @@ and how teachers can integrate them into the assessments for their programming c
 
 - 🧠 **Adaptive Feedback Loops**
   - Tailor feedback complexity to student performance
-  - Allow students to rate LLM feedback
+  - Allow students to rate different types of LLM feedback
 
 :::
 
