@@ -102,30 +102,34 @@ Oh no! Instructor is sad!
 :::
 
 ## Let's run Chasten!
+### Installation
 ```bash
-# Installation
 pipx install chasten
 pipx list  # Confirm installation
 chasten --help  # View available commands
 ```
 
-## Using Chasten
-- List avalible commands 
-- Select a config file
-- Analyze a given project
-- Save results
+### Run Chasten
+```bash
+chasten analyze lazytracker \
+        --config chasten-configuration \
+        --search-path lazytracker \
+        --save-directory dummy \
+        --save
+```
 
-## Common Checks
-- Finding missing docstrings
-- Detecting improper nesting of control structures
-- Enforcing type annotations
-- Identifying complex code patterns
 
 ## The Result
 ::: {.fragment .fade .boxed-content style="font-size: 2em;"}
 {{< iconify fluent-emoji:beaming-face-with-smiling-eyes >}}
 Yay! The Instructor is happy!
 :::
+
+### Nested-loops
+| Check ID | Check Name     | File           | Matches |
+|----------|----------------|----------------|---------|
+| PERF001  | nested-loops   | lazytracker.py | 1       |
+| PERF001  | nested-loops   | tracked.py     | 7       |
 
 ## Key Takeaways
 ::: {.incremental}
@@ -158,4 +162,6 @@ Chasten fills the gap between manual review and traditional linters by putting s
 
 ## Questions
 Please don't hesitate to reach out to us at 
+
+
 
