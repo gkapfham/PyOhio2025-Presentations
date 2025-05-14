@@ -23,7 +23,8 @@ format:
 
 ::: {.fragment style="margin-top: -0.15em; font-size: 0.8em;"}
 
-**Goal: Assess a student's ability to program with real tools**
+{{< iconify fa6-solid gears >}} **Goal: Assess a student's ability to program
+with real tools**
 
   - A student writes, modifies, and runs code to solve a real problem
   - Graded via automated tests that use Pytest tests and assertions
