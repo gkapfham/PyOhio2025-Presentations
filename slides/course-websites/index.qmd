@@ -41,23 +41,26 @@ packages like Quarto make it possible to create **interactive** and
 
 :::
 
-## Our Technology Stack
+## Building and Deploying with Quarto
 
-::: {.fragment .fade-right}
+::: fragment
 
-- **Quarto**: Markdown-based framework with minimal learning curve
-- **Python + WebAssembly**: Browser-based code execution without installation
+- **Quarto**: Accessible markdown-based framework
+- **Python + WebAssembly**: Easily run Python in the browser
 - **GitHub**: Version control and collaborative workflows
 - **GitHub Actions**: Automated testing and deployment
 
 :::
 
-## Why This Stack Works for Education
 
-- **Markdown Focus**: Students concentrate on content, not technical details
-- **Interactive Examples**: Code runs directly in documentation and slides
-- **Collaborative**: Supports peer review and cooperative learning
-- **Sustainable**: Easy to maintain and update each semester
+::: {.fragment .fade .boxed-content style="margin-top: -0.05em; font-size: 0.9em;"}
+
+{{< iconify fa6-solid lightbulb >}} **Ultimate Goal**: Build content-focused,
+interactive, collaborative course sites that instructors can maintain with
+minimal effort
+
+:::
+
 
 ## Simple QMD Template
 
@@ -182,17 +185,3 @@ def binary_search(arr, target):
 - **Scalability**: Works for any course size, from small seminars to large lectures
 
 :::
-
-## Thank You!
-
-We would love to continue the conversation! Please find us after the session if you have questions or want to discuss implementing this approach in your courses.
-
-Website: [algorithmology.org](https://algorithmology.org/)
-
-Repository: [github.com/Algorithmology/www.algorithmology.org](https://github.com/Algorithmology/www.algorithmology.org)
-
-Alish Chhetri: **chhetri01@allegheny.edu**
-
-Gregory M. Kapfhammer: **gkapfhammer@allegheny.edu**
-
-<!-- Contact info and resources for attendees --> 
