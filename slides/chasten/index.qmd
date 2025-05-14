@@ -183,8 +183,12 @@ Yay! The Instructor is happy!
 {{< iconify fa6-solid lightbulb >}} Chasten fills the gap between manual review and traditional linters by putting structure-first education into your workflow.
 :::
 
-## Questions
-Please don't hesitate to reach out to us at 
-
+## Try Chasten
+- 🔗 GitHub Repository: [https://github.com/AstuteSource/chasten](https://github.com/AstuteSource/chasten)
+- 💻 PyPI: [https://pypi.org/project/chasten/](https://pypi.org/project/chasten/)
+- 🤝 Reach out or contribute 
+  - Chi (Jaclyn) Pham: **pham02@allegheny.edu** 
+  - Daniel Bekele: **bekele01@allegheny.edu** 
+  - Gregory M. Kapfhammer: **gkapfhammer@allegheny.edu**
 
 
