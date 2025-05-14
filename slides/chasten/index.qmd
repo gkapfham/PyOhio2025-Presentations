@@ -126,7 +126,7 @@ chasten analyze lazytracker \
 
 ## The Result
 
-::: {.fragment .fade style="font-size: 0.8em;"}
+::: {.fragment .fade style="font-size: 1em;"}
 ### Nested-loop
 | Check ID | Check Name     | File           | Matches |
 |----------|----------------|----------------|---------|
@@ -134,16 +134,23 @@ chasten analyze lazytracker \
 | PERF001  | nested-loops   | tracked.py     | 7       |
 :::
 
-::: {.fragment .fade style="font-size: 0.8em;"}
-### Function Without Docstring
-| Check ID | Check Name                            | File               | Matches |
-|----------|----------------------------------------|--------------------|---------|
-| FUNC003  | all-function-definition-with-no-docstring | test_lazytracker.py| 6       |
-| FUNC003  | all-function-definition-with-no-docstring | test_tracked.py    | 2       |
-| FUNC003  | all-function-definition-with-no-docstring | tracked.py         | 2       |
+::: {.fragment .fade style="font-size: 0.7em; margin-top: 1em;"}
+{{< iconify mdi:format-list-numbered >}} **Check ID** → A unique short rule code (e.g., PERF001)
 :::
 
-::: {.fragment .fade style="font-size: 1em;"}
+::: {.fragment .fade style="font-size: 0.7em;"}
+{{< iconify mdi:label-outline >}} **Check Name** → The rule name that matched (e.g., "nested-loops")
+:::
+
+::: {.fragment .fade style="font-size: 0.7em;"}
+{{< iconify mdi:file-outline >}} **File** → The Python file where the pattern was found
+:::
+
+::: {.fragment .fade-down style="font-size: 0.7em;"}
+{{< iconify mdi:counter >}} **Matches** → Number of times the pattern was triggered in that file
+:::
+
+::: {.fragment .fade style="font-size: 1.5em; margin-top: 0.5em;"}
 {{< iconify fluent-emoji:beaming-face-with-smiling-eyes >}}
 Yay! The Instructor is happy!
 :::
