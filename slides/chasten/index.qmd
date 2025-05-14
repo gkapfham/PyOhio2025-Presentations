@@ -101,7 +101,7 @@ Oh no! Instructor is sad!
 ```
 :::
 
-### Let's run Chasten!
+## Let's run Chasten!
 ```bash
 # Installation
 pipx install chasten
@@ -109,19 +109,19 @@ pipx list  # Confirm installation
 chasten --help  # View available commands
 ```
 
-### Using Chasten
+## Using Chasten
 - List avalible commands 
 - Select a config file
 - Analyze a given project
 - Save results
 
-### Common Checks
+## Common Checks
 - Finding missing docstrings
 - Detecting improper nesting of control structures
 - Enforcing type annotations
 - Identifying complex code patterns
 
-### The Result
+## The Result
 ::: {.fragment .fade .boxed-content style="font-size: 2em;"}
 {{< iconify fluent-emoji:beaming-face-with-smiling-eyes >}}
 Yay! The Instructor is happy!
@@ -155,7 +155,6 @@ Chasten fills the gap between manual review and traditional linters by putting s
 
 :::
 
-::: {.fragment .fade .tight-boxed-content style="font-size: 0.85em;"}
 
 ## Questions
 Please don't hesitate to reach out to us at 
