@@ -153,41 +153,37 @@ chasten analyze time-complexity-lab \
 
 :::
 
-## The Result
+## Results from Running Chasten
 
 ::: {.fragment .fade style="font-size: 1em;"}
-### Nested-loop
+### Nested Loop Analysis
 | Check ID | Check Name     | File           | Matches |
 |----------|----------------|----------------|---------|
-| PERF001  | nested-loops   | lazytracker.py | 1       |
-| PERF001  | nested-loops   | tracked.py     | 7       |
+| PERF001  | nested-loops   | analyze.py     | 1       |
+| PERF001  | nested-loops   | display.py     | 7       |
+| PERF001  | nested-loops   | main.py        | 0       |
 :::
 
-::: {.fragment .fade style="font-size: 0.7em; margin-top: 1em;"}
+::: {.fragment .fade-down style="font-size: 0.7em; margin-top: 1em;"}
 {{< iconify mdi:format-list-numbered >}} **Check ID** → A unique short rule code (e.g., PERF001)
 :::
 
-::: {.fragment .fade style="font-size: 0.7em;"}
+::: {.fragment .fade-down style="font-size: 0.7em;"}
 {{< iconify mdi:label-outline >}} **Check Name** → The rule name that matched (e.g., "nested-loops")
 :::
 
-::: {.fragment .fade style="font-size: 0.7em;"}
+::: {.fragment .fade-down style="font-size: 0.7em;"}
 {{< iconify mdi:file-outline >}} **File** → The Python file where the pattern was found
 :::
 
 ::: {.fragment .fade-down style="font-size: 0.7em;"}
-{{< iconify mdi:counter >}} **Matches** → Number of times the pattern was triggered in that file
-:::
-
-::: {.fragment .fade style="font-size: 1.5em; margin-top: 0.5em;"}
-{{< iconify fluent-emoji:beaming-face-with-smiling-eyes >}}
-Yay! The Instructor is happy!
+{{< iconify mdi:counter >}} **Matches** → Number of times the pattern was detected in that file
 :::
 
 ## Limitations & Future Directions
 ::: {.incremental}
 
-- {{< iconify mdi:alert-circle-outline >}} Doesn’t handle style, formatting, or type inference
+- {{< iconify mdi:alert-circle-outline >}} Doesn't handle style, formatting, or type inference
 
 - {{< iconify mdi:timer-sand >}} Not optimized for high-speed CI use
 
