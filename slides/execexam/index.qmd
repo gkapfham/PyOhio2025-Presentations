@@ -51,19 +51,28 @@ Implementation and Prospects". In Proceedings of 54th SIGCSE.
 - Students often don’t know why their code fails
 - Feedback is shallow or missing altogether
 
-🚫 “Test failed” isn’t enough.
+🚫 “Test failed” isn't enough.
 
 ## What is ExecExam?
 
 **Scalable, feedback-rich assessment tool**
 
-- Runs Pytest on student code
-- Unlike Pytest, continues past the first failure
+:::: {.columns}
+
+::: {.column width="65%"}
+
+- Runs Pytest tests on student code
+- Reports all test failure
 - Explains why a test failed
 - Suggests how to fix it
-- Utilizes LLMs for even better feedback
+- Utilizes LLMs for enhanced feedback
+:::
 
-![](ExecExam_-_Logo_-_300.png)
+::: {.column width="35%"}
+![](ExecExam_-_Logo_-_300.png){width="100%"}
+:::
+
+::::
 
 ## 
 
