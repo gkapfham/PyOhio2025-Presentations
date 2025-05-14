@@ -114,11 +114,11 @@ print(LL.removefirst() == 3)
 print(LL.removefirst() == 9)
 print(LL.removelast() == 13)
 ```
-::: {.fragment style="margin-top: 0.15em; font-size: 0.80em;"}
 
-- {{< iconify fa6-solid robot >}} **Key Task**: After finding definitions of
-`ListNode` and `LinkedList`, draw a picture to show their relationship! Can you
-explain the `True` outputs?
+::: {.fragment style="margin-top: -0.25em; font-size: 0.775em;"}
+
+- {{< iconify fa6-solid robot >}} **Task**: Visualize `ListNode` and
+`LinkedList` and explain the `True` outputs!
 
 :::
 
