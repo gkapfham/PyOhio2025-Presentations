@@ -73,7 +73,6 @@ An executable examinations invites a learner to write, modify, and/or execute Py
 - 🧪 Full Pytest coverage, Streamlines assessment
 - 🧠 AI-powered failure analysis
 - ⚙️ GitHub integration, easy CI/CD
-- 💻 Local & cloud LLM support
 - 🔁 Enhance the learning experience by offering actionable insights throughout the coding process
 
 ## For Instructors
