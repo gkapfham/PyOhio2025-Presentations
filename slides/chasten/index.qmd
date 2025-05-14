@@ -103,13 +103,16 @@ Oh no! Instructor is sad!
 :::
 
 ## Let's run Chasten!
+::: {.fragment .fade style="font-size: 0.8em;"}
 ### Installation
 ```bash
 pipx install chasten
 pipx list  # Confirm installation
 chasten --help  # View available commands
 ```
+:::
 
+::: {.fragment .fade style="font-size: 0.8em;"}
 ### Run Chasten
 ```bash
 chasten analyze lazytracker \
@@ -118,15 +121,26 @@ chasten analyze lazytracker \
         --save-directory dummy \
         --save
 ```
+:::
 
 
 ## The Result
 
 ::: {.fragment .fade style="font-size: 0.8em;"}
+### Nested-loop
 | Check ID | Check Name     | File           | Matches |
 |----------|----------------|----------------|---------|
 | PERF001  | nested-loops   | lazytracker.py | 1       |
 | PERF001  | nested-loops   | tracked.py     | 7       |
+:::
+
+::: {.fragment .fade style="font-size: 0.8em;"}
+### Function Without Docstring
+| Check ID | Check Name                            | File               | Matches |
+|----------|----------------------------------------|--------------------|---------|
+| FUNC003  | all-function-definition-with-no-docstring | test_lazytracker.py| 6       |
+| FUNC003  | all-function-definition-with-no-docstring | test_tracked.py    | 2       |
+| FUNC003  | all-function-definition-with-no-docstring | tracked.py         | 2       |
 :::
 
 ::: {.fragment .fade style="font-size: 1em;"}
