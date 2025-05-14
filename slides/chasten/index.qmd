@@ -213,28 +213,23 @@ detected in that file (e.g., `1` match)
 :::
 
 ## Key Takeaways
+
 ::: {.incremental}
 
 - {{< iconify mdi:pen >}} Write declarative rules for AST-based code checks
 
-- {{< iconify mdi:school-outline >}} Enable automated grading that aligns with learning outcomes
+- {{< iconify mdi:email-check-outline >}} Focus on bespoke code structure patterns in Python
+
+- {{< iconify mdi:school-outline >}} Automated grading aligned with learning outcomes
 
 - {{< iconify mdi:chart-bar-stacked >}} Generate data-rich insights into student code patterns
 
-- {{< iconify mdi:email-check-outline >}} Focus on what the code does, not how it looks
-
 :::
 
-::: {.fragment .fade .boxed-content style="font-size: 0.85em;"}
-{{< iconify fa6-solid lightbulb >}} Chasten fills the gap between manual review and traditional linters by putting structure-first education into your workflow.
+::: {.fragment .boxed-content style="font-size: 0.95em;"}
+
+- **Try out Chasten and contribute to its development!**
+  - {{< iconify fa6-solid link >}} GitHub: [https://github.com/AstuteSource/chasten](https://github.com/AstuteSource/chasten)
+  - {{< iconify fa6-solid code >}} PyPI: [https://pypi.org/project/chasten/](https://pypi.org/project/chasten/)
+
 :::
-
-## Try Chasten
-- 🔗 GitHub Repository: [https://github.com/AstuteSource/chasten](https://github.com/AstuteSource/chasten)
-- 💻 PyPI: [https://pypi.org/project/chasten/](https://pypi.org/project/chasten/)
-- 🤝 Reach out or contribute 
-  - Chi (Jaclyn) Pham: **pham02@allegheny.edu** 
-  - Daniel Bekele: **bekele01@allegheny.edu** 
-  - Gregory M. Kapfhammer: **gkapfhammer@allegheny.edu**
-
-
