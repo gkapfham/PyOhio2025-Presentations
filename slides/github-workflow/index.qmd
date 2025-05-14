@@ -5,6 +5,7 @@ format:
   revealjs:
     theme: default
     slide-number: false
+    incremental: true
     code-fold: true
     code-tools: true
     code-link: true
