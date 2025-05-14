@@ -1,0 +1,24 @@
+---
+title: "ExecExam: A Tool to Facilitate Effective Executable Examinations in Python"
+subtitle: "Pallas-Athen Cain, Hemani Alaparthi, and Gregory M. Kapfhammer"
+format: 
+  revealjs:
+    theme: default
+    slide-number: false
+    incremental: true
+    code-fold: true
+    code-tools: true
+    code-link: true
+    history: false
+    scrollable: true
+    transition: slide
+    highlight-style: github
+    footer: "PyCon Education Summit 2025"
+    css: ../../css/styles.css
+---
+
+## Wonderful Content about ExecExam
+
+- Executable examinations
+- Python program
+- Uses Pytest

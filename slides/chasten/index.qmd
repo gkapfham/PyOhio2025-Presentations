@@ -1,6 +1,6 @@
 ---
 title: "Automated and Configurable Programming Project Checking with Chasten"
-subtitle: "Daniel Bekele & Chi (Jaclyn) Pham"
+subtitle: "Daniel Bekele, Chi (Jaclyn) Pham, and Gregory M. Kapfhammer"
 format: 
   revealjs:
     theme: default
@@ -9,8 +9,11 @@ format:
     code-fold: true
     code-tools: true
     code-link: true
+    history: false
+    scrollable: true
+    transition: slide
     highlight-style: github
-    footer: "Conference Presentations"
+    footer: "PyCon Education Summit 2025"
     css: ../../css/styles.css
 ---
 

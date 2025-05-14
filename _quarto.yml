@@ -8,22 +8,19 @@ project:
     navigate: false
 
 website:
-  title: "Conference Presentations"
+  title: ""
   search:
     location: navbar
   reader-mode: false
   back-to-top-navigation: true
   page-navigation: true
-  favicon: "icons/presentation.png"
-  open-graph: true
   navbar:
     left:
       - href: index.qmd
         text: Home
       - slides/index.qmd
-
   page-footer:
-    left: '© 2024 Conference Presentations'
+    left: "© 2025 Allegheny College's PyCon 2025 Team"
     right:
       - text: "{{< iconify fa github size=18px >}}"
         href: https://github.com/yourusername/conference-presentations/

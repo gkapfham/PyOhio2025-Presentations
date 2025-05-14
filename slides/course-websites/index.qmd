@@ -1,0 +1,24 @@
+---
+title: "Building and Deploying Course Websites with Python, Quarto, and Mkdocs"
+subtitle: "Alish Chhetri and Gregory M. Kapfhammer"
+format: 
+  revealjs:
+    theme: default
+    slide-number: false
+    incremental: true
+    code-fold: true
+    code-tools: true
+    code-link: true
+    history: false
+    scrollable: true
+    transition: slide
+    highlight-style: github
+    footer: "PyCon Education Summit 2025"
+    css: ../../css/styles.css
+---
+
+## Course Websites are Nice with Quarto!
+
+- Executable examinations
+- Python program
+- Uses Pytest
