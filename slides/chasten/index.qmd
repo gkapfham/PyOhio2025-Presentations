@@ -6,7 +6,7 @@ author: "Daniel Bekele, Jaclyn Pham, and Gregory M. Kapfhammer"
 format: 
   revealjs:
     theme: default
-    slide-number: true
+    slide-number: false
     incremental: false 
     code-fold: true
     code-tools: true
@@ -90,7 +90,7 @@ instructors to scan for arbitrary code patterns without AST detailed knowledge
 
 ::: {.incremental style="font-size: 0.9em; margin-top: -0.25em;"}
 
-- {{< iconify mdi:search-code >}} Uses XPath to search Python's AST
+- {{< iconify fa6-solid gear >}} Uses XPath to search Python's AST
 
 - {{< iconify mdi:file-code-outline >}} Rules written in simple YAML
 
@@ -118,27 +118,40 @@ and use Chasten to easily apply them at scale across all student submissions
 ```
 :::
 
-## Let's run Chasten!
-::: {.fragment .fade style="font-size: 0.8em;"}
-### Installation
-```bash
-pipx install chasten
-pipx list  # Confirm installation
-chasten --help  # View available commands
-```
-:::
+## Let's Run Chasten!
 
 ::: {.fragment .fade style="font-size: 0.8em;"}
-### Run Chasten
+
+### Install the Tool
+
 ```bash
-chasten analyze lazytracker \
+pipx install chasten  # Install Chasten in venv
+pipx list             # Confirm installation
+chasten --help        # View available commands
+```
+
+:::
+
+::: {.fragment .fade style="font-size: 0.8em; margin-top: 0.5em;"}
+
+### Run Chasten
+
+```bash
+chasten analyze time-complexity-lab \
         --config chasten-configuration \
-        --search-path lazytracker \
-        --save-directory dummy \
+        --search-path time-complexity-lab \
+        --save-directory time-complexity-results \
         --save
 ```
+
 :::
 
+::: {.fragment .fade style="font-size: 0.9em; margin-top: 0.15em; margin-bottom: 0.45em;"}
+
+- Save results to a **JSON file** and produce **console output**
+- Configure the **return code** for different **detection goals**
+
+:::
 
 ## The Result
 
