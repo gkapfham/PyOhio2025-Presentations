@@ -9,15 +9,16 @@ format:
     code-fold: true
     code-tools: true
     code-link: true
+    history: false
+    scrollable: true
+    transition: slide
     highlight-style: github
     footer: "PyCon Education Summit 2025"
     css: ../../css/styles.css
 ---
 
-## The Challenge of Programming Assignments
+## Wonderful Content about ExecExam
 
-- Distribution of starter code
-- Collection of submissions 
-- Providing automated feedback
-- Managing final assessment
-- Coordinating all these tasks efficiently
+- Executable examinations
+- Python program
+- Uses Pytest
