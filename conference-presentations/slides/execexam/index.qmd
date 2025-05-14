@@ -57,9 +57,10 @@ An executable examinations invites a learner to write, modify, and/or execute Py
 
 ## What is ExecExam?
 
-**Scalable, feedback-rich assessment**
+**Scalable, feedback-rich assessment tool**
 
 - Runs Pytest on student code
+- Unlike Pytest, continues past the first failure
 - Explains why a test failed
 - Suggests how to fix it
 - Utilizes LLMs for even better feedback
@@ -71,6 +72,7 @@ An executable examinations invites a learner to write, modify, and/or execute Py
 **Why use ExecExam?**
 
 - 🧪 Full Pytest coverage, Streamlines assessment
+- 💻 Can be run throughout the student coding process
 - 🧠 AI-powered failure analysis
 - ⚙️ GitHub integration, easy CI/CD
 - 🔁 Enhance the learning experience by offering actionable insights throughout the coding process
@@ -98,6 +100,7 @@ An executable examinations invites a learner to write, modify, and/or execute Py
 - 🧠 Adaptive Feedback Loops
   - Tailor feedback complexity to student performance
   - Suggest additional scaffolded tasks based on error patterns
+  - Allow students to rate LLM feedback
 
 - 📊 Analytics & Instructor Features
   - Build tools for tracking student progress over time
@@ -131,9 +134,9 @@ An executable examinations invites a learner to write, modify, and/or execute Py
 
 We would love to continue the conversation! Please find us after the session if you have questions or want to discuss implementing this approach in your courses.
 
-Repository: [https://github.com/GatorEducator/execexam ](https://github.com/GatorEducator/execexam )
+Repository: [https://github.com/GatorEducator/execexam](https://github.com/GatorEducator/execexam)
 
-PyPI: https://pypi.org/project/execexam/
+PyPI: [https://pypi.org/project/execexam/](https://pypi.org/project/execexam/)
 
 Pallas-Athena Cain: **cain01@allegheny.edu**
 
