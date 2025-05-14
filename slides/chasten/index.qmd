@@ -21,29 +21,34 @@ format:
 
 ## What Problem Are We Solving?
 
-::: {.incremental}
+::: {.incremental style="font-size: 0.825em; margin-top: -0.25em;"}
 
-- Students struggle to write **efficient, readable code**
+- Students may struggle to write **efficient, readable code**
 - Manual project review is **time-consuming** and **error-prone**
+- Many courses face these challenges:
+  - Data structures
+  - Algorithm analysis
+  - Software engineering
 - Existing tools focus on **style**, not **semantic structure**
 - Regex is **brittle**, and AST tools are **hard to prototype**
 
 :::
 
-::: {.fragment .fade .boxed-content style="margin-top: -0.05em; font-size: 0.9em;"}
+::: {.fragment .fade style="margin-top: -0.15em; font-size: 0.9em;"}
 
-{{< iconify fa6-solid lightbulb >}} **Ultimate Goal**: Enable **scalable** and
-**structure-aware** feedback that support both instructors and students
+{{< iconify fa6-solid lightbulb >}} **Project Goal**: Chasten enables
+**scalable** and **structure-aware** feedback that effectively supports both
+instructors and students
 
 :::
 
+## Avoid Time Complexity of $O(n²)$
 
-## The Instructor is teaching O(n²)
 ::: {.columns}
 ::: {.column width="50%"}
 
 ```python
-# GOOD
+# O(n) is good
 seen = set()
 for item in items:
     if item in seen:
@@ -55,7 +60,7 @@ for item in items:
 ::: {.column width="50%"}
 
 ```python
-# BAD (O(n²))
+# O(n²) is bad
 for i in range(len(items)):
     for j in range(len(items)):
         if i != j 
@@ -67,7 +72,10 @@ for i in range(len(items)):
 :::
 
 ::: {.fragment .fade .boxed-content style="font-size: 0.8em;"}
-{{< iconify mdi:alert-outline >}} Challenge: Ruff & Pylint can’t detect nested control structures like these
+
+{{< iconify mdi:alert-outline >}} Challenge: Ruff & Pylint can’t detect nested
+control structures like these
+
 :::
 
 ::: {.fragment .fade style="font-size: 2em;"}
