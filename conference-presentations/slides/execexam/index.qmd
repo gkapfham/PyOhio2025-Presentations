@@ -1,11 +1,13 @@
 ---
 title: "ExecExam: A Tool to Facilitate Effective Executable Examinations in Python"
-subtitle: Pallas-Athena Cain and Gregory Kapfhammer
+date: "2025-05-15"
+date-format: long
+author: Pallas-Athena Cain, Hemani Alaparthi, and Gregory Kapfhammer
 format: 
   revealjs:
     theme: default
     slide-number: false
-    incremental: true
+    incremental: false
     code-fold: true
     code-tools: true
     code-link: true
@@ -14,10 +16,12 @@ format:
     transition: slide
     highlight-style: github
     footer: "PyCon Education Summit 2025"
-    css: ../../css/styles.css
+    css: styles.css
 ---
 
-## Introduction: What is an Execuatable Examination?
+## What is an Execuatable Examination?
+
+::: {.fragment style="margin-top: -0.15em; font-size: 0.8em;"}
 
 **Assessing real programming ability**
 
@@ -28,7 +32,9 @@ format:
     - Debugging ability
     - Tool use (editor, terminal, Git)
 
-🎯 It’s like a take-home project — but precise, consistent, and scalable
+🎯 Like a take-home project — but precise, consistent, and scalable
+
+:::
 
 ## The Problem
 
@@ -51,6 +57,10 @@ format:
 - Utilizes LLMs for even better feedback
 
 ![](ExecExam_-_Logo_-_300.png)
+
+## 
+
+![](terminal.png)
 
 ## Key Features
 
@@ -75,24 +85,25 @@ format:
 
 ## Future Work
 
+::: {.fragment style="margin-top: -0.15em; font-size: 0.7em;"}
+
 **What’s next for ExecExam?**
 
-- 🧪 Progress Tracking & Learning Analytics
+- 📊 Analytics & Instructor Features
   - Store test outcomes and feedback over time
   - Visualize student debugging and improvement paths
-  - Enable instructors to spot misconceptions early
-
-- 🧠 Adaptive Feedback Loops
-  - Tailor feedback complexity to student performance
-  - Suggest additional scaffolded tasks based on error patterns
-  - Allow students to rate LLM feedback
-
-- 📊 Analytics & Instructor Features
-  - Build tools for tracking student progress over time
   - Log LLM interactions to evaluate effectiveness
   - Hold out hidden test cases for instructor-only grading
 
+- 🧠 Adaptive Feedback Loops
+  - Tailor feedback complexity to student performance
+  - Allow students to rate LLM feedback
+
+:::
+
 ## Key Takeaways
+
+::: {.fragment .fade .tight-boxed-content style="margin-top: -0.15em; font-size: 0.7em;"}
 
 **Better exam grading, better learning**
 
@@ -101,13 +112,25 @@ format:
 - More fair + consistent grading
 - Scales to large classes
 
-## Try ExecExam
+:::
+
+::: {.fragment .fade .tight-boxed-content style="margin-top: -0.15em; font-size: 0.6em;"}
+
+**🚀 Try ExecExam: Let’s build smarter CS assessments**
 
 - 🔗 GitHub Repository: [https://github.com/GatorEducator/execexam](https://github.com/GatorEducator/execexam)
-- 🤝 Reach out or contribute
-- 🚀 Let’s build smarter CS assessments
+- 💻 PyPI: [https://pypi.org/project/execexam/](https://pypi.org/project/execexam/)
+- 🤝 Reach out or contribute 
+  - Pallas-Athena Cain: **cain01@allegheny.edu** 
+  - Gregory M. Kapfhammer: **gkapfhammer@allegheny.edu**
+
+🦚 Consider a birds of a feather session about automated grading
+
+:::
 
 ## References
+
+::: {.fragment .tight-boxed-content style="margin-top: -0.15em; font-size: 0.5em;"}
 
 - João Paulo Barros, Luís Estevens, Rui Dias, Rui Pais, and Elisabete Soeiro. 2003. Using lab exams to ensure programming practice in an introductory programming course. SIGCSE Bull. 35, 3 (September 2003), 16–20. https://doi.org/10.1145/961290.961519
 - Jonathan Corley, Ana Stanescu, Lewis Baumstark, and Michael C. Orsega. 2020. Paper Or IDE? The Impact of Exam Format on Student Performance in a CS1 Course. In Proceedings of the 51st ACM Technical Symposium on Computer Science Education (SIGCSE '20). Association for Computing Machinery, New York, NY, USA, 706–712. https://doi.org/10.1145/3328778.3366857
@@ -115,14 +138,4 @@ format:
 - Sevkli, Z. 2024. Assessing the Impact of Open-Resource Access on Student Performance in Computer-Based Examinations. In Proceedings of the 2024 ASEE Annual Conference & Exposition, Portland, Oregon. https://doi.org/10.18260/1-2--46619
 - Vesa Lappalainen, Antti-Jussi Lakanen, and Harri Högmander. 2016. Paper-based vs computer-based exams in CS1. In Proceedings of the 16th Koli Calling International Conference on Computing Education Research (Koli Calling '16). Association for Computing Machinery, New York, NY, USA, 172–173. https://doi.org/10.1145/2999541.2999565
 
-## Thank you!
-
-We would love to continue the conversation! Please find us after the session if you have questions or want to discuss implementing this approach in your courses.
-
-Repository: [https://github.com/GatorEducator/execexam](https://github.com/GatorEducator/execexam)
-
-PyPI: [https://pypi.org/project/execexam/](https://pypi.org/project/execexam/)
-
-Pallas-Athena Cain: **cain01@allegheny.edu**
-
-Gregory M. Kapfhammer: **gkapfhammer@allegheny.edu**
+:::
