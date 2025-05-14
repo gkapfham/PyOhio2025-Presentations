@@ -1,6 +1,9 @@
 ---
 title: "Building and Deploying Course Websites with Python, Quarto, and Mkdocs"
-subtitle: "Alish Chhetri and Gregory M. Kapfhammer"
+description: "Building interactive course websites with modern tools"
+date: "2025-05-15"
+date-format: long
+author: "Alish Chhetri and Gregory M. Kapfhammer"
 format: 
   revealjs:
     theme: default
@@ -17,8 +20,169 @@ format:
     css: ../../css/styles.css
 ---
 
-## Course Websites are Nice with Quarto!
+## The Problem We're Solving
 
-- Executable examinations
-- Python program
-- Uses Pytest
+::: incremental
+
+- Course websites often become **static archives** rather than **living resources**
+- Students view learning materials as **products to consume** not **projects to contribute to**
+- Interactive examples require separate tools or platforms
+- Content becomes outdated quickly without a sustainable update process
+
+:::
+
+## Our Technology Stack
+
+::: {.fragment .fade-right}
+
+- **Quarto**: Markdown-based framework with minimal learning curve
+- **Python + WebAssembly**: Browser-based code execution without installation
+- **GitHub**: Version control and collaborative workflows
+- **GitHub Actions**: Automated testing and deployment
+
+:::
+
+## Why This Stack Works for Education
+
+- **Markdown Focus**: Students concentrate on content, not technical details
+- **Interactive Examples**: Code runs directly in documentation and slides
+- **Collaborative**: Supports peer review and cooperative learning
+- **Sustainable**: Easy to maintain and update each semester
+
+## Simple QMD Template
+
+```markdown
+---
+title: "Week 3: Algorithm Analysis"
+author: "Student Name"
+date: "2025-02-20"
+format:
+  html:
+    code-fold: true
+    toc: true
+---
+
+
+## Key Takeaways
+
+- Main concepts I learned this week
+- How these relate to previous material
+
+## Example Code
+
+'''python
+def binary_search(arr, target):
+    low, high = 0, len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
+'''
+```
+
+## Setting Up the Course Infrastructure
+
+::: incremental
+
+1. Create a GitHub repository with Quarto structure
+2. Configure navigation, styling, and organization in `_quarto.yml`
+3. Set up GitHub Actions for automated deployment
+4. Create templates for student contributions
+5. Publish to GitHub Pages or Netlify
+
+:::
+
+## The Instructor's Role
+
+::: {.fragment .fade-right}
+
+- Create core course content and structure
+- Establish contribution guidelines
+- Review and provide feedback on student submissions
+- Guide collaborative knowledge building
+
+:::
+
+## How Students Contribute
+
+::: incremental
+
+- Fork the repository and create content in their assigned folder
+- Write reflections and examples in simple Markdown with code
+- Submit a Pull Request for review and feedback
+- Content is automatically published when approved
+
+:::
+
+## Real World Example
+
+::: {.fragment .fade-right}
+
+- [Algorithmology.org](https://algorithmology.org/)
+- [Algorithmology GitHub repository](https://github.com/Algorithmology/www.algorithmology.org)
+
+:::
+
+## Educational Benefits
+
+::: incremental
+
+- **Learn by Contributing**: Students practice real-world technical documentation
+- **Code + Context**: Code always presented with educational context
+- **Literate Programming**: Encourages explaining code, not just writing it
+- **Continuous Improvement**: Course materials evolve each semester
+
+:::
+
+## Technical Advantages
+
+::: {.fragment .fade-right}
+
+- **Low Barrier to Entry**: Markdown is easier than HTML/CSS/JS
+- **Focus on Content**: Technical details are abstracted away
+- **Interactive Examples**: Code runs in the browser without installation
+- **Full-Text Search**: Find anything across all course materials
+- **Developer Workflow**: Students learn how to collaborate using industry-standard tools
+
+:::
+
+## Future Improvements
+
+::: {.fragment .fade-right}
+
+- Full browser-based IDE experience
+- Better error messages for WebAssembly Python
+- Implementation of a note taking tool, allowing students to take notes in the browser by commenting on the slides
+
+:::
+
+## Why You Should Consider This Approach
+
+::: incremental
+
+- **Student Ownership**: Contributions create investment in the course
+- **Living Knowledge Base**: Materials improve rather than decay over time
+- **Practical Skills**: Industry tools in an educational context
+- **Transparency**: Public materials encourage higher quality work
+- **Scalability**: Works for any course size, from small seminars to large lectures
+
+:::
+
+## Thank You!
+
+We would love to continue the conversation! Please find us after the session if you have questions or want to discuss implementing this approach in your courses.
+
+Website: [algorithmology.org](https://algorithmology.org/)
+
+Repository: [github.com/Algorithmology/www.algorithmology.org](https://github.com/Algorithmology/www.algorithmology.org)
+
+Alish Chhetri: **chhetri01@allegheny.edu**
+
+Gregory M. Kapfhammer: **gkapfhammer@allegheny.edu**
+
+<!-- Contact info and resources for attendees --> 
