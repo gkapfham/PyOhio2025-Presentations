@@ -73,6 +73,32 @@ Assign
 
 ## Chasten Workflow
 
+### Installation
+```bash
+pipx install chasten
+pipx list  # Confirm installation
+chasten --help  # View available commands
+```
+
+## Chasten Workflow
+
+### Using Chasten
+- List avalible commands 
+- Select a config file
+- Analyze a given project
+- Save results
+
+## Chasten Demo Video
+[Demo Chasten](https//:wwww.)
+
+## Chasten Workflow
+
+### Common Checks
+- Finding missing docstrings
+- Detecting improper nesting of control structures
+- Enforcing type annotations
+- Identifying complex code patterns
+
 ## Key Takeaways
 - ✅ **Declarative rule-writing with XPath**  
   Easily define grading criteria and static analysis checks — no need to write Python plugins.
