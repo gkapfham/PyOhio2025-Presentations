@@ -16,10 +16,10 @@ format:
     transition: slide
     highlight-style: github
     footer: "PyCon Education Summit 2025"
-    css: styles.css
+    css: ./styles.css
 ---
 
-## What is an Execuatable Examination?
+## What is an Executable Examination?
 
 ::: {.fragment style="margin-top: -0.15em; font-size: 0.8em;"}
 
