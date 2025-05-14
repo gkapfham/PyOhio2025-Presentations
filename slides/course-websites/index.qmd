@@ -20,14 +20,16 @@ format:
     css: ../../css/styles.css
 ---
 
-## The Problem We're Solving
+## What Problem Are We Solving?
 
 ::: incremental
 
-- Course websites often become **static archives** rather than **living resources**
-- Students view learning materials as **products to consume** not **projects to contribute to**
-- Interactive examples require separate tools or platforms
-- Content becomes outdated quickly without a sustainable update process
+- Course sites as **static archives** rather than **living resources**
+- Students view materials as **products to consume** not **projects to
+contribute to**, limiting learning and engagement
+- Interactive examples require **separate tools** or **platforms**
+- Content becomes **quickly outdated** without a sustainable update process that
+leverages **industry-standard tools**
 
 :::
 
