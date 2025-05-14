@@ -2,7 +2,7 @@
 title: "ExecExam: A Tool to Facilitate Effective Executable Examinations in Python"
 date: "2025-05-15"
 date-format: long
-author: Pallas-Athena Cain, Hemani Alaparthi, and Gregory Kapfhammer
+author: "Pallas-Athena Cain, Hemani Alaparthi, and Gregory Kapfhammer"
 format: 
   revealjs:
     theme: default
@@ -16,126 +16,146 @@ format:
     transition: slide
     highlight-style: github
     footer: "PyCon Education Summit 2025"
-    css: styles.css
+    css: ./styles.css
 ---
 
-## What is an Execuatable Examination?
+## What is an Executable Examination?
 
 ::: {.fragment style="margin-top: -0.15em; font-size: 0.8em;"}
 
-**Assessing real programming ability**
+{{< iconify fa6-solid gears >}} **Goal: Assess a student's ability to program
+with real tools**
 
   - A student writes, modifies, and runs code to solve a real problem
-  - Graded via automated tests (e.g. Pytest)
-  - Unlike static exams, this tests:
+  - Graded via automated tests that use Pytest tests and assertions
+  - Unlike static examinations an executable examination assesses:
     - Programming logic
     - Debugging ability
-    - Tool use (editor, terminal, Git)
-
-🎯 Like a take-home project — but precise, consistent, and scalable
+    - Tool use (e.g., text editor, terminal, IDE, and Git)
 
 :::
 
-## The Problem
+::: {.fragment .fade style="margin-top: -0.15em; font-size: 0.8em;"}
 
-**Why do we need better assessments?**
+🎯 **Like a take-home project — but precise, consistent, and scalable!**
+
+**Reference**: Chris Bourke, Yael Erez, and Orit Hazzan. 2023. "Executable Exams: Taxonomy,
+Implementation and Prospects". In Proceedings of 54th SIGCSE.
+
+:::
+
+## Problems with Computing Assessments
+
+::: fragment
+
+{{< iconify game-icons team-idea >}} **Why do we need better assessments?**
 
 - Manual grading is slow and inconsistent
 - Students often don’t know why their code fails
 - Feedback is shallow or missing altogether
+- Limited assessment of effective tool use
+- Pytest not a good fit for assessment
 
-🚫 “Test failed” isn’t enough.
+:::
+
+::: {.fragment .fade style="margin-top: -0.15em; font-size: 0.9em;"}
+
+🚫 **Test assertion failure is not enough**! ExecExam is a compelling alternative to
+either manual assessment or running only Pytest.
+
+:::
 
 ## What is ExecExam?
 
-**Scalable, feedback-rich assessment tool**
+::: fragment
 
-- Runs Pytest on student code
-- Unlike Pytest, continues past the first failure
-- Explains why a test failed
-- Suggests how to fix it
-- Utilizes LLMs for even better feedback
+{{< iconify fa6-solid gears >}} **Scalable, feedback-rich assessment tool built in Python**
 
-![](ExecExam_-_Logo_-_300.png)
+:::: {.columns}
 
-## 
+::: {.column width="65%"}
+
+- Runs Pytest tests on student code
+- Reports all test failures and context
+- Clearly explains why a test failed
+- Suggests how to fix tested function
+- Uses LLMs for enhanced feedback
+:::
+
+::: {.column width="35%" .middle}
+![](ExecExam_-_Logo_-_300.png){width="100%"}
+:::
+
+:::
+
+::: {.fragment .fade style="margin-top: -0.75em; font-size: 0.9em;"}
+
+{{< iconify fa6-solid lightbulb >}} **Next Step**: Explore ExecExam's features
+and how teachers can integrate them into the assessments for their programming courses!
+
+:::
+
+::::
+
+## Understanding ExecExam's Output
 
 ![](terminal.png)
 
-## Key Features
+## Key Features of ExecExam
 
-**Why use ExecExam?**
+::: fragment
 
-- 🧪 Full Pytest coverage, Streamlines assessment
-- 💻 Can be run throughout the student coding process
-- 🧠 AI-powered failure analysis
-- ⚙️ GitHub integration, easy CI/CD
-- 🔁 Enhance the learning experience by offering actionable insights throughout the coding process
+{{< iconify fa6-solid lightbulb >}} **Why use ExecExam for your next assessment?**
 
-## For Instructors
+:::
 
-**How to adopt it**
+::: incremental
 
-- Design scaffolded coding tasks
-- Write tests
-- Deploy with GitHub Actions or CLI
-- Grade fairly, at scale
+- 🧪 Configured Pytest runs for streamlined assessment
+- 💻 Runs on student laptop through assessment process
+- 📜 Provides contextualized, detailed test failure reports
+- ⚙️ Integrates with GitHub and GitHub Actions for CI/CD
+- 🧠 Features flexible, democratized LLM-powered debugging
+- 🔁 Offers actionable insights to instructors and students!
+- 🛠️ Open-source tool collaboratively developed on GitHub
 
-🧰 Lightweight setup—just Python, Git, and your test cases
+:::
 
-## Future Work
+## Getting Started with ExecExam
 
-::: {.fragment style="margin-top: -0.15em; font-size: 0.7em;"}
+{{< iconify fa6-solid gears >}} **How instructors can adopt automated assessments**
 
-**What’s next for ExecExam?**
+::: fragment
 
-- 📊 Analytics & Instructor Features
+- Create a **solution repository**
+  - Design scaffolded coding tasks
+  - Write test cases using Pytest
+  - Add ExecExam as a dependency
+  - Use GatorGrader to run all checks
+- Using **solution ablation** to create a **starter repository**
+- GitHub Classroom **distributes** and **receives** examinations
+
+:::
+
+## Conclusions and Future Work
+
+::: {.fragment style="margin-top: -0.15em; font-size: 0.8em;"}
+
+- 📊 **Analytics and Instructor Features**
   - Store test outcomes and feedback over time
   - Visualize student debugging and improvement paths
   - Log LLM interactions to evaluate effectiveness
   - Hold out hidden test cases for instructor-only grading
 
-- 🧠 Adaptive Feedback Loops
+- 🧠 **Adaptive Feedback Loops**
   - Tailor feedback complexity to student performance
-  - Allow students to rate LLM feedback
+  - Allow students to rate different types of LLM feedback
 
 :::
 
-## Key Takeaways
-
-::: {.fragment .fade .tight-boxed-content style="margin-top: -0.15em; font-size: 0.7em;"}
-
-**Better exam grading, better learning**
-
-- Helps students debug and learn
-- Saves teachers time
-- More fair + consistent grading
-- Scales to large classes
-
-:::
-
-::: {.fragment .fade .tight-boxed-content style="margin-top: -0.15em; font-size: 0.6em;"}
-
-**🚀 Try ExecExam: Let’s build smarter CS assessments**
+::: {.fragment style="margin-top: -0.25em; font-size: 0.8em;"}
 
 - 🔗 GitHub Repository: [https://github.com/GatorEducator/execexam](https://github.com/GatorEducator/execexam)
 - 💻 PyPI: [https://pypi.org/project/execexam/](https://pypi.org/project/execexam/)
-- 🤝 Reach out or contribute 
-  - Pallas-Athena Cain: **cain01@allegheny.edu** 
-  - Gregory M. Kapfhammer: **gkapfhammer@allegheny.edu**
-
-🦚 Consider a birds of a feather session about automated grading
-
-:::
-
-## References
-
-::: {.fragment .tight-boxed-content style="margin-top: -0.15em; font-size: 0.5em;"}
-
-- João Paulo Barros, Luís Estevens, Rui Dias, Rui Pais, and Elisabete Soeiro. 2003. Using lab exams to ensure programming practice in an introductory programming course. SIGCSE Bull. 35, 3 (September 2003), 16–20. https://doi.org/10.1145/961290.961519
-- Jonathan Corley, Ana Stanescu, Lewis Baumstark, and Michael C. Orsega. 2020. Paper Or IDE? The Impact of Exam Format on Student Performance in a CS1 Course. In Proceedings of the 51st ACM Technical Symposium on Computer Science Education (SIGCSE '20). Association for Computing Machinery, New York, NY, USA, 706–712. https://doi.org/10.1145/3328778.3366857
-- Scott Grissom, Laurie Murphy, Renée McCauley, and Sue Fitzgerald. 2016. Paper vs. Computer-based Exams: A Study of Errors in Recursive Binary Tree Algorithms. In Proceedings of the 47th ACM Technical Symposium on Computing Science Education (SIGCSE '16). Association for Computing Machinery, New York, NY, USA, 6–11. https://doi.org/10.1145/2839509.2844587
-- Sevkli, Z. 2024. Assessing the Impact of Open-Resource Access on Student Performance in Computer-Based Examinations. In Proceedings of the 2024 ASEE Annual Conference & Exposition, Portland, Oregon. https://doi.org/10.18260/1-2--46619
-- Vesa Lappalainen, Antti-Jussi Lakanen, and Harri Högmander. 2016. Paper-based vs computer-based exams in CS1. In Proceedings of the 16th Koli Calling International Conference on Computing Education Research (Koli Calling '16). Association for Computing Machinery, New York, NY, USA, 172–173. https://doi.org/10.1145/2999541.2999565
 
 :::
