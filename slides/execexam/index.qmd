@@ -69,8 +69,15 @@ Implementation and Prospects". In Proceedings of 54th SIGCSE.
 - Uses LLMs for enhanced feedback
 :::
 
-::: {.column width="35%"}
+::: {.column width="35%" .middle}
 ![](ExecExam_-_Logo_-_300.png){width="100%"}
+:::
+
+::: {.fragment .fade style="margin-top: -0.75em; font-size: 0.9em;"}
+
+{{< iconify fa6-solid lightbulb >}} Let's learn more about ExecExam's features
+and how you can integrate them into your assessments for your own courses!
+
 :::
 
 ::::
