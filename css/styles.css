@@ -128,7 +128,7 @@ a:hover {
 }
 
 .quarto-light .reveal .btn.btn-exercise-editor.btn-primary {
-    border: 1.5px solid #333;
+    border: 1px solid #333;
     --exercise-btn-bg: var(--bs-btn-bg, transparent);
     --exercise-btn-color: var(--bs-btn-color, #333);
     --exercise-btn-border-color: var(--bs-btn-border-color, #333);
@@ -138,6 +138,7 @@ a:hover {
 }
 
 .quarto-light .reveal .btn.btn-exercise-editor.btn-outline-dark {
+    border: 1px solid #333;
     --exercise-btn-bg: var(--bs-btn-bg, transparent);
     --exercise-btn-color: var(--bs-btn-color, #333);
     --exercise-btn-border-color: var(--bs-btn-border-color, #333);
