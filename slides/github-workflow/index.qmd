@@ -61,30 +61,41 @@ format:
 :::: {.columns}
 
 ::: {.column width="48%"}
+
 ### For Students
-- Professional version control
+
+- Version control
 - Immediate feedback
-- Clear guidance with TODOs
+- Clear guidance with `TODO`s
 - Portfolio building
-- Real development environment
+- Development environment
+
 :::
 
 ::: {.column width="4%"}
+
 :::
 
 ::: {.column width="48%"}
+
 ### For Instructors
+
 - Automated distribution
 - Centralized collection
 - Automated testing
 - Progress visibility
 - Consistent environments
+
 :::
 
 ::::
 
-::: {.fragment .fade .boxed-content style="margin-top: 0.5em; font-size: 0.8em;"}
-{{< iconify fa6-solid star >}} **Summary:** GitHub Classroom bridges the gap between classroom learning and professional development while saving time for both students and instructors.
+::: {.fragment .fade .boxed-content style="margin-top: -0.2em; font-size: 0.8em;"}
+
+{{< iconify fa6-solid star >}} **Summary:** GitHub Classroom bridges the gap
+between learning and professional development while saving time for
+students and instructors
+
 :::
 
 ## Implementation Workflow
@@ -102,9 +113,11 @@ format:
 
 ::: {.column width="50%" style="font-size: 0.8em;"}
 
-### {{< iconify material-symbols:check-rounded >}} **Configure GitHub Classroom**  
+### {{< iconify material-symbols:check-rounded >}} **Setup GitHub Classroom**  
+
 - Link organization and repositories  
 - Set deadlines and visibility  
+- Invite students to classroom
 
 :::
 
@@ -116,7 +129,7 @@ format:
 
 ### {{< iconify material-symbols:check-rounded >}} **Feedback & Assessment**  
 - Track progress via GitHub insights  
-- Targeted code reviews via pull requests  
+- Code reviews via pull requests  
 - Assignment clarifications via issues  
 
 :::
