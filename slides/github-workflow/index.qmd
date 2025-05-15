@@ -159,7 +159,7 @@ students and instructors
   - Leave structure intact for students to complete
   - Keep tests and various checks to guide students
 
-::: {.fragment .boxed-content style="font-size: 0.8em;"}
+::: {.fragment .boxed-content style="font-size: 0.75em;"}
 
 - {{< iconify game-icons team-idea >}} **Tests run automatically** on each push
 to student's repository:
