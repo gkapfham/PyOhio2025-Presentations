@@ -179,9 +179,11 @@ to student's repository:
 :::
 
 ::: {.fragment}
-- GitHub Actions test results (pass/fail status for each test)
-- Code quality checks (PEP8 compliance with Ruff)
-- Code coverage reports
+
+- **GitHub Actions check**: pass/fail status for each check
+- **Code quality checks**: PEP8 compliance with Ruff
+- **Test coverage reports**: Pytest and Coverage.py
+
 :::
 
 ::: {.fragment}
@@ -189,9 +191,11 @@ to student's repository:
 :::
 
 ::: {.fragment}
-- In-line code comments (specific suggestions on implementation)
-- Pull request reviews (comprehensive feedback on approach)
-- Issue-based feedback (higher-level design discussions)
+
+- **In-line code comments**: specific suggestions on code
+- **Pull request reviews**: detailed feedback on approach
+- **Issue-based feedback**: high-level design discussions
+
 :::
 
 :::
