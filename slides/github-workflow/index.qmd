@@ -5,7 +5,7 @@ format:
   revealjs:
     theme: default
     slide-number: false
-    incremental: true
+    incremental: false
     code-fold: true
     code-tools: true
     code-link: true
@@ -15,8 +15,8 @@ format:
     highlight-style: github
     footer: "PyCon Education Summit 2025"
     css: ../../css/styles.css
-    width: 1280
-    height: 720
+    # width: 1280
+    # height: 720
     code-block-font-size: 0.5em
 ---
 
@@ -24,7 +24,7 @@ format:
 
 ::: {.fragment style="margin-top: -0.15em"}
 
-- {{< iconify fa6-solid lightbulb >}} **Inefficient workflows lead to:**
+- {{< iconify fa6-solid lightbulb >}} **Inefficient workflows cause**
   - Version chaos via email submissions
   - Time-consuming manual testing
   - Delayed feedback disconnected from code
@@ -33,22 +33,28 @@ format:
 
 :::
 
-::: {.fragment .fade .boxed-content style="margin-top: 0.25em; font-size: 0.8em;"}
+::: {.fragment .fade .boxed-content style="margin-top: 0.25em; font-size: 0.825em;"}
 
-{{< iconify fa6-solid microscope >}} How can we create a workflow that **automates repetitive tasks**, provides **immediate feedback**, and teaches **industry-standard practices**?
+{{< iconify fa6-solid microscope >}} How can we create a workflow that
+**automates repetitive tasks**, provides **immediate feedback**, and teaches
+**industry-standard practices**?
 
 :::
 
-## Enter GitHub, GitHub Classroom, and GitHub Actions
+## Key Solution: GitHub, GitHub Classroom, and GitHub Actions
 
-A complete ecosystem for programming education that:
+**A complete ecosystem for programming education offering**:
 
-- **Industry-standard tools** (Git, CI/CD, code review)
-- **Good practices** (commit messages, branching, reviews)
-- **Task automation** (testing, style checks, assignment distribution)
-- **Immediate feedback** (pass/fail checks)
-- **Student portfolios** (real-world projects)
+::: incremental
 
+- **Industry-standard tools**: Git, CI/CD, code review
+- **Good practices**: Commit messages, branching, reviews
+- **Task automation**: Testing, style checks, distribution
+- **Immediate feedback**: Pass/fail checks and detailed logs
+- **Student portfolios**: Real-world projects on GitHub
+- **Instructor insights**: Progress tracking and code reviews
+
+:::
 
 ## GitHub Classroom Benefits
 
