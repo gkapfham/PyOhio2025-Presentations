@@ -250,6 +250,8 @@ challenges!**
 
 ## Key Takeaways
 
+<!-- TODO: Please make these bullets points fit on a single line -->
+
 ::: {.fragment style="font-size: 0.9em;"}
 
 - {{< iconify fa6-solid check-circle >}} **Streamlined workflow** from assignment creation to grading
