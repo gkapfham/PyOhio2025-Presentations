@@ -125,7 +125,7 @@ students and instructors
 
 :::: {.columns}
 
-::: {.column width="50%" style="font-size: 0.8em;"}
+::: {.column style="font-size: 0.8em;"}
 
 ### {{< iconify material-symbols:check-rounded >}} **Feedback & Assessment**  
 - Track progress via GitHub insights  
@@ -134,7 +134,7 @@ students and instructors
 
 :::
 
-::: {.column width="50%" style="font-size: 0.8em;"}
+::: {.column style="font-size: 0.8em;"}
 
 ### {{< iconify material-symbols:check-rounded >}} **Monitor Progress**  
 - Automated test results (✅/❌)  
