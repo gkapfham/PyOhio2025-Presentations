@@ -250,15 +250,13 @@ challenges!**
 
 ## Key Takeaways
 
-<!-- TODO: Please make these bullets points fit on a single line -->
-
 ::: {.fragment style="font-size: 0.9em;"}
 
 - {{< iconify fa6-solid check-circle >}} **Streamlined workflow** from assignment creation to grading
-- {{< iconify fa6-solid check-circle >}} **Industry-relevant skills** that benefit students beyond the classroom
-- {{< iconify fa6-solid check-circle >}} **Automated testing** saves instructor time and provides immediate feedback
-- {{< iconify fa6-solid check-circle >}} **Visible progress** through commit history helps with targeted interventions
-- {{< iconify fa6-solid check-circle >}} **Reduced administrative overhead** through integrated tools and workflows
+- {{< iconify fa6-solid check-circle >}} **Industry-relevant skills** that benefit beyond the classroom
+- {{< iconify fa6-solid check-circle >}} **Automated testing** for immediate feedback
+- {{< iconify fa6-solid check-circle >}} **Visible progress** through tracking commit history
+- {{< iconify fa6-solid check-circle >}} **Reduced administrative overhead** with integrated tools
 
 :::
 
