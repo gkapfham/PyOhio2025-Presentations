@@ -17,7 +17,7 @@ format:
     css: ../../css/styles.css
     # width: 1280
     # height: 720
-    code-block-font-size: 0.5em
+    # code-block-font-size: 0.5em
 ---
 
 ## Traditional Assignment Challenges
@@ -145,72 +145,28 @@ students and instructors
 
 ::::
 
+::: fragment
+
+- Create **solution** and **starter** repositories for each assignment
+
+:::
+
 ## Implementation Ablation
 
-What is implementation ablation?
+- **After solution creation, must create a starter repository**:
+  - Remove implementation details from your solution
+  - Replace with well-documented `TODO`s as placeholders
+  - Leave structure intact for students to complete
+  - Keep tests and various checks to guide students
 
-- Systematically remove implementation details from your solution
-- Replace with well-documented TODOs
-- Leave structure intact for students to complete
-- Keep tests to guide students
-
-## Example of Implementation Ablation
-
-### Starter code with ablation
-
-```python
-# Starter code with ablation
-def find_duplicates(input_list):
-    # TODO: Use sets to track seen items and duplicates
-    # Hint: You need to keep track of what you've seen so far
-    seen = set()
-    duplicates = set()
-    
-    for item in input_list:
-        if item in seen:
-            duplicates.add(item)
-        else:
-            seen.add(item)
-    
-    return list(duplicates)
-```
-
-## GitHub Actions Workflow Example
-
-:::: {.columns}
-
-::: {.column width="55%" style="font-size: 0.8em; float: left;"}
-
-```yaml
-name: Python Checks
-on: [push]
-
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.11'
-    - name: Install dependencies
-      run: pip install pytest mypy ruff
-    - name: Test with pytest
-      run: pytest
-```
-
-:::
-
-::: {.column width="40%" style="font-size: 0.8em; float: left;"}
+::: {.fragment .boxed-content style="font-size: 0.8em;"}
 
 - {{< iconify game-icons team-idea >}} **Tests run automatically** on each push
-- ✅/❌ **Status checks** provide immediate feedback
-- 🛠️ **Detailed logs** highlight errors for quick diagnosis
+to student's repository:
+  - ✅/❌ **Status checks** provide immediate feedback
+  - 🛠️ **Detailed logs** highlight errors for quick diagnosis
 
 :::
-
-::::
 
 ## Multi-level Feedback System
 
