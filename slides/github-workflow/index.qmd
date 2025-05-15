@@ -204,23 +204,30 @@ to student's repository:
 
 ## Integrating with External Tools
 
-GitHub Actions can integrate with:
+**GitHub Actions can integrate with tools like**
 
 - Pytest for test coverage
 - Ruff for style checking
 - Chasten for AST-based pattern checking
 - Custom grading tool such as ExecExam
-- And many more!
+- ... *And many more*!
 
-::: {.fragment .fade .boxed-content style="margin-top: 0.5em; font-size: 0.9em;"}
-{{< iconify fa6-solid puzzle-piece >}} **Integration Benefits**: Automated feedback fosters code quality, industry practices, and eases instructor workload.
+::: {.fragment .fade style="margin-top: 0.5em; font-size: 0.925em;"}
+
+{{< iconify fa6-solid puzzle-piece >}} **Integration Benefits**: Automated
+feedback fosters code quality, adoptions of industry practices, and eases
+instructor workload
+
 :::
 
 ## Common Challenges and Solutions
 
-::: {.fragment .fade style="margin-top: -0.5em; font-size: 1em;"}
+::: {.fragment .fade style="margin-top: 0.25em; font-size: 0.9em;"}
 
-{{< iconify fa6-solid rocket >}} **GitHub Classroom creates a realistic, automated workflow that benefits both students and instructors! But there are challenges:**
+{{< iconify fa6-solid rocket >}} **GitHub Classroom creates a realistic,
+automated workflow that benefits both students and instructors. But there are
+challenges!**
+
 :::
 
 ::: {.fragment .fade style="margin-top: 0.5em; font-size: 0.8em; margin-bottom: 0.3em;"}
@@ -236,7 +243,9 @@ GitHub Actions can integrate with:
 :::
 
 ::: {.fragment .fade .boxed-content style="margin-top: 0.4em; font-size: 0.9em;"}
-**Limitations:** There is a learning curve for Git and GitHub, initial setup time, internet access requirements, and organization permission management to consider.
+
+**Challenges:** Learning curve for Git and GitHub and associated tools
+
 :::
 
 ## Key Takeaways
