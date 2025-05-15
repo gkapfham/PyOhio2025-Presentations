@@ -17,17 +17,17 @@ format:
     transition: slide
     highlight-style: github
     footer: "PyCon Education Summit 2025"
-    css: ../../css/styles.css
+    css: styles.css
 ---
 
-## What Problem Are We Solving?
+## [What Problem Are We Solving?]{style="font-size: 0.9em;"}
 
-::: {.incremental style="margin-top: -0.15em;"}
+::: {.incremental style="margin-top: 1em; font-size: 0.8em;"}
 
 - Course sites as **static archives** rather than **living resources**
-- Students view materials as **products to consume** not **projects to contribute to**, limiting learning and engagement
-- Interactive examples require **separate tools** or **platforms** 
-- Content becomes **quickly outdated** without a sustainable update process that leverages **industry-standard tools**
+- Students view materials as **products to consume** rather than **projects to contribute to**
+- Interactive examples require **separate tools** or external **platforms** 
+- Content becomes **quickly outdated** without sustainable update processes
 
 :::
 
@@ -44,15 +44,15 @@ packages like Quarto make it possible to create **interactive** and
 ::: fragment
 
 - **Quarto**: Accessible markdown-based framework
-- **Python + WebAssembly**: Easily run Python in the browser
+- **Python & WebAssembly**: Easily run Python in the browser
 - **GitHub**: Version control and collaborative workflows
 - **GitHub Actions**: Automated testing and deployment
 
 :::
 
-::: {.fragment .fade .tight-boxed-content style="margin-top: -0.05em; margin-bottom: -0.25em; font-size: 0.8em;"}
+::: {.fragment .fade .tight-boxed-content style="margin-top: -0.05em; margin-bottom: -0.25em; font-size: 0.70em;"}
 
-- {{< iconify fa6-solid lightbulb >}} **Ultimate Goal**: Build content-focused, interactive, collaborative course sites that instructors can maintain with minimal effort
+- {{< iconify fa6-solid lightbulb >}} **Ultimate Goal**: Build content-focused, interactive, collaborative course sites that instructors can maintain with minimal effort.
 - {{< iconify fa6-solid diagram-project >}} **Next Steps**: Give examples of content you can immediately use! See [Algorithmology.org](https://algorithmology.org/) for more details!
 
 :::
@@ -80,7 +80,6 @@ def fibonacci(n):
 # Calculate and display first 10 Fibonacci numbers
 fib_10 = fibonacci(10)
 print(f"First 10 Fibonacci numbers: {fib_10}")
-
 ```
 
 ::: {.fragment style="margin-top: -0.25em; font-size: 0.775em;"}
@@ -91,7 +90,7 @@ print(f"First 10 Fibonacci numbers: {fib_10}")
 
 ## Setting Up the Course Infrastructure
 
-::: incremental
+::: {.fragment style="margin-left: 3.75em; margin-top: 1em;"}
 
 1. Create a GitHub repository with Quarto structure
 2. Configure navigation, styling, and organization in `_quarto.yml`
@@ -108,10 +107,11 @@ print(f"First 10 Fibonacci numbers: {fib_10}")
 ### Instructor's Role 
 
 ::: {.fragment .fade-right}
-- Create course content and structure
+- Create course content structure
 - Establish contribution guidelines
 - Review and provide feedback
 - Guide collaborative learning
+- Maintain core infrastructure
 :::
 :::
 
@@ -122,10 +122,11 @@ print(f"First 10 Fibonacci numbers: {fib_10}")
 ### Student's Role
 
 ::: {.fragment .fade-left}
-- Fork repository, create content
-- Write reflections with code examples
-- Submit PRs for review
-- Learn from publication process
+- Fork repository for contributions
+- Create content in assigned areas
+- Submit pull requests for review
+- Engage in peer feedback
+- [Create technical documentation]{style="font-size: 0.9em;"}
 :::
 :::
 :::
@@ -137,8 +138,7 @@ print(f"First 10 Fibonacci numbers: {fib_10}")
 ### [Course Website](https://algorithmology.org/)
 
 ::: {.fragment .fade-right}
-
-![](algorithmology_website.png){width=500 fig-align="center"}
+![](algorithmology_website.png){width=400 fig-align="center"}
 :::
 :::
 
@@ -149,58 +149,59 @@ print(f"First 10 Fibonacci numbers: {fib_10}")
 ### [GitHub Repository](https://github.com/Algorithmology/www.algorithmology.org)
 
 ::: {.fragment .fade-left}
-#### [](https://github.com/Algorithmology/www.algorithmology.org)
 
-![](algorithmology_repo.png){width=500 fig-align="center"}
+![](algorithmology_repo.png){width=400 fig-align="center"}
 :::
 :::
 :::
 
-## Technical Advantages & Future Improvements
+## Future Improvements
+
+::: {.fragment .fade-right .fragment style="font-size: .85em; margin-top: 1.25em;"}
+
+- **Browser-Based IDE Experience**: Complete development environment in the browser
+- **Enhanced WebAssembly**: Better error messages and debugging for Python in browser
+- **Collaborative Features**: Note taking and shared whiteboarding tools
+- **Automated Feedback**: AI-powered assistance for student contributions
+- **Enhanced Visualizations**: Interactive data and algorithm visualizations
+
+:::
+
+## [Why You Should Consider This Approach]{style="font-size: 0.9em;"}
 
 ::: {.columns}
-::: {.column width="60%"}
-### Current Advantages
+::: {.column width="50%"}
+### Educational Benefits
 
-::: {.fragment .fade-right}
-- **Low Barrier to Entry**: Markdown is easier than HTML/CSS/JS
-- **Focus on Content**: Technical details are abstracted away
-- **Interactive Examples**: Code runs in the browser without installation
-- **Full-Text Search**: Find anything across all course materials
-- **Developer Workflow**: Students learn how to collaborate using industry-standard tools
+::: {.fragment .fade-right style="font-size: 0.8em;"}
+- **Student Ownership & Investment**: Students become stakeholders in course content
+- **Living Educational Resources**: Materials continuously evolve and improve
+- **Industry-Standard Practices**: Students gain experience with professional tools
+- **Transparent Learning Process**: Public materials encourage higher quality work
+- **Adaptable for All Class Sizes**: Effective from seminars to large lectures
 :::
 :::
 
-::: {.column width="40%"}
-### Future Improvements
+::: {.column width="50%"}
+### Technical Benefits
 
-::: {.fragment .fade-left}
-- Full browser-based IDE experience
-- Better error messages for WebAssembly Python
-- In-browser note taking and collaborative whiteboarding tools
+::: {.fragment .fade-left style="font-size: 0.8em;"}
+- **Simplified Content Creation**: Markdown reduces technical barriers
+- **Focus on Educational Value**: Infrastructure complexity is abstracted away
+- **Browser-Based Interactivity**: Code execution without local installations
+- **Comprehensive Searchability**: Find content across all course materials
+- **Collaborative Development**: Modern version control and workflows
 :::
 :::
 :::
 
-## Why You Should Consider This Approach
+::: {.fragment .fade .boxed-content style="margin-top: 2em; margin-bottom: 1em; font-size: 0.8em; padding: 0.5em;"}
 
-::: incremental
+**Contact Information & Resources**
 
-- **Student Ownership**: Contributions create investment in the course
-- **Transparency**: Public materials encourage higher quality work
-- **Living Knowledge Base**: Materials improve rather than decay over time
-- **Practical Skills**: Industry tools in an educational context
-- **Scalability**: Works for any course size, from small seminars to large lectures
+**Website**: [https://algorithmology.org/](https://algorithmology.org/) 
 
-:::
-
-::: {.fragment .fade .boxed-content style="margin-top: 1em; font-size: 0.8em;"}
-
-**Contact Us & Resources**:  
-
-**Site**: [https://algorithmology.org/](https://algorithmology.org/)
-
-**Repo**: [https://github.com/Algorithmology/www.algorithmology.org](https://github.com/Algorithmology/www.algorithmology.org)  
+**Repository**: [https://github.com/Algorithmology/www.algorithmology.org](https://github.com/Algorithmology/www.algorithmology.org)  
 
 **Alish Chhetri**: chhetri01@allegheny.edu
 
