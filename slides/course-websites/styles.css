@@ -9,6 +9,11 @@ body {
     color: #333;
 }
 
+/* Title size adjustment */
+.reveal .quarto-title-block .title {
+    font-size: 1.5em !important;
+}
+
 /* Code blocks */
 
 pre {
@@ -98,7 +103,7 @@ a:hover {
 /* Presentation specific styles */
 
 .reveal h1 {
-    font-size: 2em;
+    font-size: 1.5em;
     color: #ff6f3c;
     text-align: center;
 }
@@ -158,6 +163,11 @@ a:hover {
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
+}
+
+/* Additional title styling with high specificity */
+.reveal .slides section .quarto-title-block h1.title {
+    font-size: 1.5em !important;
 }
 
 /* Code highlighting */

@@ -16,7 +16,6 @@ format:
     scrollable: true
     transition: slide
     highlight-style: github
-    width: 1400
     footer: "PyCon Education Summit 2025"
     css: styles.css
 ---
