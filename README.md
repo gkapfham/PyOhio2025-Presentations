@@ -1,6 +1,7 @@
-# Conference Presentations
+# PyCon 2025 Education Summit Presentations
 
-A collection of conference presentations focusing on educational technology and development tools, built with Quarto.
+A collection of conference presentations focusing on educational technology and
+development tools, built with Quarto.
 
 ## Setup
 
@@ -10,8 +11,8 @@ A collection of conference presentations focusing on educational technology and 
 
 2. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/conference-presentations.git
-   cd conference-presentations
+   git clone https://github.com/GatorEducator/PyCon2025-EducationSummit-Presentations.git
+   cd PyCon2025-EducationSummit-Presentations
    ```
 
 3. Install dependencies:
