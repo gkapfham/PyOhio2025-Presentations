@@ -13,27 +13,10 @@ toc: false
 - Understand how to implement efficient project validation
 - Explore best practices for automated testing
 
-### 2. Up and Running with GitHub, GitHub Classroom, and GitHub Actions
-- [View Presentation](github-workflow/index.qmd)
-- Master GitHub workflow integration
-- Set up GitHub Classroom for educational purposes
-- Implement automated workflows with GitHub Actions
-
-### 3. ExecExam: A Tool to Facilitate Effective Executable Examinations in Python
-- [View Presentation](execexam/index.qmd)
-- Discover tools for creating executable examinations
-- Learn about Python-based testing frameworks
-- Implement effective examination strategies
-
-### 4. Building and Deploying Course Websites with Python, Quarto, and Mkdocs
-- [View Presentation](course-websites/index.qmd)
-- Create modern course websites
-- Implement documentation with Mkdocs
-- Deploy and maintain educational content
-
 ## Navigation
 
-Use the navigation menu at the top of the page to move between presentations. Each presentation includes:
+Use the navigation menu at the top of the page to move between presentations.
+Each presentation includes:
 
 - Detailed slides with code examples
 - Implementation guides
