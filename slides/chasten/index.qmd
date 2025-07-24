@@ -20,6 +20,19 @@ format:
     css: ../../css/styles.css
 ---
 
+## What is `chasten`? Why did we build it?
+
+![](chasten.svg)
+
+::: {.incremental style="font-size: 0.85em; margin-top: -0.35em;"}
+
+- Configurable **program analysis** and **linting** with XPath expressions
+  - Avoid a unique performance anti-pattern?
+  - Confirm the use of a new coding style?
+  - Nervous about writing a custom AST visitors?
+
+:::
+
 ## Chasten helps you automatically detect patterns in Python programs
 
 ::: {.columns style="margin-top: 1.25em; font-size: 0.8em;"}
