@@ -20,10 +20,10 @@ website:
         text: Home
       - slides/index.qmd
   page-footer:
-    left: "© 2025 Allegheny College's PyCon 2025 Team"
+    left: "© 2025 Daniel Bekele, Gregory M. Kapfhammer, Jaclyn Pham"
     right:
       - text: "{{< iconify fa github size=18px >}}"
-        href: https://github.com/yourusername/conference-presentations/
+        href: https://www.gregorykapfhammer.com/
 
 format:
   html:
