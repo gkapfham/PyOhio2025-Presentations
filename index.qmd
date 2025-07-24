@@ -27,4 +27,7 @@ Each presentation is available in the [slides section](slides/index.qmd). You ca
 
 ## Contributing
 
-These presentations are open source and available for educational purposes. Feel free to use and modify them according to your needs. If you find any issues or have suggestions for improvements, please contribute through our GitHub repository. 
+These presentations are open source and available for educational purposes.
+Feel free to use and modify them according to your needs. If you find any
+issues or have suggestions for improvements, please contribute through our
+GitHub repository. 
