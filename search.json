@@ -28,6 +28,27 @@
     "text": "Contributing\nThese presentations are open source and available for educational purposes. Feel free to use and modify them according to your needs. If you find any issues or have suggestions for improvements, please contribute through our GitHub repository."
   },
   {
+    "objectID": "slides/index.html",
+    "href": "slides/index.html",
+    "title": "Slides",
+    "section": "",
+    "text": "View Presentation\nLearn about automated project checking and configuration\nUnderstand how to implement efficient project validation\nExplore best practices for automated testing\n\n\n\n\n\nUse the navigation menu at the top of the page to move between presentations. Each presentation includes:\n\nDetailed slides with code examples\nImplementation guides\nBest practices and recommendations\nAdditional resources and references"
+  },
+  {
+    "objectID": "slides/index.html#available-presentations",
+    "href": "slides/index.html#available-presentations",
+    "title": "Slides",
+    "section": "",
+    "text": "View Presentation\nLearn about automated project checking and configuration\nUnderstand how to implement efficient project validation\nExplore best practices for automated testing"
+  },
+  {
+    "objectID": "slides/index.html#navigation",
+    "href": "slides/index.html#navigation",
+    "title": "Slides",
+    "section": "",
+    "text": "Use the navigation menu at the top of the page to move between presentations. Each presentation includes:\n\nDetailed slides with code examples\nImplementation guides\nBest practices and recommendations\nAdditional resources and references"
+  },
+  {
     "objectID": "slides/chasten/index.html#what-problem-are-we-solving",
     "href": "slides/chasten/index.html#what-problem-are-we-solving",
     "title": "Automated and Configurable Programming Project Checking with Chasten",
@@ -75,26 +96,5 @@
     "title": "Automated and Configurable Programming Project Checking with Chasten",
     "section": "Key Takeaways",
     "text": "Key Takeaways\n\n Write declarative rules for AST-based code checks\n Focus on bespoke code structure patterns in Python\n Automated grading aligned with learning outcomes\n Generate data-rich insights into student code patterns\n\n\n\nTry out Chasten and contribute to its development!\n\n GitHub: https://github.com/AstuteSource/chasten\n PyPI: https://pypi.org/project/chasten/"
-  },
-  {
-    "objectID": "slides/index.html",
-    "href": "slides/index.html",
-    "title": "Slides",
-    "section": "",
-    "text": "View Presentation\nLearn about automated project checking and configuration\nUnderstand how to implement efficient project validation\nExplore best practices for automated testing\n\n\n\n\n\nUse the navigation menu at the top of the page to move between presentations. Each presentation includes:\n\nDetailed slides with code examples\nImplementation guides\nBest practices and recommendations\nAdditional resources and references"
-  },
-  {
-    "objectID": "slides/index.html#available-presentations",
-    "href": "slides/index.html#available-presentations",
-    "title": "Slides",
-    "section": "",
-    "text": "View Presentation\nLearn about automated project checking and configuration\nUnderstand how to implement efficient project validation\nExplore best practices for automated testing"
-  },
-  {
-    "objectID": "slides/index.html#navigation",
-    "href": "slides/index.html#navigation",
-    "title": "Slides",
-    "section": "",
-    "text": "Use the navigation menu at the top of the page to move between presentations. Each presentation includes:\n\nDetailed slides with code examples\nImplementation guides\nBest practices and recommendations\nAdditional resources and references"
   }
 ]
