@@ -29,7 +29,7 @@ format:
 - Configurable **program analysis** and **linting** with XPath expressions
   - Avoid a unique performance anti-pattern?
   - Confirm the use of a new coding style?
-  - Nervous about writing a custom AST visitors?
+  - Nervous about writing custom AST visitors?
 
 :::
 
@@ -45,47 +45,56 @@ format:
 - Avoid code anti-patterns
 - Facilitate code reviews
 
+### Researchers
+
+- Count code patterns
+- Measure code quality
+- Calculate statistical correlation
+
 :::
 
 ::: {.fragment .column style="margin-top: 0.25em;"}
 
-### Timing Function
+### Students
 
-- Use the `time` module
-- Calculate elapsed time
-- Consistent number format
+- Explore different code style
+- Avoid performance problems
+- Calculate statistical correlation
 
-:::
+### Educators 
 
-:::
-
-::: {.fragment .fade .boxed-content style="margin-top: -0.25em; font-size: 0.9em;"}
-
-{{< iconify fa6-solid lightbulb >}} **Key Insight**: properly designed
-experiments yield meaningful insights into the likely
+- Confirm assignment requirements
+- Give early feedback on code style
+- Support use on laptops and CI
 
 :::
 
-## What Problem Are We Solving?
+:::
 
-::: {.incremental style="font-size: 0.825em; margin-top: -0.25em;"}
+## Example: students and educators using `chasten` for a Python project
 
-- Students may struggle to write **efficient, readable code**
-- Manual project review is **time-consuming** and **error-prone**
-- Many courses face these challenges:
-  - Data structures
-  - Algorithm analysis
-  - Software engineering
-- Existing tools focus on **style**, not **semantic structure**
-- Regex is **brittle**, and AST tools are **hard to prototype**
+::: {.incremental style="font-size: 0.85em; margin-top: -0.25em;"}
+
+- Students may struggle to write **efficient** and **readable** Python code
+- Manual review by instructors is **time-consuming** and **error-prone**
+- Existing tools often focus on **style** not **semantic structure**
+- Regex is **brittle** and AST tools are **hard to prototype**
 
 :::
 
-::: {.fragment .fade style="margin-top: -0.25em; font-size: 0.9em;"}
+::: {.fragment .fade style="margin-top: -0.25em; font-size: 0.925em;"}
 
-{{< iconify fa6-solid lightbulb >}} **Project Goal**: Chasten enables
+{{< iconify fa6-solid lightbulb >}} **Project Goal**: `chasten` enables
 **scalable** and **structure-aware** feedback that effectively supports both
 instructors and students
+
+:::
+
+::: {.fragment .fade style="margin-top: 0.5em; font-size: 0.925em;"}
+
+{{< iconify fa6-solid gears >}} **Take a Step Back**: Before diving into the
+implementation of `chasten`, it's worth surveying the landscape of linting and
+checking
 
 :::
 
