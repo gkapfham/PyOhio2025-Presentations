@@ -1,8 +1,8 @@
 ---
-title: "Automated and Configurable Programming Project Checking with Chasten" 
-date: "2025-05-15"
+title: "Chasten Your Python Program: Configurable Program Analysis and Linting with XPath" 
+date: "2025-07-26"
 date-format: long
-author: "Daniel Bekele, Jaclyn Pham, and Gregory M. Kapfhammer"
+author: "Gregory M. Kapfhammer"
 format: 
   revealjs:
     theme: default
@@ -15,7 +15,7 @@ format:
     scrollable: true
     transition: slide
     highlight-style: github
-    footer: "PyCon Education Summit 2025"
+    footer: "PyOhio 2025"
     css: ../../css/styles.css
 ---
 
