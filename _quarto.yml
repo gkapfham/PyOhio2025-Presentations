@@ -23,7 +23,7 @@ website:
     left: "© 2025 Daniel Bekele, Gregory M. Kapfhammer, Jaclyn Pham"
     right:
       - text: "{{< iconify fa github size=18px >}}"
-        href: https://www.gregorykapfhammer.com/
+        href: https://github.com/gkapfham/PyOhio2025-Presentations
 
 format:
   html:
