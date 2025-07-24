@@ -1,7 +1,7 @@
-# PyCon 2025 Education Summit Presentations
+# PyOhio 2025 Presentation(s)
 
 A collection of conference presentations focusing on educational technology and
-development tools, built with Quarto.
+software development tools, built with Quarto.
 
 ## Setup
 
@@ -11,8 +11,8 @@ development tools, built with Quarto.
 
 2. Clone this repository:
    ```bash
-   git clone https://github.com/GatorEducator/PyCon2025-EducationSummit-Presentations.git
-   cd PyCon2025-EducationSummit-Presentations
+   git clone https://github.com/gkapfham/PyOhio2025-Presentations.git
+   cd PyOhio2025-Presentations
    ```
 
 3. Install dependencies:
