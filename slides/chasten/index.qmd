@@ -6,6 +6,7 @@ author: "Gregory M. Kapfhammer"
 format: 
   revealjs:
     theme: default
+    menu: false
     slide-number: false
     incremental: false 
     code-fold: true
@@ -18,6 +19,39 @@ format:
     footer: "PyOhio 2025"
     css: ../../css/styles.css
 ---
+
+## Chasten helps you automatically detect patterns in Python programs
+
+::: {.columns style="margin-top: 1.25em; font-size: 0.8em;"}
+
+::: {.fragment .column .fade style="margin-top: 0.25em;"}
+
+### Developers
+
+- Project-specific checks
+- Avoid code anti-patterns
+- Facilitate code reviews
+
+:::
+
+::: {.fragment .column style="margin-top: 0.25em;"}
+
+### Timing Function
+
+- Use the `time` module
+- Calculate elapsed time
+- Consistent number format
+
+:::
+
+:::
+
+::: {.fragment .fade .boxed-content style="margin-top: -0.25em; font-size: 0.9em;"}
+
+{{< iconify fa6-solid lightbulb >}} **Key Insight**: properly designed
+experiments yield meaningful insights into the likely
+
+:::
 
 ## What Problem Are We Solving?
 
