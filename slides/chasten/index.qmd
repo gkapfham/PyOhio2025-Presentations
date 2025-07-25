@@ -588,19 +588,19 @@ if __name__ == "__main__":
 ```
 
 
-## Limitations and Future Directions
+## Limitations and future directions
 
 ::: {.incremental}
 
-- **Limitations of the Chasten Tool**
+- **Limitations of the current version of `chasten`**
   - {{< iconify mdi:alert-circle-outline >}} Doesn't handle style, formatting, or
   type inference
   - {{< iconify mdi:timer-sand >}} Not optimized for fast use in continuous
   integration
-  - {{< iconify mdi:code-not-equal-variant >}} Pattern matches through use of
+  - {{< iconify mdi:code-not-equal-variant >}} Pattern matches through
   XPath on Python's AST
 
-- **Empirical Study of Chasten**
+- **Empirical study of `chasten`'s effectiveness and influence**
   - {{< iconify fa6-solid scale-unbalanced-flip >}} Frequency of false positives
   or false negatives?
   - {{< iconify game-icons team-idea >}} How do students respond to the tool's feedback?
@@ -608,9 +608,11 @@ if __name__ == "__main__":
 
 :::
 
-## Key Takeaways
+## Key takeaways
 
 ::: {.incremental}
+
+- {{< iconify fa6-solid lightbulb >}} Help developers, researchers, students, and educators
 
 - {{< iconify mdi:pen >}} Write declarative rules for AST-based code checks
 
@@ -622,10 +624,13 @@ if __name__ == "__main__":
 
 :::
 
-::: {.fragment .boxed-content style="font-size: 0.95em;"}
+::: {.fragment .boxed-content style="font-size: 0.9em;"}
 
 - **Try out Chasten and contribute to its development!**
   - {{< iconify fa6-solid link >}} GitHub: [https://github.com/AstuteSource/chasten](https://github.com/AstuteSource/chasten)
   - {{< iconify fa6-solid code >}} PyPI: [https://pypi.org/project/chasten/](https://pypi.org/project/chasten/)
 
+:::
+
+::: footer
 :::
