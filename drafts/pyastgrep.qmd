@@ -1,0 +1,55 @@
+---
+format: revealjs
+---
+
+## Searching Python's AST with `pyastgrep`
+
+::: {.columns style="margin-top: 1.25em; font-size: 0.8em;"}
+
+::: {.column .fade width="40%"}
+
+### Python Source Code
+
+Save this to `example.py`:
+
+```python
+def too_many_args(a, b, c, d, e, f):
+    pass
+
+def another_function(x, y):
+    pass
+
+def a_third_function(p, q, r, s, t, u, v):
+    pass
+```
+
+:::
+
+::: {.column .fade width="60%"}
+
+### `pyastgrep` Query
+
+Find functions with more than 5 arguments using an XPath expression:
+
+```bash
+pyastgrep '//FunctionDef[count(args/args) > 5]' example.py
+```
+
+### Matched Output
+
+The tool will highlight the function definitions that match the query:
+
+```python
+example.py:1:1:def too_many_args(a, b, c, d, e, f):
+example.py:7:1:def a_third_function(p, q, r, s, t, u, v):
+```
+
+:::
+
+:::
+
+::: {.fragment .fade style="margin-top: -0.2em; font-size: 0.9em;"}
+
+{{< iconify fa6-solid lightbulb >}} `pyastgrep` allows for powerful, structure-aware code searching directly from the command line.
+
+:::

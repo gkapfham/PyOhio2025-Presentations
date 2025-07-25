@@ -1,0 +1,37 @@
+---
+format: revealjs
+---
+
+## `pyastgrep` vs. `chasten`
+
+::: {.columns style="margin-top: 1.25em; font-size: 0.8em;"}
+
+::: {.column .fade width="50%"}
+
+### {{< iconify mdi search-web >}} `pyastgrep`
+
+- Interactive AST search tool
+- Ad-hoc queries from the CLI
+- Uses raw XPath expressions
+- `grep`-like console output
+
+:::
+
+::: {.column .fade width="50%"}
+
+### {{< iconify mdi cogs >}} `chasten`
+
+- Built using `pyastgrep`'s API
+- Runs checks from a YAML file
+- Saves results (JSON, CSV, DB)
+- View results with `datasette`
+
+:::
+
+:::
+
+::: {.fragment .fade style="margin-top: 0.2em; font-size: 0.9em;"}
+
+{{< iconify fa6-solid lightbulb >}} **Key Idea**: `chasten` uses `pyastgrep`'s powerful search to build a configurable, project-oriented linter.
+
+:::
