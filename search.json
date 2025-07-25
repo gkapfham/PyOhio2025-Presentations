@@ -28,11 +28,39 @@
     "text": "Contributing\nThese presentations are open source and available for educational purposes. Feel free to use and modify them according to your needs. If you find any issues or have suggestions for improvements, please contribute through our GitHub repository."
   },
   {
-    "objectID": "drafts/chasten.html#pyastgrep-vs.-chasten",
-    "href": "drafts/chasten.html#pyastgrep-vs.-chasten",
+    "objectID": "drafts/pyastgrep.html#searching-pythons-ast-with-pyastgrep",
+    "href": "drafts/pyastgrep.html#searching-pythons-ast-with-pyastgrep",
     "title": "",
-    "section": "pyastgrep vs. chasten",
-    "text": "pyastgrep vs. chasten\n\n\n pyastgrep\n\nInteractive AST search tool\nAd-hoc queries from the CLI\nUses raw XPath expressions\ngrep-like console output\n\n\n chasten\n\nBuilt using pyastgrep’s API\nRuns checks from a YAML file\nSaves results (JSON, CSV, DB)\nView results with datasette\n\n\n\n Key Idea: chasten uses pyastgrep’s powerful search to build a configurable, project-oriented linter."
+    "section": "Searching Python’s AST with pyastgrep",
+    "text": "Searching Python’s AST with pyastgrep\n\n\nPython Source Code\nSave this to example.py:\ndef too_many_args(a, b, c, d, e, f):\n    pass\n\ndef another_function(x, y):\n    pass\n\ndef a_third_function(p, q, r, s, t, u, v):\n    pass\n\npyastgrep Query\nFind functions with more than 5 arguments using an XPath expression:\npyastgrep '//FunctionDef[count(args/args) &gt; 5]' example.py\nMatched Output\nThe tool will highlight the function definitions that match the query:\nexample.py:1:1:def too_many_args(a, b, c, d, e, f):\nexample.py:7:1:def a_third_function(p, q, r, s, t, u, v):\n\n\n pyastgrep allows for powerful, structure-aware code searching directly from the command line."
+  },
+  {
+    "objectID": "slides/index.html",
+    "href": "slides/index.html",
+    "title": "Slides",
+    "section": "",
+    "text": "View Presentation\nLearn about automated project checking and configuration\nUnderstand how to implement efficient project validation\nExplore best practices for automated testing\n\n\n\n\n\nUse the navigation menu at the top of the page to move between presentations. Each presentation includes:\n\nDetailed slides with code examples\nImplementation guides\nBest practices and recommendations\nAdditional resources and references"
+  },
+  {
+    "objectID": "slides/index.html#available-presentations",
+    "href": "slides/index.html#available-presentations",
+    "title": "Slides",
+    "section": "",
+    "text": "View Presentation\nLearn about automated project checking and configuration\nUnderstand how to implement efficient project validation\nExplore best practices for automated testing"
+  },
+  {
+    "objectID": "slides/index.html#navigation",
+    "href": "slides/index.html#navigation",
+    "title": "Slides",
+    "section": "",
+    "text": "Use the navigation menu at the top of the page to move between presentations. Each presentation includes:\n\nDetailed slides with code examples\nImplementation guides\nBest practices and recommendations\nAdditional resources and references"
+  },
+  {
+    "objectID": "slides/chasten/index.html#follow-along",
+    "href": "slides/chasten/index.html#follow-along",
+    "title": "Chasten Your Python Program: Configurable Program Analysis and Linting with XPath",
+    "section": "Follow Along!",
+    "text": "Follow Along!\n\n\nScan the QR code to follow along."
   },
   {
     "objectID": "slides/chasten/index.html#what-is-chasten-why-did-we-build-it",
@@ -95,7 +123,7 @@
     "href": "slides/chasten/index.html#exploring-some-options",
     "title": "Chasten Your Python Program: Configurable Program Analysis and Linting with XPath",
     "section": "Exploring some options",
-    "text": "Exploring some options\nPreview"
+    "text": "Exploring some options\n\nPython ast module - The official documentation for Python’s Abstract Syntax Tree module.\nPylint - A popular static code analyzer for Python.\nFlake8 - A wrapper around PyFlakes, pycodestyle, and McCabe.\nRuff - An extremely fast Python linter and code formatter, written in Rust.\nTree-sitter - A parser generator tool and incremental parsing library.\nast-grep - A CLI tool for searching and rewriting code with ASTs.\npyastgrep - A tool for searching Python code with XPath expressions.\nchasten - A configurable program analysis and linting tool built on pyastgrep.\ndatasette - A tool for exploring and publishing data."
   },
   {
     "objectID": "slides/chasten/index.html#avoid-time-complexity-of-on²",
@@ -140,31 +168,10 @@
     "text": "Key Takeaways\n\n Write declarative rules for AST-based code checks\n Focus on bespoke code structure patterns in Python\n Automated grading aligned with learning outcomes\n Generate data-rich insights into student code patterns\n\n\n\nTry out Chasten and contribute to its development!\n\n GitHub: https://github.com/AstuteSource/chasten\n PyPI: https://pypi.org/project/chasten/"
   },
   {
-    "objectID": "slides/index.html",
-    "href": "slides/index.html",
-    "title": "Slides",
-    "section": "",
-    "text": "View Presentation\nLearn about automated project checking and configuration\nUnderstand how to implement efficient project validation\nExplore best practices for automated testing\n\n\n\n\n\nUse the navigation menu at the top of the page to move between presentations. Each presentation includes:\n\nDetailed slides with code examples\nImplementation guides\nBest practices and recommendations\nAdditional resources and references"
-  },
-  {
-    "objectID": "slides/index.html#available-presentations",
-    "href": "slides/index.html#available-presentations",
-    "title": "Slides",
-    "section": "",
-    "text": "View Presentation\nLearn about automated project checking and configuration\nUnderstand how to implement efficient project validation\nExplore best practices for automated testing"
-  },
-  {
-    "objectID": "slides/index.html#navigation",
-    "href": "slides/index.html#navigation",
-    "title": "Slides",
-    "section": "",
-    "text": "Use the navigation menu at the top of the page to move between presentations. Each presentation includes:\n\nDetailed slides with code examples\nImplementation guides\nBest practices and recommendations\nAdditional resources and references"
-  },
-  {
-    "objectID": "drafts/pyastgrep.html#searching-pythons-ast-with-pyastgrep",
-    "href": "drafts/pyastgrep.html#searching-pythons-ast-with-pyastgrep",
+    "objectID": "drafts/chasten.html#pyastgrep-vs.-chasten",
+    "href": "drafts/chasten.html#pyastgrep-vs.-chasten",
     "title": "",
-    "section": "Searching Python’s AST with pyastgrep",
-    "text": "Searching Python’s AST with pyastgrep\n\n\nPython Source Code\nSave this to example.py:\ndef too_many_args(a, b, c, d, e, f):\n    pass\n\ndef another_function(x, y):\n    pass\n\ndef a_third_function(p, q, r, s, t, u, v):\n    pass\n\npyastgrep Query\nFind functions with more than 5 arguments using an XPath expression:\npyastgrep '//FunctionDef[count(args/args) &gt; 5]' example.py\nMatched Output\nThe tool will highlight the function definitions that match the query:\nexample.py:1:1:def too_many_args(a, b, c, d, e, f):\nexample.py:7:1:def a_third_function(p, q, r, s, t, u, v):\n\n\n pyastgrep allows for powerful, structure-aware code searching directly from the command line."
+    "section": "pyastgrep vs. chasten",
+    "text": "pyastgrep vs. chasten\n\n\n pyastgrep\n\nInteractive AST search tool\nAd-hoc queries from the CLI\nUses raw XPath expressions\ngrep-like console output\n\n\n chasten\n\nBuilt using pyastgrep’s API\nRuns checks from a YAML file\nSaves results (JSON, CSV, DB)\nView results with datasette\n\n\n\n Key Idea: chasten uses pyastgrep’s powerful search to build a configurable, project-oriented linter."
   }
 ]

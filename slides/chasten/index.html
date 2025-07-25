@@ -6,9 +6,9 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-4a990d8dcb58f517c7c86712b8f2ac7c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-234273d1456647dabc34a594ac50e507.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/quarto-contrib/iconify-2.1.0/iconify-icon.min.js"></script><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.31">
+  <meta name="generator" content="quarto-1.7.32">
 
   <meta name="author" content="Gregory M. Kapfhammer">
   <meta name="dcterms.date" content="2025-07-26">
@@ -209,6 +209,16 @@ Gregory M. Kapfhammer
 
   <p class="date">July 26, 2025</p>
 </section>
+<section id="follow-along" class="slide level2">
+<h2>Follow Along!</h2>
+<!-- qrencode -t SVG -s 10 -o qrcode.svg 'https://gkapfham.github.io/PyOhio2025-Presentations/slides/chasten/' -->
+<div style="text-align: center">
+<p>Scan the QR code to follow along.</p>
+<div class="fragment fade-in">
+<p><img data-src="qrcode.svg" style="width:50.0%"></p>
+</div>
+</div>
+</section>
 <section id="what-is-chasten-why-did-we-build-it" class="slide level2">
 <h2>What is <code>chasten</code>? Why did we build it?</h2>
 
@@ -403,7 +413,17 @@ Gregory M. Kapfhammer
 </section>
 <section id="exploring-some-options" class="slide level2">
 <h2>Exploring some options</h2>
-<p><a href="https://dhv.davep.dev/" data-preview-link="true">Preview</a></p>
+<ul>
+<li><a href="https://docs.python.org/3/library/ast.html" class="preview-link">Python <code>ast</code> module</a> - The official documentation for Python’s Abstract Syntax Tree module.</li>
+<li><a href="https://pylint.org/" class="preview-link">Pylint</a> - A popular static code analyzer for Python.</li>
+<li><a href="https://flake8.pycqa.org/en/latest/" class="preview-link">Flake8</a> - A wrapper around PyFlakes, pycodestyle, and McCabe.</li>
+<li><a href="https://docs.astral.sh/ruff/" class="preview-link">Ruff</a> - An extremely fast Python linter and code formatter, written in Rust.</li>
+<li><a href="https://tree-sitter.github.io/tree-sitter/" class="preview-link">Tree-sitter</a> - A parser generator tool and incremental parsing library.</li>
+<li><a href="https://ast-grep.github.io/" class="preview-link">ast-grep</a> - A CLI tool for searching and rewriting code with ASTs.</li>
+<li><a href="https://github.com/AstuteSource/pyastgrep" class="preview-link"><code>pyastgrep</code></a> - A tool for searching Python code with XPath expressions.</li>
+<li><a href="https://github.com/AstuteSource/chasten" class="preview-link"><code>chasten</code></a> - A configurable program analysis and linting tool built on <code>pyastgrep</code>.</li>
+<li><a href="https://datasette.io/" class="preview-link"><code>datasette</code></a> - A tool for exploring and publishing data.</li>
+</ul>
 </section>
 <section id="avoid-time-complexity-of-on²" class="slide level2">
 <h2>Avoid Time Complexity of <span class="math inline">\(O(n²)\)</span></h2>
