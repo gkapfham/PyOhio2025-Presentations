@@ -21,6 +21,16 @@ format:
     css: ../../css/styles.css
 ---
 
+## Follow Along!
+
+::: {style="text-align: center"}
+Scan the QR code to follow along with the presentation on your own device.
+:::
+
+::: {.fragment .fade-in}
+![](qrcode.png){width=50%}
+:::
+
 ## What is `chasten`? Why did we build it?
 
 ![](chasten.svg)
@@ -286,7 +296,16 @@ example.py:7:1:def a_third_function(p, q, r, s, t, u, v):
 
 ## Exploring some options
 
-[Preview](https://dhv.davep.dev/){preview-link="true"}
+- [Python `ast` module](https://docs.python.org/3/library/ast.html){.preview-link} - The official documentation for Python's Abstract Syntax Tree module.
+- [Pylint](https://pylint.org/){.preview-link} - A popular static code analyzer for Python.
+- [Flake8](https://flake8.pycqa.org/en/latest/){.preview-link} - A wrapper around PyFlakes, pycodestyle, and McCabe.
+- [Ruff](https://docs.astral.sh/ruff/){.preview-link} - An extremely fast Python linter and code formatter, written in Rust.
+- [Tree-sitter](https://tree-sitter.github.io/tree-sitter/){.preview-link} - A parser generator tool and incremental parsing library.
+- [ast-grep](https://ast-grep.github.io/){.preview-link} - A CLI tool for searching and rewriting code with ASTs.
+- [`pyastgrep`](https://github.com/AstuteSource/pyastgrep){.preview-link} - A tool for searching Python code with XPath expressions.
+- [`chasten`](https://github.com/AstuteSource/chasten){.preview-link} - A configurable program analysis and linting tool built on `pyastgrep`.
+- [`datasette`](https://datasette.io/){.preview-link} - A tool for exploring and publishing data.
+
 
 ## Avoid Time Complexity of $O(n²)$
 
