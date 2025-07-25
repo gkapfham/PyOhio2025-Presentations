@@ -299,16 +299,19 @@ example.py:7:1:def a_third_function(p, q, r, s, t, u, v):
 
 - Built using `pyastgrep`'s API
 - Runs checks from a YAML file
-- Saves results (JSON, CSV, DB)
+- Saves results in JSON, CSV, DB
 - View results with `datasette`
 
 :::
 
 :::
 
-::: {.fragment .fade style="margin-top: 0.2em; font-size: 0.9em;"}
+::: {.fragment .fade .boxed-content style="margin-top: 0.2em; font-size: 0.85em;"}
 
-{{< iconify fa6-solid lightbulb >}} **Key Idea**: `chasten` uses `pyastgrep`'s powerful search to build a configurable, project-oriented linter.
+{{< iconify fa6-solid lightbulb >}} **Key Idea**: `chasten` uses `pyastgrep`'s
+powerful search to build a configurable, project-oriented linter. Developers,
+researchers, students, and instructors can "`chasten`" 
+Python projects and save the results!
 
 :::
 
