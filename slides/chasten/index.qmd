@@ -246,6 +246,8 @@ Module(
 
 ## Scanning code with `pyastgrep`
 
+**Define a Python file with functions**
+
 ```python
 def too_many_args(a, b, c, d, e, f):
 def another_function(x, y):
@@ -264,7 +266,7 @@ pyastgrep '//FunctionDef[count(args/args) > 5]' example.py
 
 ::: {.fragment style="margin-top: 0.45em;"}
 
-**Find functions with more than 5 arguments**
+**Results from running the query with `pyastgrep`**
 
 ```python
 example.py:1:1:def too_many_args(a, b, c, d, e, f):
