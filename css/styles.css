@@ -25,6 +25,18 @@ p {
     color: #323b60;
 }
 
+.boxed-content {
+    border: 3px solid #1c1c1c;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.tight-boxed-content {
+    border: 3px solid #1c1c1c;
+    padding: -2px;
+    border-radius: 5px;
+}
+
 /* Code blocks */
 
 pre {
@@ -37,13 +49,13 @@ code {
 }
 
 .reveal div.sourceCode pre code {
-  margin-top: -0.05em;
-  min-height: 100% !important;
-  max-height: 550px !important;
+    margin-top: -0.05em;
+    min-height: 100% !important;
+    max-height: 550px !important;
 }
 
 .reveal code {
-    color: #3459e6 !important;
+    color: #323b60 !important;
     font-size: 0.875em;
     background-color: rgba(0, 0, 0, 0);
     white-space: pre-wrap;
@@ -88,7 +100,7 @@ a:hover {
 /* Footer */
 
 .footer {
-    border-top: 1px solid #eaecef;
+    /* border-top: 1px solid #eaecef; */
     padding: 1em 0;
 }
 
@@ -170,13 +182,17 @@ a:hover {
 
 /* Custom classes for boxed content */
 .boxed-content {
-  border: 3px solid #1c1c1c;
-  padding: 10px;
-  border-radius: 5px;
+    border: 3px solid #1c1c1c;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .tight-boxed-content {
-  border: 3px solid #1c1c1c;
-  padding: -2px;
-  border-radius: 5px;
+    border: 3px solid #1c1c1c;
+    padding: -2px;
+    border-radius: 5px;
+}
+
+.reveal .slides section:not(:first-of-type) .footer {
+    display: none;
 }

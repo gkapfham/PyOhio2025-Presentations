@@ -2,14 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://gkapfham.github.io/PyOhio2025-Presentations/index.html</loc>
-    <lastmod>2025-07-24T21:37:49.757Z</lastmod>
+    <lastmod>2025-07-24T21:47:30.122Z</lastmod>
   </url>
   <url>
-    <loc>https://gkapfham.github.io/PyOhio2025-Presentations/slides/index.html</loc>
-    <lastmod>2025-07-24T21:37:49.767Z</lastmod>
+    <loc>https://gkapfham.github.io/PyOhio2025-Presentations/drafts/chasten.html</loc>
+    <lastmod>2025-07-25T00:38:13.875Z</lastmod>
   </url>
   <url>
     <loc>https://gkapfham.github.io/PyOhio2025-Presentations/slides/chasten/index.html</loc>
-    <lastmod>2025-07-24T21:37:49.767Z</lastmod>
+    <lastmod>2025-07-25T01:29:17.614Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gkapfham.github.io/PyOhio2025-Presentations/slides/index.html</loc>
+    <lastmod>2025-07-24T21:29:34.994Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gkapfham.github.io/PyOhio2025-Presentations/drafts/pyastgrep.html</loc>
+    <lastmod>2025-07-25T00:34:29.176Z</lastmod>
   </url>
 </urlset>
