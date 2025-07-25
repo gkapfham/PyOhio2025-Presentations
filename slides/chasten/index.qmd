@@ -104,38 +104,39 @@ checking
 
 ::: {.fragment .column .fade style="margin-top: 0.25em;"}
 
-### Regular expressions
+### Regular Expressions
 
 - Project-specific checks
 - Avoid code anti-patterns
-- Facilitate code reviews
 
 ### Pylint and Flake8
 
 - Count code patterns
 - Measure code quality
-- Calculate statistical correlation
 
 :::
 
 ::: {.fragment .column style="margin-top: 0.25em;"}
 
-### {{< iconify fa6-solid user-graduate >}} Students
+### Ruff
 
 - Explore different code style
 - Avoid performance problems
-- Calculate statistical correlation
 
-### {{< iconify fa6-solid person-chalkboard >}} Educators 
+### Treesitter and Ast-Grep
 
 - Confirm assignment requirements
 - Give early feedback on code style
-- Support use on laptops and CI
 
 :::
 
 :::
 
+::: {.fragment .fade style="margin-top: -0.2em; font-size: 0.9em;"}
+
+{{< iconify fa6-solid lightbulb >}} Wow, `pyastgrep` offers a novel way query a program's AST!
+
+:::
 
 ## Avoid Time Complexity of $O(n²)$
 
