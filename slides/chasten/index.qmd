@@ -96,12 +96,11 @@ Scan the QR code to follow along
 
 - Students may struggle to write **efficient** and **readable** Python code
 - Manual review by instructors is **time-consuming** and **error-prone**
-- Existing tools often focus on **style** not **semantic structure**
-- Regex is **brittle** and AST tools are **hard to prototype**
+- Regex is **brittle** and AST-based tools are **hard to prototype**
 
 :::
 
-::: {.fragment .fade style="margin-top: -0.25em; font-size: 0.925em;"}
+::: {.fragment .fade style="margin-top: -0.25em; font-size: 0.9em;"}
 
 {{< iconify fa6-solid lightbulb >}} **Project Goal**: `chasten` enables
 **scalable** and **structure-aware** feedback that effectively supports both
@@ -109,11 +108,19 @@ instructors and students
 
 :::
 
-::: {.fragment .fade style="margin-top: 0.5em; font-size: 0.925em;"}
+::: {.fragment .fade style="margin-top: 0.5em; font-size: 0.9em;"}
 
 {{< iconify fa6-solid gears >}} **Take a Step Back**: Before diving into the
 implementation of `chasten`, it's worth surveying the landscape of linting and
 checking
+
+:::
+
+::: {.fragment .fade style="margin-top: 0.5em; font-size: 0.9em;"}
+
+{{< iconify mdi:code-not-equal-variant >}} **Many Trade-Offs**: Different tools
+with varying implementation, features, performance, and extensibility! Which
+one(s) to pick?
 
 :::
 
