@@ -23,12 +23,14 @@ format:
 
 ## Follow Along!
 
+<!-- qrencode -t SVG -s 10 -o qrcode.svg 'https://gkapfham.github.io/PyOhio2025-Presentations/slides/chasten/' -->
+
 ::: {style="text-align: center"}
-Scan the QR code to follow along with the presentation on your own device.
-:::
+Scan the QR code to follow along.
 
 ::: {.fragment .fade-in}
-![](qrcode.png){width=50%}
+![](qrcode.svg){width=50%}
+:::
 :::
 
 ## What is `chasten`? Why did we build it?
