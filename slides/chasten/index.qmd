@@ -7,6 +7,7 @@ format:
   revealjs:
     theme: default
     menu: false
+    preview-links: true
     slide-number: false
     incremental: false 
     code-fold: true
@@ -98,7 +99,7 @@ checking
 
 :::
 
-## Building a source code analyzer! What are key options and their trade-offs?
+## Building a source code analyzer! What are options and their trade-offs?
 
 ::: {.columns style="margin-top: 1.25em; font-size: 0.8em;"}
 
@@ -132,10 +133,13 @@ checking
 
 :::
 
-::: {.fragment .fade style="margin-top: -0.2em; font-size: 0.9em;"}
+::: {.fragment .fade style="margin-top: -0.1em; font-size: 0.9em;"}
 
 {{< iconify fa6-solid lightbulb >}} Wow, `pyastgrep` offers a novel way query a program's AST!
 
+:::
+
+::: footer
 :::
 
 ## Wait, what is an abstract syntax tree?
@@ -200,6 +204,41 @@ Module(
 
 :::
 
+::: footer
+:::
+
+## Scanning code with `pyastgrep`
+
+```python
+def too_many_args(a, b, c, d, e, f):
+def another_function(x, y):
+def a_third_function(p, q, r, s, t, u, v):
+```
+
+::: {.fragment style="margin-top: 0.45em;"}
+
+**Find functions with more than 5 arguments**
+
+```bash
+pyastgrep '//FunctionDef[count(args/args) > 5]' example.py
+```
+
+:::
+
+::: {.fragment style="margin-top: 0.45em;"}
+
+**Find functions with more than 5 arguments**
+
+```python
+example.py:1:1:def too_many_args(a, b, c, d, e, f):
+example.py:7:1:def a_third_function(p, q, r, s, t, u, v):
+```
+
+:::
+
+::: footer
+:::
+
 ## Make the connection by comparing the `pyastgrep` and `chasten` tools
 
 ::: {.columns style="margin-top: 1.25em; font-size: 0.8em;"}
@@ -233,6 +272,21 @@ Module(
 {{< iconify fa6-solid lightbulb >}} **Key Idea**: `chasten` uses `pyastgrep`'s powerful search to build a configurable, project-oriented linter.
 
 :::
+
+## Use `dhv` to explore a Python AST
+
+::: {.fragment style="margin-left: 2.2em;"}
+
+![](dhv.png){width=90%}
+
+:::
+
+::: footer
+:::
+
+## Exploring some options
+
+[Preview](https://dhv.davep.dev/){preview-link="true"}
 
 ## Avoid Time Complexity of $O(n²)$
 
