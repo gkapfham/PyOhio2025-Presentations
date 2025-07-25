@@ -172,14 +172,65 @@ Module(
 
 :::
 
-::: {.column .fade width="40%"}
+::: {.column .fade width="50%"}
+
+::: {.fragment .fade style="margin-left: 1.5em; font-size: 0.9em;"}
 
 ### Exploring the AST
 
-- more bullet points
-- more bullet points
+- Tree representation of code
+- Nodes are syntax elements
+- Great for program analysis
+- Independent of code style
 
 :::
+
+::: {.fragment .fade style="margin-left: 1.5em; font-size: 0.9em;"}
+
+### Exploring the AST
+
+- Tree representation of code
+- Nodes are syntax elements
+- Great for program analysis
+- Independent of code style
+
+:::
+
+:::
+
+:::
+
+## Make the connection by comparing the `pyastgrep` and `chasten` tools
+
+::: {.columns style="margin-top: 1.25em; font-size: 0.8em;"}
+
+::: {.column .fade width="50%"}
+
+### {{< iconify mdi search-web >}} `pyastgrep`
+
+- Interactive AST search tool
+- Ad-hoc queries from the CLI
+- Uses raw XPath expressions
+- `grep`-like console output
+
+:::
+
+::: {.column .fade width="50%"}
+
+### {{< iconify mdi cogs >}} `chasten`
+
+- Built using `pyastgrep`'s API
+- Runs checks from a YAML file
+- Saves results (JSON, CSV, DB)
+- View results with `datasette`
+
+:::
+
+:::
+
+::: {.fragment .fade style="margin-top: 0.2em; font-size: 0.9em;"}
+
+{{< iconify fa6-solid lightbulb >}} **Key Idea**: `chasten` uses `pyastgrep`'s powerful search to build a configurable, project-oriented linter.
 
 :::
 
