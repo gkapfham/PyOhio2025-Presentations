@@ -1,0 +1,14 @@
+[
+  {
+    "file": "test_project/bad.py",
+    "line": 4,
+    "col": 8,
+    "pattern": "doubly-nested-for-loops"
+  },
+  {
+    "file": "test_project/subdir/also_bad.py",
+    "line": 8,
+    "col": 12,
+    "pattern": "doubly-nested-for-loops"
+  }
+]

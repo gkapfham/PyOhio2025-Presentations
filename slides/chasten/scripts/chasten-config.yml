@@ -1,0 +1,8 @@
+chasten:
+  checks:
+    - id: "CHA001"
+      name: "doubly-nested-for-loops"
+      description: "Detect doubly-nested for loops in Python code"
+      pattern: './/For[ancestor::For]'
+      min: 0
+      max: 10
