@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-html/tabby.min.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-234273d1456647dabc34a594ac50e507.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/quarto-contrib/iconify-2.1.0/iconify-icon.min.js"></script><meta charset="utf-8">
+<script src="../../site_libs/quarto-contrib/iconify-2.1.0/iconify-icon.min.js"></script>
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.32">
 
   <meta name="author" content="Gregory M. Kapfhammer">
@@ -97,7 +99,7 @@
     code span.vs { color: #032f62; } /* VerbatimString */
     code span.wa { color: #ff5555; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-f563837468303362081e247dddd440d0.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-2c68d4e54d35810038446c33f7c9eae0.css">
   <link rel="stylesheet" href="../../css/styles.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -216,7 +218,7 @@ Gregory M. Kapfhammer
 <div style="text-align: center; margin-top: 0em;">
 <p>Scan the QR code to follow along</p>
 <div class="fragment fade-in" style="text-align: center; margin-top: -0.5em;">
-<p><img data-src="qrcode.svg" style="width:50.0%"></p>
+<p><a href="qrcode.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img data-src="qrcode.svg" style="width:50.0%"></a></p>
 </div>
 </div>
 </section>
@@ -230,7 +232,7 @@ Gregory M. Kapfhammer
 <li class="fragment">Avoid a unique performance anti-pattern?</li>
 <li class="fragment">Confirm the use of a new coding style?</li>
 <li class="fragment">Nervous about writing custom AST visitors?</li>
-<li class="fragment">Need configuration and data storage?</li>
+<li class="fragment">Need configuration and data storage of results?</li>
 </ul></li>
 </ul>
 </div>
@@ -323,11 +325,11 @@ Gregory M. Kapfhammer
 <div class="columns" style="margin-top: 1.25em; font-size: 0.75em;">
 <div class="column fade" style="width:50%;">
 <p><strong>Python Source Code</strong></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="kw">def</span> calculate_sum(x, y):</span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="kw">def</span> calculate_sum(x, y):</span>
 <span id="cb1-2"><a></a>  <span class="co">"""Add two numbers."""</span></span>
-<span id="cb1-3"><a></a>  <span class="cf">return</span> x <span class="op">+</span> y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a></a>  <span class="cf">return</span> x <span class="op">+</span> y</span></code></pre></div>
 <p><strong>Abstract Syntax Tree</strong></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>Module(</span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a></a>Module(</span>
 <span id="cb2-2"><a></a>  body<span class="op">=</span>[</span>
 <span id="cb2-3"><a></a>    FunctionDef(</span>
 <span id="cb2-4"><a></a>      name<span class="op">=</span><span class="st">'calculate_sum'</span>, </span>
@@ -339,7 +341,7 @@ Gregory M. Kapfhammer
 <span id="cb2-10"><a></a>            op<span class="op">=</span>Add(), </span>
 <span id="cb2-11"><a></a>            right<span class="op">=</span>Name(<span class="bu">id</span><span class="op">=</span><span class="st">'y'</span>, ...)))], </span>
 <span id="cb2-12"><a></a>      ...)], </span>
-<span id="cb2-13"><a></a>  ...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-13"><a></a>  ...)</span></code></pre></div>
 </div><div class="column fade" style="width:50%;">
 <div class="fragment fade" style="margin-left: 1.5em; font-size: 0.9em;">
 <h3 id="understanding-the-ast"><iconify-icon role="img" inline="" icon="fa6-solid:brain" aria-label="Icon brain from fa6-solid Iconify.design set." title="Icon brain from fa6-solid Iconify.design set."></iconify-icon> Understanding the AST</h3>
@@ -369,17 +371,17 @@ Gregory M. Kapfhammer
 <section id="scanning-code-with-pyastgrep" class="slide level2">
 <h2>Scanning code with <code>pyastgrep</code></h2>
 <p><strong>Define a Python file with functions</strong></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="kw">def</span> too_many_args(a, b, c, d, e, f):</span>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="kw">def</span> too_many_args(a, b, c, d, e, f):</span>
 <span id="cb3-2"><a></a><span class="kw">def</span> another_function(x, y):</span>
-<span id="cb3-3"><a></a><span class="kw">def</span> a_third_function(p, q, r, s, t, u, v):</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-3"><a></a><span class="kw">def</span> a_third_function(p, q, r, s, t, u, v):</span></code></pre></div>
 <div class="fragment" style="margin-top: 0.45em;">
 <p><strong>Find functions with more than 5 arguments</strong></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a></a><span class="ex">pyastgrep</span> <span class="st">'//FunctionDef[count(args/args) &gt; 5]'</span> example.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines"><code class="sourceCode bash"><span id="cb4-1"><a></a><span class="ex">pyastgrep</span> <span class="st">'//FunctionDef[count(args/args) &gt; 5]'</span> example.py</span></code></pre></div>
 </div>
 <div class="fragment" style="margin-top: 0.45em;">
 <p><strong>Results from running the query with <code>pyastgrep</code></strong></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>example.py:<span class="dv">1</span>:<span class="dv">1</span>:<span class="kw">def</span> too_many_args(a, b, c, d, e, f):</span>
-<span id="cb5-2"><a></a>example.py:<span class="dv">7</span>:<span class="dv">1</span>:<span class="kw">def</span> a_third_function(p, q, r, s, t, u, v):</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb5-1"><a></a>example.py:<span class="dv">1</span>:<span class="dv">1</span>:<span class="kw">def</span> too_many_args(a, b, c, d, e, f):</span>
+<span id="cb5-2"><a></a>example.py:<span class="dv">7</span>:<span class="dv">1</span>:<span class="kw">def</span> a_third_function(p, q, r, s, t, u, v):</span></code></pre></div>
 </div>
 <div class="footer">
 
@@ -401,54 +403,73 @@ Gregory M. Kapfhammer
 <ul>
 <li>Built using <code>pyastgrep</code>’s API</li>
 <li>Runs checks from a YAML file</li>
-<li>Saves results (JSON, CSV, DB)</li>
+<li>Saves results in JSON, CSV, DB</li>
 <li>View results with <code>datasette</code></li>
 </ul>
 </div></div>
-<div class="fragment fade" style="margin-top: 0.2em; font-size: 0.9em;">
-<p><iconify-icon role="img" inline="" icon="fa6-solid:lightbulb" aria-label="Icon lightbulb from fa6-solid Iconify.design set." title="Icon lightbulb from fa6-solid Iconify.design set."></iconify-icon> <strong>Key Idea</strong>: <code>chasten</code> uses <code>pyastgrep</code>’s powerful search to build a configurable, project-oriented linter.</p>
+<div class="fragment fade boxed-content" style="margin-top: 0.2em; font-size: 0.85em;">
+<p><iconify-icon role="img" inline="" icon="fa6-solid:lightbulb" aria-label="Icon lightbulb from fa6-solid Iconify.design set." title="Icon lightbulb from fa6-solid Iconify.design set."></iconify-icon> <strong>Key Idea</strong>: <code>chasten</code> uses <code>pyastgrep</code>’s powerful search to build a configurable, project-oriented linter. Developers, researchers, students, and instructors can “<code>chasten</code>” Python projects and save the results!</p>
 </div>
 </section>
 <section id="use-dhv-to-explore-a-python-ast" class="slide level2">
-<h2>Use <code>dhv</code> to explore a Python AST</h2>
+<h2>Use <code>dhv</code> to explore a Python AST!</h2>
 <div class="fragment" style="margin-left: 2.2em;">
-<p><img data-src="dhv.png" style="width:90.0%"></p>
+<p><a href="dhv.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img data-src="dhv.png" style="width:95.0%"></a></p>
 </div>
 <div class="footer">
 
 </div>
 </section>
-<section id="exploring-some-options" class="slide level2">
-<h2>Exploring some options</h2>
+<section id="quick-recap-of-referenced-projects" class="slide level2">
+<h2>Quick recap of referenced projects</h2>
+<div class="fragment fade-down">
+<div title="Click these links to preview documentation for referenced tools!">
+<div class="callout callout-note no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Click these links to preview documentation for referenced tools!</strong></p>
+</div>
+<div class="callout-content">
 <ul>
-<li><a href="https://docs.python.org/3/library/ast.html" class="preview-link">Python <code>ast</code> module</a> - The official documentation for Python’s Abstract Syntax Tree module.</li>
-<li><a href="https://pylint.org/" class="preview-link">Pylint</a> - A popular static code analyzer for Python.</li>
-<li><a href="https://flake8.pycqa.org/en/latest/" class="preview-link">Flake8</a> - A wrapper around PyFlakes, pycodestyle, and McCabe.</li>
-<li><a href="https://docs.astral.sh/ruff/" class="preview-link">Ruff</a> - An extremely fast Python linter and code formatter, written in Rust.</li>
-<li><a href="https://tree-sitter.github.io/tree-sitter/" class="preview-link">Tree-sitter</a> - A parser generator tool and incremental parsing library.</li>
-<li><a href="https://ast-grep.github.io/" class="preview-link">ast-grep</a> - A CLI tool for searching and rewriting code with ASTs.</li>
-<li><a href="https://github.com/AstuteSource/pyastgrep" class="preview-link"><code>pyastgrep</code></a> - A tool for searching Python code with XPath expressions.</li>
-<li><a href="https://github.com/AstuteSource/chasten" class="preview-link"><code>chasten</code></a> - A configurable program analysis and linting tool built on <code>pyastgrep</code>.</li>
-<li><a href="https://datasette.io/" class="preview-link"><code>datasette</code></a> - A tool for exploring and publishing data.</li>
+<li><a href="https://docs.python.org/3/library/ast.html" class="preview-link">Python <code>ast</code> module</a>: Python’s abstract syntax tree module</li>
+<li><a href="https://pylint.org/" class="preview-link">Pylint</a>: A popular static code analyzer for Python</li>
+<li><a href="https://flake8.pycqa.org/en/latest/" class="preview-link">Flake8</a>: An extensible wrapper around PyFlakes, pycodestyle, and McCabe</li>
+<li><a href="https://docs.astral.sh/ruff/" class="preview-link">Ruff</a> - An extremely fast Python linter and code formatter, written in Rust</li>
+<li><a href="https://tree-sitter.github.io/tree-sitter/" class="preview-link">Tree-sitter</a>: A parser generator tool and incremental parsing library</li>
+<li><a href="https://ast-grep.github.io/" class="preview-link">Ast-grep</a>: A CLI tool for searching and rewriting code with ASTs</li>
+<li><a href="https://pyastgrep.readthedocs.io/en/latest/" class="preview-link">Pyastgrep</a>: A tool for searching Python code with XPath expressions</li>
+<li><a href="https://dhv.davep.dev/" class="preview-link">Dhv</a>: A comprehensive TUI for Python code exploration built with Textual</li>
+<li><a href="https://datasette.io/" class="preview-link">Datasette</a>: A SQL-based tool for exploring and publishing data to the web</li>
 </ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment fade" style="margin-top: 0.75em; font-size: 0.9em;">
+<p><iconify-icon role="img" inline="" icon="fa6-solid:rocket" aria-label="Icon rocket from fa6-solid Iconify.design set." title="Icon rocket from fa6-solid Iconify.design set."></iconify-icon> <strong>Next Steps</strong>: Use case for Python project analysis with <code>chasten</code></p>
+</div>
+<div class="footer">
+
+</div>
 </section>
 <section id="avoid-time-complexity-of-on²" class="slide level2">
-<h2>Avoid Time Complexity of <span class="math inline">\(O(n²)\)</span></h2>
+<h2>Avoid time complexity of <span class="math inline">\(O(n²)\)</span></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="co"># O(n) is acceptable</span></span>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="co"># O(n) is acceptable</span></span>
 <span id="cb6-2"><a></a>seen <span class="op">=</span> <span class="bu">set</span>()</span>
 <span id="cb6-3"><a></a><span class="cf">for</span> item <span class="kw">in</span> items:</span>
 <span id="cb6-4"><a></a>    <span class="cf">if</span> item <span class="kw">in</span> seen:</span>
 <span id="cb6-5"><a></a>        <span class="cf">return</span> <span class="va">True</span></span>
-<span id="cb6-6"><a></a>    seen.add(item)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-6"><a></a>    seen.add(item)</span></code></pre></div>
 </div><div class="column" style="width:50%;">
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="co"># O(n²) is not okay</span></span>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="co"># O(n²) is not okay</span></span>
 <span id="cb7-2"><a></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(items)):</span>
 <span id="cb7-3"><a></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(items)):</span>
 <span id="cb7-4"><a></a>        <span class="cf">if</span> i <span class="op">!=</span> j </span>
 <span id="cb7-5"><a></a>         <span class="kw">and</span> items[i] <span class="op">==</span> items[j]:</span>
-<span id="cb7-6"><a></a>            <span class="cf">return</span> <span class="va">True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-6"><a></a>            <span class="cf">return</span> <span class="va">True</span></span></code></pre></div>
 </div></div>
 <div class="fade" style="font-size: 0.9em; margin-top: 0.25em;">
 <ul>
@@ -459,7 +480,7 @@ Gregory M. Kapfhammer
 </div>
 </section>
 <section id="chasten-to-the-rescue" class="slide level2">
-<h2>Chasten to the Rescue!</h2>
+<h2>Chasten to the rescue!</h2>
 <div style="font-size: 0.9em; margin-top: -0.25em;">
 <ul>
 <li class="fragment"><p><iconify-icon role="img" inline="" icon="fa6-solid:gear" aria-label="Icon gear from fa6-solid Iconify.design set." title="Icon gear from fa6-solid Iconify.design set."></iconify-icon> Uses XPath to search Python’s AST</p></li>
@@ -472,29 +493,29 @@ Gregory M. Kapfhammer
 <p><iconify-icon role="img" inline="" icon="fa6-solid:lightbulb" aria-label="Icon lightbulb from fa6-solid Iconify.design set." title="Icon lightbulb from fa6-solid Iconify.design set."></iconify-icon> <strong>Result</strong>: Instructors define checks once and use Chasten to easily apply them at scale across all student submissions</p>
 </div>
 <div class="fragment">
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a></a><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">"nested-loops"</span></span>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource yaml number-lines"><code class="sourceCode yaml"><span id="cb8-1"><a></a><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">"nested-loops"</span></span>
 <span id="cb8-2"><a></a><span class="at">  </span><span class="fu">code</span><span class="kw">:</span><span class="at"> </span><span class="st">"PERF001"</span></span>
 <span id="cb8-3"><a></a><span class="at">  </span><span class="fu">pattern</span><span class="kw">:</span><span class="at"> </span><span class="st">"//For[descendant::For]"</span></span>
-<span id="cb8-4"><a></a><span class="at">  </span><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">"Detects doubly nested for-loops (e.g., O(n²))"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-4"><a></a><span class="at">  </span><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">"Detects doubly nested for-loops (e.g., O(n²))"</span></span></code></pre></div>
 </div>
 </section>
 <section id="lets-run-chasten" class="slide level2">
-<h2>Let’s Run Chasten!</h2>
+<h2>Let’s run <code>chasten</code>!</h2>
 <div class="fragment fade" style="font-size: 0.8em;">
 <h3 id="install-the-tool">Install the Tool</h3>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a></a><span class="ex">pipx</span> install chasten  <span class="co"># Install Chasten in venv</span></span>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource bash number-lines"><code class="sourceCode bash"><span id="cb9-1"><a></a><span class="ex">pipx</span> install chasten  <span class="co"># Install Chasten in venv</span></span>
 <span id="cb9-2"><a></a><span class="ex">pipx</span> list             <span class="co"># Confirm installation</span></span>
-<span id="cb9-3"><a></a><span class="ex">chasten</span> <span class="at">--help</span>        <span class="co"># View available commands</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-3"><a></a><span class="ex">chasten</span> <span class="at">--help</span>        <span class="co"># View available commands</span></span></code></pre></div>
 </div>
 <div class="fragment fade" style="font-size: 0.8em; margin-top: 0.5em;">
 <h3 id="run-chasten">Run Chasten</h3>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a></a><span class="ex">chasten</span> analyze time-complexity-lab <span class="dt">\</span></span>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource bash number-lines"><code class="sourceCode bash"><span id="cb10-1"><a></a><span class="ex">chasten</span> analyze time-complexity-lab <span class="dt">\</span></span>
 <span id="cb10-2"><a></a>        <span class="at">--config</span> chasten-configuration <span class="dt">\</span></span>
 <span id="cb10-3"><a></a>        <span class="at">--search-path</span> time-complexity-lab <span class="dt">\</span></span>
 <span id="cb10-4"><a></a>        <span class="at">--save-directory</span> time-complexity-results <span class="dt">\</span></span>
-<span id="cb10-5"><a></a>        <span class="at">--save</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-5"><a></a>        <span class="at">--save</span></span></code></pre></div>
 </div>
-<div class="fragment fade" style="font-size: 0.9em; margin-top: 0.15em; margin-bottom: 0.45em;">
+<div class="fragment fade-down" style="font-size: 0.9em; margin-top: 0.15em; margin-bottom: 0.45em;">
 <ul>
 <li>Save results to a <strong>JSON file</strong> and produce <strong>console output</strong></li>
 <li>Configure the <strong>return code</strong> for different <strong>detection goals</strong></li>
@@ -502,9 +523,9 @@ Gregory M. Kapfhammer
 </div>
 </section>
 <section id="results-from-running-chasten" class="slide level2">
-<h2>Results from Running Chasten</h2>
+<h2>Results from running <code>chasten</code></h2>
 <div class="fragment fade" style="font-size: 1em;">
-<h3 id="nested-loop-analysis">Nested Loop Analysis</h3>
+<h3 id="nested-loop-analysis">Nested loop analysis</h3>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -549,16 +570,105 @@ Gregory M. Kapfhammer
 <p><iconify-icon role="img" inline="" icon="mdi:counter" aria-label="Icon counter from mdi Iconify.design set." title="Icon counter from mdi Iconify.design set."></iconify-icon> <strong>Matches</strong> → Number of times the pattern was detected in that file (e.g., <code>1</code> match)</p>
 </div>
 </section>
-<section id="limitations-and-future-directions" class="slide level2">
-<h2>Limitations and Future Directions</h2>
+<section id="exploring-a-bespoke-solution" class="slide level2">
+<h2>Exploring a bespoke solution</h2>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb11-1"><a></a><span class="im">import</span> ast</span>
+<span id="cb11-2"><a></a><span class="im">import</span> json</span>
+<span id="cb11-3"><a></a><span class="im">import</span> os</span>
+<span id="cb11-4"><a></a><span class="im">import</span> sys</span>
+<span id="cb11-5"><a></a></span>
+<span id="cb11-6"><a></a><span class="kw">class</span> ForVisitor(ast.NodeVisitor):</span>
+<span id="cb11-7"><a></a>    <span class="co">"""</span></span>
+<span id="cb11-8"><a></a><span class="co">    An AST visitor that detects doubly-nested for loops.</span></span>
+<span id="cb11-9"><a></a><span class="co">    """</span></span>
+<span id="cb11-10"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, filepath):</span>
+<span id="cb11-11"><a></a>        <span class="va">self</span>.filepath <span class="op">=</span> filepath</span>
+<span id="cb11-12"><a></a>        <span class="va">self</span>.nested_for_loops <span class="op">=</span> []</span>
+<span id="cb11-13"><a></a>        <span class="va">self</span>._for_depth <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb11-14"><a></a></span>
+<span id="cb11-15"><a></a>    <span class="kw">def</span> visit_For(<span class="va">self</span>, node):</span>
+<span id="cb11-16"><a></a>        <span class="co">"""</span></span>
+<span id="cb11-17"><a></a><span class="co">        Visit a for-loop node in the AST.</span></span>
+<span id="cb11-18"><a></a><span class="co">        """</span></span>
+<span id="cb11-19"><a></a>        <span class="va">self</span>._for_depth <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb11-20"><a></a>        <span class="cf">if</span> <span class="va">self</span>._for_depth <span class="op">&gt;</span> <span class="dv">1</span>:</span>
+<span id="cb11-21"><a></a>            <span class="va">self</span>.nested_for_loops.append({</span>
+<span id="cb11-22"><a></a>                <span class="st">"file"</span>: <span class="va">self</span>.filepath,</span>
+<span id="cb11-23"><a></a>                <span class="st">"line"</span>: node.lineno,</span>
+<span id="cb11-24"><a></a>                <span class="st">"col"</span>: node.col_offset</span>
+<span id="cb11-25"><a></a>            })</span>
+<span id="cb11-26"><a></a>        <span class="va">self</span>.generic_visit(node)</span>
+<span id="cb11-27"><a></a>        <span class="va">self</span>._for_depth <span class="op">-=</span> <span class="dv">1</span></span>
+<span id="cb11-28"><a></a></span>
+<span id="cb11-29"><a></a><span class="kw">def</span> analyze_directory(directory):</span>
+<span id="cb11-30"><a></a>    <span class="co">"""</span></span>
+<span id="cb11-31"><a></a><span class="co">    Analyze all Python files in a directory for doubly-nested for loops.</span></span>
+<span id="cb11-32"><a></a><span class="co">    """</span></span>
+<span id="cb11-33"><a></a>    all_nested_loops <span class="op">=</span> []</span>
+<span id="cb11-34"><a></a>    <span class="cf">for</span> root, _, files <span class="kw">in</span> os.walk(directory):</span>
+<span id="cb11-35"><a></a>        <span class="cf">for</span> <span class="bu">file</span> <span class="kw">in</span> files:</span>
+<span id="cb11-36"><a></a>            <span class="cf">if</span> <span class="bu">file</span>.endswith(<span class="st">".py"</span>):</span>
+<span id="cb11-37"><a></a>                filepath <span class="op">=</span> os.path.join(root, <span class="bu">file</span>)</span>
+<span id="cb11-38"><a></a>                <span class="cf">with</span> <span class="bu">open</span>(filepath, <span class="st">"r"</span>, encoding<span class="op">=</span><span class="st">"utf-8"</span>) <span class="im">as</span> source_file:</span>
+<span id="cb11-39"><a></a>                    <span class="cf">try</span>:</span>
+<span id="cb11-40"><a></a>                        tree <span class="op">=</span> ast.parse(source_file.read(), filename<span class="op">=</span>filepath)</span>
+<span id="cb11-41"><a></a>                        visitor <span class="op">=</span> ForVisitor(filepath)</span>
+<span id="cb11-42"><a></a>                        visitor.visit(tree)</span>
+<span id="cb11-43"><a></a>                        all_nested_loops.extend(visitor.nested_for_loops)</span>
+<span id="cb11-44"><a></a>                    <span class="cf">except</span> <span class="pp">SyntaxError</span> <span class="im">as</span> e:</span>
+<span id="cb11-45"><a></a>                        <span class="bu">print</span>(<span class="ss">f"Could not parse </span><span class="sc">{</span>filepath<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb11-46"><a></a>    <span class="cf">return</span> all_nested_loops</span>
+<span id="cb11-47"><a></a></span>
+<span id="cb11-48"><a></a><span class="kw">def</span> main():</span>
+<span id="cb11-49"><a></a>    <span class="co">"""</span></span>
+<span id="cb11-50"><a></a><span class="co">    Main function to run the analysis and save the results.</span></span>
+<span id="cb11-51"><a></a><span class="co">    """</span></span>
+<span id="cb11-52"><a></a>    <span class="cf">if</span> <span class="bu">len</span>(sys.argv) <span class="op">!=</span> <span class="dv">2</span>:</span>
+<span id="cb11-53"><a></a>        <span class="bu">print</span>(<span class="st">"Usage: python double_loops_detect.py &lt;directory&gt;"</span>)</span>
+<span id="cb11-54"><a></a>        sys.exit(<span class="dv">1</span>)</span>
+<span id="cb11-55"><a></a></span>
+<span id="cb11-56"><a></a>    script_dir <span class="op">=</span> os.path.dirname(os.path.abspath(<span class="va">__file__</span>))</span>
+<span id="cb11-57"><a></a>    target_directory <span class="op">=</span> os.path.join(script_dir, <span class="st">'..'</span>, sys.argv[<span class="dv">1</span>])</span>
+<span id="cb11-58"><a></a>    <span class="cf">if</span> <span class="kw">not</span> os.path.isdir(target_directory):</span>
+<span id="cb11-59"><a></a>        <span class="bu">print</span>(<span class="ss">f"Error: '</span><span class="sc">{</span>target_directory<span class="sc">}</span><span class="ss">' is not a valid directory."</span>)</span>
+<span id="cb11-60"><a></a>        sys.exit(<span class="dv">1</span>)</span>
+<span id="cb11-61"><a></a></span>
+<span id="cb11-62"><a></a>    results <span class="op">=</span> analyze_directory(target_directory)</span>
+<span id="cb11-63"><a></a></span>
+<span id="cb11-64"><a></a>    output_filename <span class="op">=</span> <span class="st">"nested_loops.json"</span></span>
+<span id="cb11-65"><a></a>    <span class="cf">with</span> <span class="bu">open</span>(output_filename, <span class="st">"w"</span>, encoding<span class="op">=</span><span class="st">"utf-8"</span>) <span class="im">as</span> f:</span>
+<span id="cb11-66"><a></a>        json.dump(results, f, indent<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb11-67"><a></a></span>
+<span id="cb11-68"><a></a>    <span class="bu">print</span>(<span class="ss">f"Analysis complete. Found </span><span class="sc">{</span><span class="bu">len</span>(results)<span class="sc">}</span><span class="ss"> doubly-nested for-loops."</span>)</span>
+<span id="cb11-69"><a></a>    <span class="bu">print</span>(<span class="ss">f"Results saved to </span><span class="sc">{</span>output_filename<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb11-70"><a></a></span>
+<span id="cb11-71"><a></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb11-72"><a></a>    main()</span></code></pre></div>
+</section>
+<section id="what-role-should-generative-ai-play-in-program-analysis-and-chasten" class="slide level2">
+<h2>What role should generative AI play in program analysis and <code>chasten</code>?</h2>
+<div class="fragment">
 <ul>
-<li class="fragment"><strong>Limitations of the Chasten Tool</strong>
+<li><p>The prior program was automatically generated by Gemini 2.5 Pro with <code>gemini-cli</code>. And, it works! Impressive!</p></li>
+<li><p>Similar programs can also be generated by GPT4.1 or Claude Sonnet 4 with <code>open-code</code>. Again, very impressive!</p>
+<ul>
+<li><iconify-icon role="img" inline="" icon="fa6-solid:gears" aria-label="Icon gears from fa6-solid Iconify.design set." title="Icon gears from fa6-solid Iconify.design set."></iconify-icon> <code>npx https://github.com/google-gemini/gemini-cli</code></li>
+<li><iconify-icon role="img" inline="" icon="fa6-solid:gears" aria-label="Icon gears from fa6-solid Iconify.design set." title="Icon gears from fa6-solid Iconify.design set."></iconify-icon> <code>npx opencode-ai@latest</code></li>
+</ul></li>
+<li><p>Or, use these tools to generate <code>chasten</code> configurations!</p></li>
+</ul>
+</div>
+</section>
+<section id="limitations-and-future-directions" class="slide level2">
+<h2>Limitations and future directions</h2>
+<ul>
+<li class="fragment"><strong>Limitations of the current version of <code>chasten</code></strong>
 <ul>
 <li class="fragment"><iconify-icon role="img" inline="" icon="mdi:alert-circle-outline" aria-label="Icon alert-circle-outline from mdi Iconify.design set." title="Icon alert-circle-outline from mdi Iconify.design set."></iconify-icon> Doesn’t handle style, formatting, or type inference</li>
 <li class="fragment"><iconify-icon role="img" inline="" icon="mdi:timer-sand" aria-label="Icon timer-sand from mdi Iconify.design set." title="Icon timer-sand from mdi Iconify.design set."></iconify-icon> Not optimized for fast use in continuous integration</li>
-<li class="fragment"><iconify-icon role="img" inline="" icon="mdi:code-not-equal-variant" aria-label="Icon code-not-equal-variant from mdi Iconify.design set." title="Icon code-not-equal-variant from mdi Iconify.design set."></iconify-icon> Pattern matches through use of XPath on Python’s AST</li>
+<li class="fragment"><iconify-icon role="img" inline="" icon="mdi:code-not-equal-variant" aria-label="Icon code-not-equal-variant from mdi Iconify.design set." title="Icon code-not-equal-variant from mdi Iconify.design set."></iconify-icon> Pattern matches through XPath on Python’s AST</li>
 </ul></li>
-<li class="fragment"><strong>Empirical Study of Chasten</strong>
+<li class="fragment"><strong>Empirical study of <code>chasten</code>’s effectiveness and influence</strong>
 <ul>
 <li class="fragment"><iconify-icon role="img" inline="" icon="fa6-solid:scale-unbalanced-flip" aria-label="Icon scale-unbalanced-flip from fa6-solid Iconify.design set." title="Icon scale-unbalanced-flip from fa6-solid Iconify.design set."></iconify-icon> Frequency of false positives or false negatives?</li>
 <li class="fragment"><iconify-icon role="img" inline="" icon="game-icons:team-idea" aria-label="Icon team-idea from game-icons Iconify.design set." title="Icon team-idea from game-icons Iconify.design set."></iconify-icon> How do students respond to the tool’s feedback?</li>
@@ -567,14 +677,15 @@ Gregory M. Kapfhammer
 </ul>
 </section>
 <section id="key-takeaways" class="slide level2">
-<h2>Key Takeaways</h2>
+<h2>Key takeaways</h2>
 <ul>
+<li class="fragment"><p><iconify-icon role="img" inline="" icon="fa6-solid:lightbulb" aria-label="Icon lightbulb from fa6-solid Iconify.design set." title="Icon lightbulb from fa6-solid Iconify.design set."></iconify-icon> Help developers, researchers, students, and educators</p></li>
 <li class="fragment"><p><iconify-icon role="img" inline="" icon="mdi:pen" aria-label="Icon pen from mdi Iconify.design set." title="Icon pen from mdi Iconify.design set."></iconify-icon> Write declarative rules for AST-based code checks</p></li>
 <li class="fragment"><p><iconify-icon role="img" inline="" icon="mdi:email-check-outline" aria-label="Icon email-check-outline from mdi Iconify.design set." title="Icon email-check-outline from mdi Iconify.design set."></iconify-icon> Focus on bespoke code structure patterns in Python</p></li>
 <li class="fragment"><p><iconify-icon role="img" inline="" icon="mdi:school-outline" aria-label="Icon school-outline from mdi Iconify.design set." title="Icon school-outline from mdi Iconify.design set."></iconify-icon> Automated grading aligned with learning outcomes</p></li>
-<li class="fragment"><p><iconify-icon role="img" inline="" icon="mdi:chart-bar-stacked" aria-label="Icon chart-bar-stacked from mdi Iconify.design set." title="Icon chart-bar-stacked from mdi Iconify.design set."></iconify-icon> Generate data-rich insights into student code patterns</p></li>
+<li class="fragment"><p><iconify-icon role="img" inline="" icon="mdi:chart-bar-stacked" aria-label="Icon chart-bar-stacked from mdi Iconify.design set." title="Icon chart-bar-stacked from mdi Iconify.design set."></iconify-icon> Generate data-rich insights into your code patterns</p></li>
 </ul>
-<div class="fragment boxed-content" style="font-size: 0.95em;">
+<div class="fragment boxed-content" style="font-size: 0.9em;">
 <ul>
 <li><strong>Try out Chasten and contribute to its development!</strong>
 <ul>
@@ -582,6 +693,9 @@ Gregory M. Kapfhammer
 <li><iconify-icon role="img" inline="" icon="fa6-solid:code" aria-label="Icon code from fa6-solid Iconify.design set." title="Icon code from fa6-solid Iconify.design set."></iconify-icon> PyPI: <a href="https://pypi.org/project/chasten/">https://pypi.org/project/chasten/</a></li>
 </ul></li>
 </ul>
+</div>
+<div class="footer">
+
 </div>
 
 
@@ -807,67 +921,6 @@ Gregory M. Kapfhammer
         tabsets.forEach(function(tabset) {
           const tabby = new Tabby('#' + tabset.id);
         });
-        const isCodeAnnotation = (el) => {
-          for (const clz of el.classList) {
-            if (clz.startsWith('code-annotation-')) {                     
-              return true;
-            }
-          }
-          return false;
-        }
-        const onCopySuccess = function(e) {
-          // button target
-          const button = e.trigger;
-          // don't keep focus
-          button.blur();
-          // flash "checked"
-          button.classList.add('code-copy-button-checked');
-          var currentTitle = button.getAttribute("title");
-          button.setAttribute("title", "Copied!");
-          let tooltip;
-          if (window.bootstrap) {
-            button.setAttribute("data-bs-toggle", "tooltip");
-            button.setAttribute("data-bs-placement", "left");
-            button.setAttribute("data-bs-title", "Copied!");
-            tooltip = new bootstrap.Tooltip(button, 
-              { trigger: "manual", 
-                customClass: "code-copy-button-tooltip",
-                offset: [0, -8]});
-            tooltip.show();    
-          }
-          setTimeout(function() {
-            if (tooltip) {
-              tooltip.hide();
-              button.removeAttribute("data-bs-title");
-              button.removeAttribute("data-bs-toggle");
-              button.removeAttribute("data-bs-placement");
-            }
-            button.setAttribute("title", currentTitle);
-            button.classList.remove('code-copy-button-checked');
-          }, 1000);
-          // clear code selection
-          e.clearSelection();
-        }
-        const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
-            }
-            return codeEl.innerText;
-        }
-        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-          text: getTextToCopy
-        });
-        clipboard.on('success', onCopySuccess);
-        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-            text: getTextToCopy,
-            container: window.document.getElementById('quarto-embedded-source-code-modal')
-          });
-          clipboardModal.on('success', onCopySuccess);
-        }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
             var filterRegex = new RegExp("https:\/\/gkapfham\.github\.io\/PyOhio2025-Presentations\/");
@@ -968,6 +1021,38 @@ Gregory M. Kapfhammer
         }
       });
       </script>
+    <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+    (function() {
+      let previousOnload = window.onload;
+      window.onload = () => {
+        if (previousOnload) {
+          previousOnload();
+        }
+        lightboxQuarto.on('slide_before_load', (data) => {
+          const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+          const href = trigger.getAttribute('href');
+          if (href !== null) {
+            const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+            if (imgEl !== null) {
+              const srcAttr = imgEl.getAttribute("src");
+              if (srcAttr && srcAttr.startsWith("data:")) {
+                slideConfig.href = srcAttr;
+              }
+            }
+          } 
+        });
+      
+        lightboxQuarto.on('slide_after_load', (data) => {
+          const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(slideNode);
+          }
+        });
+      
+      };
+      
+    })();
+              </script>
     
 
 </body></html>

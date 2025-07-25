@@ -67,7 +67,7 @@
     "href": "slides/chasten/index.html#what-is-chasten-why-did-we-build-it",
     "title": "Chasten Your Python Program: Configurable Program Analysis and Linting with XPath",
     "section": "What is chasten? Why did we build it?",
-    "text": "What is chasten? Why did we build it?\n\n\n\nConfigurable program analysis and linting with XPath expressions\n\nAvoid a unique performance anti-pattern?\nConfirm the use of a new coding style?\nNervous about writing custom AST visitors?\nNeed configuration and data storage?"
+    "text": "What is chasten? Why did we build it?\n\n\n\nConfigurable program analysis and linting with XPath expressions\n\nAvoid a unique performance anti-pattern?\nConfirm the use of a new coding style?\nNervous about writing custom AST visitors?\nNeed configuration and data storage of results?"
   },
   {
     "objectID": "slides/chasten/index.html#chasten-helps-you-automatically-detect-patterns-in-python-programs",
@@ -109,63 +109,77 @@
     "href": "slides/chasten/index.html#make-the-connection-by-comparing-the-pyastgrep-and-chasten-tools",
     "title": "Chasten Your Python Program: Configurable Program Analysis and Linting with XPath",
     "section": "Make the connection by comparing the pyastgrep and chasten tools",
-    "text": "Make the connection by comparing the pyastgrep and chasten tools\n\n\n pyastgrep\n\nInteractive AST search tool\nAd-hoc queries from the CLI\nUses raw XPath expressions\ngrep-like console output\n\n\n chasten\n\nBuilt using pyastgrep’s API\nRuns checks from a YAML file\nSaves results (JSON, CSV, DB)\nView results with datasette\n\n\n\n Key Idea: chasten uses pyastgrep’s powerful search to build a configurable, project-oriented linter."
+    "text": "Make the connection by comparing the pyastgrep and chasten tools\n\n\n pyastgrep\n\nInteractive AST search tool\nAd-hoc queries from the CLI\nUses raw XPath expressions\ngrep-like console output\n\n\n chasten\n\nBuilt using pyastgrep’s API\nRuns checks from a YAML file\nSaves results in JSON, CSV, DB\nView results with datasette\n\n\n\n Key Idea: chasten uses pyastgrep’s powerful search to build a configurable, project-oriented linter. Developers, researchers, students, and instructors can “chasten” Python projects and save the results!"
   },
   {
     "objectID": "slides/chasten/index.html#use-dhv-to-explore-a-python-ast",
     "href": "slides/chasten/index.html#use-dhv-to-explore-a-python-ast",
     "title": "Chasten Your Python Program: Configurable Program Analysis and Linting with XPath",
-    "section": "Use dhv to explore a Python AST",
-    "text": "Use dhv to explore a Python AST"
+    "section": "Use dhv to explore a Python AST!",
+    "text": "Use dhv to explore a Python AST!"
   },
   {
-    "objectID": "slides/chasten/index.html#exploring-some-options",
-    "href": "slides/chasten/index.html#exploring-some-options",
+    "objectID": "slides/chasten/index.html#quick-recap-of-referenced-projects",
+    "href": "slides/chasten/index.html#quick-recap-of-referenced-projects",
     "title": "Chasten Your Python Program: Configurable Program Analysis and Linting with XPath",
-    "section": "Exploring some options",
-    "text": "Exploring some options\n\nPython ast module - The official documentation for Python’s Abstract Syntax Tree module.\nPylint - A popular static code analyzer for Python.\nFlake8 - A wrapper around PyFlakes, pycodestyle, and McCabe.\nRuff - An extremely fast Python linter and code formatter, written in Rust.\nTree-sitter - A parser generator tool and incremental parsing library.\nast-grep - A CLI tool for searching and rewriting code with ASTs.\npyastgrep - A tool for searching Python code with XPath expressions.\nchasten - A configurable program analysis and linting tool built on pyastgrep.\ndatasette - A tool for exploring and publishing data."
+    "section": "Quick recap of referenced projects",
+    "text": "Quick recap of referenced projects\n\n\n\n\n\nClick these links to preview documentation for referenced tools!\n\n\n\nPython ast module: Python’s abstract syntax tree module\nPylint: A popular static code analyzer for Python\nFlake8: An extensible wrapper around PyFlakes, pycodestyle, and McCabe\nRuff - An extremely fast Python linter and code formatter, written in Rust\nTree-sitter: A parser generator tool and incremental parsing library\nAst-grep: A CLI tool for searching and rewriting code with ASTs\nPyastgrep: A tool for searching Python code with XPath expressions\nDhv: A comprehensive TUI for Python code exploration built with Textual\nDatasette: A SQL-based tool for exploring and publishing data to the web\n\n\n\n\n\n\n\n Next Steps: Use case for Python project analysis with chasten"
   },
   {
     "objectID": "slides/chasten/index.html#avoid-time-complexity-of-on²",
     "href": "slides/chasten/index.html#avoid-time-complexity-of-on²",
     "title": "Chasten Your Python Program: Configurable Program Analysis and Linting with XPath",
-    "section": "Avoid Time Complexity of \\(O(n²)\\)",
-    "text": "Avoid Time Complexity of \\(O(n²)\\)\n\n\n# O(n) is acceptable\nseen = set()\nfor item in items:\n    if item in seen:\n        return True\n    seen.add(item)\n\n# O(n²) is not okay\nfor i in range(len(items)):\n    for j in range(len(items)):\n        if i != j \n         and items[i] == items[j]:\n            return True\n\n\n\n Goal: Automatically scan the source code that students submit to confirm that there are no inefficient looping constructs\n Challenge: Linters like Ruff and Pylint don’t have rules to detect nested control structures that either are or are not acceptable\n Build: An extensible tool allowing instructors to scan for arbitrary code patterns without detailed AST knowledge"
+    "section": "Avoid time complexity of \\(O(n²)\\)",
+    "text": "Avoid time complexity of \\(O(n²)\\)\n\n\n# O(n) is acceptable\nseen = set()\nfor item in items:\n    if item in seen:\n        return True\n    seen.add(item)\n\n# O(n²) is not okay\nfor i in range(len(items)):\n    for j in range(len(items)):\n        if i != j \n         and items[i] == items[j]:\n            return True\n\n\n\n Goal: Automatically scan the source code that students submit to confirm that there are no inefficient looping constructs\n Challenge: Linters like Ruff and Pylint don’t have rules to detect nested control structures that either are or are not acceptable\n Build: An extensible tool allowing instructors to scan for arbitrary code patterns without detailed AST knowledge"
   },
   {
     "objectID": "slides/chasten/index.html#chasten-to-the-rescue",
     "href": "slides/chasten/index.html#chasten-to-the-rescue",
     "title": "Chasten Your Python Program: Configurable Program Analysis and Linting with XPath",
-    "section": "Chasten to the Rescue!",
-    "text": "Chasten to the Rescue!\n\n\n Uses XPath to search Python’s AST\n Rules written in simple YAML\n Structure-first, not just style\n Outputs to JSON, CSV, or SQLite\n\n\n\n Result: Instructors define checks once and use Chasten to easily apply them at scale across all student submissions\n\n\n- name: \"nested-loops\"\n  code: \"PERF001\"\n  pattern: \"//For[descendant::For]\"\n  description: \"Detects doubly nested for-loops (e.g., O(n²))\""
+    "section": "Chasten to the rescue!",
+    "text": "Chasten to the rescue!\n\n\n Uses XPath to search Python’s AST\n Rules written in simple YAML\n Structure-first, not just style\n Outputs to JSON, CSV, or SQLite\n\n\n\n Result: Instructors define checks once and use Chasten to easily apply them at scale across all student submissions\n\n\n- name: \"nested-loops\"\n  code: \"PERF001\"\n  pattern: \"//For[descendant::For]\"\n  description: \"Detects doubly nested for-loops (e.g., O(n²))\""
   },
   {
     "objectID": "slides/chasten/index.html#lets-run-chasten",
     "href": "slides/chasten/index.html#lets-run-chasten",
     "title": "Chasten Your Python Program: Configurable Program Analysis and Linting with XPath",
-    "section": "Let’s Run Chasten!",
-    "text": "Let’s Run Chasten!\n\nInstall the Tool\npipx install chasten  # Install Chasten in venv\npipx list             # Confirm installation\nchasten --help        # View available commands\n\n\nRun Chasten\nchasten analyze time-complexity-lab \\\n        --config chasten-configuration \\\n        --search-path time-complexity-lab \\\n        --save-directory time-complexity-results \\\n        --save\n\n\n\nSave results to a JSON file and produce console output\nConfigure the return code for different detection goals"
+    "section": "Let’s run chasten!",
+    "text": "Let’s run chasten!\n\nInstall the Tool\npipx install chasten  # Install Chasten in venv\npipx list             # Confirm installation\nchasten --help        # View available commands\n\n\nRun Chasten\nchasten analyze time-complexity-lab \\\n        --config chasten-configuration \\\n        --search-path time-complexity-lab \\\n        --save-directory time-complexity-results \\\n        --save\n\n\n\nSave results to a JSON file and produce console output\nConfigure the return code for different detection goals"
   },
   {
     "objectID": "slides/chasten/index.html#results-from-running-chasten",
     "href": "slides/chasten/index.html#results-from-running-chasten",
     "title": "Chasten Your Python Program: Configurable Program Analysis and Linting with XPath",
-    "section": "Results from Running Chasten",
-    "text": "Results from Running Chasten\n\nNested Loop Analysis\n\n\n\nCheck ID\nCheck Name\nFile\nMatches\n\n\n\n\nPERF001\nnested-loops\nanalyze.py\n1\n\n\nPERF001\nnested-loops\ndisplay.py\n7\n\n\nPERF001\nnested-loops\nmain.py\n0\n\n\n\n\n\n Check ID → A unique short rule code (e.g., PERF001)\n\n\n Check Name → The rule name that matched (e.g., nested-loops)\n\n\n File → The Python file that the tool scanned (e.g., analyze.py)\n\n\n Matches → Number of times the pattern was detected in that file (e.g., 1 match)"
+    "section": "Results from running chasten",
+    "text": "Results from running chasten\n\nNested loop analysis\n\n\n\nCheck ID\nCheck Name\nFile\nMatches\n\n\n\n\nPERF001\nnested-loops\nanalyze.py\n1\n\n\nPERF001\nnested-loops\ndisplay.py\n7\n\n\nPERF001\nnested-loops\nmain.py\n0\n\n\n\n\n\n Check ID → A unique short rule code (e.g., PERF001)\n\n\n Check Name → The rule name that matched (e.g., nested-loops)\n\n\n File → The Python file that the tool scanned (e.g., analyze.py)\n\n\n Matches → Number of times the pattern was detected in that file (e.g., 1 match)"
+  },
+  {
+    "objectID": "slides/chasten/index.html#exploring-a-bespoke-solution",
+    "href": "slides/chasten/index.html#exploring-a-bespoke-solution",
+    "title": "Chasten Your Python Program: Configurable Program Analysis and Linting with XPath",
+    "section": "Exploring a bespoke solution",
+    "text": "Exploring a bespoke solution\nimport ast\nimport json\nimport os\nimport sys\n\nclass ForVisitor(ast.NodeVisitor):\n    \"\"\"\n    An AST visitor that detects doubly-nested for loops.\n    \"\"\"\n    def __init__(self, filepath):\n        self.filepath = filepath\n        self.nested_for_loops = []\n        self._for_depth = 0\n\n    def visit_For(self, node):\n        \"\"\"\n        Visit a for-loop node in the AST.\n        \"\"\"\n        self._for_depth += 1\n        if self._for_depth &gt; 1:\n            self.nested_for_loops.append({\n                \"file\": self.filepath,\n                \"line\": node.lineno,\n                \"col\": node.col_offset\n            })\n        self.generic_visit(node)\n        self._for_depth -= 1\n\ndef analyze_directory(directory):\n    \"\"\"\n    Analyze all Python files in a directory for doubly-nested for loops.\n    \"\"\"\n    all_nested_loops = []\n    for root, _, files in os.walk(directory):\n        for file in files:\n            if file.endswith(\".py\"):\n                filepath = os.path.join(root, file)\n                with open(filepath, \"r\", encoding=\"utf-8\") as source_file:\n                    try:\n                        tree = ast.parse(source_file.read(), filename=filepath)\n                        visitor = ForVisitor(filepath)\n                        visitor.visit(tree)\n                        all_nested_loops.extend(visitor.nested_for_loops)\n                    except SyntaxError as e:\n                        print(f\"Could not parse {filepath}: {e}\")\n    return all_nested_loops\n\ndef main():\n    \"\"\"\n    Main function to run the analysis and save the results.\n    \"\"\"\n    if len(sys.argv) != 2:\n        print(\"Usage: python double_loops_detect.py &lt;directory&gt;\")\n        sys.exit(1)\n\n    script_dir = os.path.dirname(os.path.abspath(__file__))\n    target_directory = os.path.join(script_dir, '..', sys.argv[1])\n    if not os.path.isdir(target_directory):\n        print(f\"Error: '{target_directory}' is not a valid directory.\")\n        sys.exit(1)\n\n    results = analyze_directory(target_directory)\n\n    output_filename = \"nested_loops.json\"\n    with open(output_filename, \"w\", encoding=\"utf-8\") as f:\n        json.dump(results, f, indent=2)\n\n    print(f\"Analysis complete. Found {len(results)} doubly-nested for-loops.\")\n    print(f\"Results saved to {output_filename}\")\n\nif __name__ == \"__main__\":\n    main()"
+  },
+  {
+    "objectID": "slides/chasten/index.html#what-role-should-generative-ai-play-in-program-analysis-and-chasten",
+    "href": "slides/chasten/index.html#what-role-should-generative-ai-play-in-program-analysis-and-chasten",
+    "title": "Chasten Your Python Program: Configurable Program Analysis and Linting with XPath",
+    "section": "What role should generative AI play in program analysis and chasten?",
+    "text": "What role should generative AI play in program analysis and chasten?\n\n\nThe prior program was automatically generated by Gemini 2.5 Pro with gemini-cli. And, it works! Impressive!\nSimilar programs can also be generated by GPT4.1 or Claude Sonnet 4 with open-code. Again, very impressive!\n\n npx https://github.com/google-gemini/gemini-cli\n npx opencode-ai@latest\n\nOr, use these tools to generate chasten configurations!"
   },
   {
     "objectID": "slides/chasten/index.html#limitations-and-future-directions",
     "href": "slides/chasten/index.html#limitations-and-future-directions",
     "title": "Chasten Your Python Program: Configurable Program Analysis and Linting with XPath",
-    "section": "Limitations and Future Directions",
-    "text": "Limitations and Future Directions\n\nLimitations of the Chasten Tool\n\n Doesn’t handle style, formatting, or type inference\n Not optimized for fast use in continuous integration\n Pattern matches through use of XPath on Python’s AST\n\nEmpirical Study of Chasten\n\n Frequency of false positives or false negatives?\n How do students respond to the tool’s feedback?\n Differences in scores with varied feedback types?"
+    "section": "Limitations and future directions",
+    "text": "Limitations and future directions\n\nLimitations of the current version of chasten\n\n Doesn’t handle style, formatting, or type inference\n Not optimized for fast use in continuous integration\n Pattern matches through XPath on Python’s AST\n\nEmpirical study of chasten’s effectiveness and influence\n\n Frequency of false positives or false negatives?\n How do students respond to the tool’s feedback?\n Differences in scores with varied feedback types?"
   },
   {
     "objectID": "slides/chasten/index.html#key-takeaways",
     "href": "slides/chasten/index.html#key-takeaways",
     "title": "Chasten Your Python Program: Configurable Program Analysis and Linting with XPath",
-    "section": "Key Takeaways",
-    "text": "Key Takeaways\n\n Write declarative rules for AST-based code checks\n Focus on bespoke code structure patterns in Python\n Automated grading aligned with learning outcomes\n Generate data-rich insights into student code patterns\n\n\n\nTry out Chasten and contribute to its development!\n\n GitHub: https://github.com/AstuteSource/chasten\n PyPI: https://pypi.org/project/chasten/"
+    "section": "Key takeaways",
+    "text": "Key takeaways\n\n Help developers, researchers, students, and educators\n Write declarative rules for AST-based code checks\n Focus on bespoke code structure patterns in Python\n Automated grading aligned with learning outcomes\n Generate data-rich insights into your code patterns\n\n\n\nTry out Chasten and contribute to its development!\n\n GitHub: https://github.com/AstuteSource/chasten\n PyPI: https://pypi.org/project/chasten/"
   },
   {
     "objectID": "drafts/chasten.html#pyastgrep-vs.-chasten",
