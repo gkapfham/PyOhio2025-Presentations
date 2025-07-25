@@ -124,7 +124,7 @@ one(s) to pick?
 
 :::
 
-## Building a source code analyzer! What are options and their trade-offs?
+## Building a source code analyzer! What are the options and trade-offs?
 
 ::: {.columns style="margin-top: 1.25em; font-size: 0.8em;"}
 
@@ -161,10 +161,8 @@ one(s) to pick?
 ::: {.fragment .fade style="margin-top: -0.1em; font-size: 0.9em;"}
 
 {{< iconify fa6-solid lightbulb >}} Wow, `pyastgrep` offers a novel way query a program's AST!
+Is XPATH sufficient? Can this tool support all envisioned use cases?
 
-:::
-
-::: footer
 :::
 
 ## Wait, what is an abstract syntax tree?
