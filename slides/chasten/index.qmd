@@ -39,13 +39,13 @@ format:
 
 ::: {.fragment .column .fade style="margin-top: 0.25em;"}
 
-### Developers
+### {{< iconify fa6-solid code >}} Developers
 
 - Project-specific checks
 - Avoid code anti-patterns
 - Facilitate code reviews
 
-### Researchers
+### {{< iconify fa6-solid flask-vial >}} Researchers
 
 - Count code patterns
 - Measure code quality
@@ -55,13 +55,13 @@ format:
 
 ::: {.fragment .column style="margin-top: 0.25em;"}
 
-### Students
+### {{< iconify fa6-solid user-graduate >}} Students
 
 - Explore different code style
 - Avoid performance problems
 - Calculate statistical correlation
 
-### Educators 
+### {{< iconify fa6-solid person-chalkboard >}} Educators 
 
 - Confirm assignment requirements
 - Give early feedback on code style
@@ -98,7 +98,44 @@ checking
 
 :::
 
-## Building a source code analyzer! What are the options and key trade-offs?
+## Building a source code analyzer! What are key options and their trade-offs?
+
+::: {.columns style="margin-top: 1.25em; font-size: 0.8em;"}
+
+::: {.fragment .column .fade style="margin-top: 0.25em;"}
+
+### Regular expressions
+
+- Project-specific checks
+- Avoid code anti-patterns
+- Facilitate code reviews
+
+### Pylint and Flake8
+
+- Count code patterns
+- Measure code quality
+- Calculate statistical correlation
+
+:::
+
+::: {.fragment .column style="margin-top: 0.25em;"}
+
+### {{< iconify fa6-solid user-graduate >}} Students
+
+- Explore different code style
+- Avoid performance problems
+- Calculate statistical correlation
+
+### {{< iconify fa6-solid person-chalkboard >}} Educators 
+
+- Confirm assignment requirements
+- Give early feedback on code style
+- Support use on laptops and CI
+
+:::
+
+:::
+
 
 ## Avoid Time Complexity of $O(n²)$
 
