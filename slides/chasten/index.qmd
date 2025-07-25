@@ -21,16 +21,22 @@ format:
     css: ../../css/styles.css
 ---
 
-## Follow Along!
+## Access resources during the talk!
+
+<!-- This is the command used to create the QR code: -->
 
 <!-- qrencode -t SVG -s 10 -o qrcode.svg 'https://gkapfham.github.io/PyOhio2025-Presentations/slides/chasten/' -->
 
-::: {style="text-align: center"}
-Scan the QR code to follow along.
+::: {style="text-align: center; margin-top: 0em;"}
 
-::: {.fragment .fade-in}
+Scan the QR code to follow along
+
+::: {.fragment .fade-in style="text-align: center; margin-top: -0.5em;"}
+
 ![](qrcode.svg){width=50%}
+
 :::
+
 :::
 
 ## What is `chasten`? Why did we build it?
