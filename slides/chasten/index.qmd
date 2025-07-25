@@ -106,13 +106,13 @@ checking
 
 ### Regular Expressions
 
-- Project-specific checks
-- Avoid code anti-patterns
+- Easy to write and try out
+- Often brittle and confusing
 
 ### Pylint and Flake8
 
-- Count code patterns
-- Measure code quality
+- Extensible with plugins
+- Must have AST knowledge
 
 :::
 
@@ -120,13 +120,13 @@ checking
 
 ### Ruff
 
-- Explore different code style
-- Avoid performance problems
+- Fast and easy to use
+- No extension mechanism
 
 ### Treesitter and Ast-Grep
 
-- Confirm assignment requirements
-- Give early feedback on code style
+- Configurable with patterns
+- Less support for tool building
 
 :::
 
