@@ -620,7 +620,7 @@ if __name__ == "__main__":
 
 - {{< iconify mdi:school-outline >}} Automated grading aligned with learning outcomes
 
-- {{< iconify mdi:chart-bar-stacked >}} Generate data-rich insights into student code patterns
+- {{< iconify mdi:chart-bar-stacked >}} Generate data-rich insights into your code patterns
 
 :::
 
