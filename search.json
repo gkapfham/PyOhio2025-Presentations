@@ -56,53 +56,53 @@
     "text": "Use the navigation menu at the top of the page to move between presentations. Each presentation includes:\n\nDetailed slides with code examples\nImplementation guides\nBest practices and recommendations\nAdditional resources and references"
   },
   {
-    "objectID": "slides/chasten/index.html#follow-along",
-    "href": "slides/chasten/index.html#follow-along",
+    "objectID": "slides/chasten/index.html#access-resources-during-the-talk",
+    "href": "slides/chasten/index.html#access-resources-during-the-talk",
     "title": "Chasten Your Python Program: Configurable Program Analysis and Linting with XPath",
-    "section": "Follow Along!",
-    "text": "Follow Along!\n\n\nScan the QR code to follow along."
+    "section": "Access resources during the talk!",
+    "text": "Access resources during the talk!\n\n\n\nScan the QR code to follow along"
   },
   {
     "objectID": "slides/chasten/index.html#what-is-chasten-why-did-we-build-it",
     "href": "slides/chasten/index.html#what-is-chasten-why-did-we-build-it",
     "title": "Chasten Your Python Program: Configurable Program Analysis and Linting with XPath",
     "section": "What is chasten? Why did we build it?",
-    "text": "What is chasten? Why did we build it?\n\n\n\nConfigurable program analysis and linting with XPath expressions\n\nAvoid a unique performance anti-pattern?\nConfirm the use of a new coding style?\nNervous about writing custom AST visitors?"
+    "text": "What is chasten? Why did we build it?\n\n\n\nConfigurable program analysis and linting with XPath expressions\n\nAvoid a unique performance anti-pattern?\nConfirm the use of a new coding style?\nNervous about writing custom AST visitors?\nNeed configuration and data storage?"
   },
   {
     "objectID": "slides/chasten/index.html#chasten-helps-you-automatically-detect-patterns-in-python-programs",
     "href": "slides/chasten/index.html#chasten-helps-you-automatically-detect-patterns-in-python-programs",
     "title": "Chasten Your Python Program: Configurable Program Analysis and Linting with XPath",
     "section": "Chasten helps you automatically detect patterns in Python programs",
-    "text": "Chasten helps you automatically detect patterns in Python programs\n\n\n Developers\n\nProject-specific checks\nAvoid code anti-patterns\nFacilitate code reviews\n\n Researchers\n\nCount code patterns\nMeasure code quality\nCalculate statistical correlation\n\n\n Students\n\nExplore different code style\nAvoid performance problems\nCalculate statistical correlation\n\n Educators\n\nConfirm assignment requirements\nGive early feedback on code style\nSupport use on laptops and CI"
+    "text": "Chasten helps you automatically detect patterns in Python programs\n\n\n Developers\n\nProject-specific checks\nAvoid code anti-patterns\nFacilitate code reviews\n\n Researchers\n\nCount code patterns\nMeasure code quality\nEasily share results\n\n\n Students\n\nExplore different code style\nAvoid performance problems\nConfirm project criteria\n\n Educators\n\nGive early feedback on code style\nEnforce assignment requirements\nSupport use on laptops and in CI"
   },
   {
     "objectID": "slides/chasten/index.html#example-students-and-educators-using-chasten-for-a-python-project",
     "href": "slides/chasten/index.html#example-students-and-educators-using-chasten-for-a-python-project",
     "title": "Chasten Your Python Program: Configurable Program Analysis and Linting with XPath",
     "section": "Example: students and educators using chasten for a Python project",
-    "text": "Example: students and educators using chasten for a Python project\n\n\nStudents may struggle to write efficient and readable Python code\nManual review by instructors is time-consuming and error-prone\nExisting tools often focus on style not semantic structure\nRegex is brittle and AST tools are hard to prototype\n\n\n\n Project Goal: chasten enables scalable and structure-aware feedback that effectively supports both instructors and students\n\n\n Take a Step Back: Before diving into the implementation of chasten, it’s worth surveying the landscape of linting and checking"
+    "text": "Example: students and educators using chasten for a Python project\n\n\nStudents may struggle to write efficient and readable Python code\nManual review by instructors is time-consuming and error-prone\nRegex is brittle and AST-based tools are hard to prototype\n\n\n\n Project Goal: chasten enables scalable and structure-aware feedback that effectively supports both instructors and students\n\n\n Take a Step Back: Before diving into the implementation of chasten, it’s worth surveying the landscape of linting and checking\n\n\n Many Trade-Offs: Different tools with varying implementation, features, performance, and extensibility! Which one(s) to pick?"
   },
   {
-    "objectID": "slides/chasten/index.html#building-a-source-code-analyzer-what-are-options-and-their-trade-offs",
-    "href": "slides/chasten/index.html#building-a-source-code-analyzer-what-are-options-and-their-trade-offs",
+    "objectID": "slides/chasten/index.html#building-a-source-code-analyzer-what-are-the-options-and-trade-offs",
+    "href": "slides/chasten/index.html#building-a-source-code-analyzer-what-are-the-options-and-trade-offs",
     "title": "Chasten Your Python Program: Configurable Program Analysis and Linting with XPath",
-    "section": "Building a source code analyzer! What are options and their trade-offs?",
-    "text": "Building a source code analyzer! What are options and their trade-offs?\n\n\nRegular Expressions\n\nEasy to write and try out\nOften brittle and confusing\n\nPylint and Flake8\n\nExtensible with plugins\nMust have AST knowledge\n\n\nRuff\n\nFast and easy to use\nNo extension mechanism\n\nTreesitter and Ast-Grep\n\nConfigurable with patterns\nLess support for tool building\n\n\n\n Wow, pyastgrep offers a novel way query a program’s AST!"
+    "section": "Building a source code analyzer! What are the options and trade-offs?",
+    "text": "Building a source code analyzer! What are the options and trade-offs?\n\n\nRegular Expressions\n\nEasy to write and try out\nOften brittle and confusing\n\nPylint and Flake8\n\nExtensible with plugins\nMust have AST knowledge\n\n\nRuff\n\nFast and easy to use\nNo extension mechanism\n\nTreesitter and Ast-Grep\n\nConfigurable with patterns\nLess support for tool building\n\n\n\n Wow, pyastgrep offers a novel way query a program’s AST! Is XPATH sufficient? Can this tool support all envisioned use cases?"
   },
   {
     "objectID": "slides/chasten/index.html#wait-what-is-an-abstract-syntax-tree",
     "href": "slides/chasten/index.html#wait-what-is-an-abstract-syntax-tree",
     "title": "Chasten Your Python Program: Configurable Program Analysis and Linting with XPath",
     "section": "Wait, what is an abstract syntax tree?",
-    "text": "Wait, what is an abstract syntax tree?\n\n\nPython Source Code\ndef calculate_sum(x, y):\n  \"\"\"Add two numbers.\"\"\"\n  return x + y\nAbstract Syntax Tree\nModule(\n  body=[\n    FunctionDef(\n      name='calculate_sum', \n      args=..., \n      body=[\n        Return(\n          value=BinOp(\n            left=Name(id='x', ...), \n            op=Add(), \n            right=Name(id='y', ...)))], \n      ...)], \n  ...)\n\n\nExploring the AST\n\nTree representation of code\nNodes are syntax elements\nGreat for program analysis\nIndependent of code style\n\n\n\nExploring the AST\n\nTree representation of code\nNodes are syntax elements\nGreat for program analysis\nIndependent of code style"
+    "text": "Wait, what is an abstract syntax tree?\n\n\nPython Source Code\ndef calculate_sum(x, y):\n  \"\"\"Add two numbers.\"\"\"\n  return x + y\nAbstract Syntax Tree\nModule(\n  body=[\n    FunctionDef(\n      name='calculate_sum', \n      args=..., \n      body=[\n        Return(\n          value=BinOp(\n            left=Name(id='x', ...), \n            op=Add(), \n            right=Name(id='y', ...)))], \n      ...)], \n  ...)\n\n\n Understanding the AST\n\nTree representation of code\nNodes are syntax elements\nGreat for program analysis\nIndependent of code style\n\n\n\n AST Analysis Challenges\n\nComplex structure for code\nBrittle regular expressions\nFalse positives and negatives\nNeed easy way to query\nAvoid bespoke solutions\nAdopt XPATH-like queries"
   },
   {
     "objectID": "slides/chasten/index.html#scanning-code-with-pyastgrep",
     "href": "slides/chasten/index.html#scanning-code-with-pyastgrep",
     "title": "Chasten Your Python Program: Configurable Program Analysis and Linting with XPath",
     "section": "Scanning code with pyastgrep",
-    "text": "Scanning code with pyastgrep\ndef too_many_args(a, b, c, d, e, f):\ndef another_function(x, y):\ndef a_third_function(p, q, r, s, t, u, v):\n\nFind functions with more than 5 arguments\npyastgrep '//FunctionDef[count(args/args) &gt; 5]' example.py\n\n\nFind functions with more than 5 arguments\nexample.py:1:1:def too_many_args(a, b, c, d, e, f):\nexample.py:7:1:def a_third_function(p, q, r, s, t, u, v):"
+    "text": "Scanning code with pyastgrep\nDefine a Python file with functions\ndef too_many_args(a, b, c, d, e, f):\ndef another_function(x, y):\ndef a_third_function(p, q, r, s, t, u, v):\n\nFind functions with more than 5 arguments\npyastgrep '//FunctionDef[count(args/args) &gt; 5]' example.py\n\n\nResults from running the query with pyastgrep\nexample.py:1:1:def too_many_args(a, b, c, d, e, f):\nexample.py:7:1:def a_third_function(p, q, r, s, t, u, v):"
   },
   {
     "objectID": "slides/chasten/index.html#make-the-connection-by-comparing-the-pyastgrep-and-chasten-tools",
