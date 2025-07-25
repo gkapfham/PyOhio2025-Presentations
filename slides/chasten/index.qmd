@@ -68,7 +68,7 @@ Scan the QR code to follow along
 
 - Count code patterns
 - Measure code quality
-- Calculate statistical correlation
+- Easily share results
 
 :::
 
@@ -78,13 +78,13 @@ Scan the QR code to follow along
 
 - Explore different code style
 - Avoid performance problems
-- Calculate statistical correlation
+- Confirm project criteria
 
 ### {{< iconify fa6-solid person-chalkboard >}} Educators 
 
-- Confirm assignment requirements
 - Give early feedback on code style
-- Support use on laptops and CI
+- Enforce assignment requirements
+- Support use on laptops and in CI
 
 :::
 
