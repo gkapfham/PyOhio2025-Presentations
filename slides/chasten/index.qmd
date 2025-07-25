@@ -98,6 +98,8 @@ checking
 
 :::
 
+## Building a source code analyzer! What are the options and key trade-offs?
+
 ## Avoid Time Complexity of $O(n²)$
 
 ::: {.columns}
