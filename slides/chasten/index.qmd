@@ -49,7 +49,11 @@ Scan the QR code to follow along
   - Avoid a unique performance anti-pattern?
   - Confirm the use of a new coding style?
   - Nervous about writing custom AST visitors?
+  - Need configuration and data storage?
 
+:::
+
+::: footer
 :::
 
 ## Chasten helps you automatically detect patterns in Python programs
@@ -103,16 +107,16 @@ Scan the QR code to follow along
 ::: {.fragment .fade style="margin-top: -0.25em; font-size: 0.9em;"}
 
 {{< iconify fa6-solid lightbulb >}} **Project Goal**: `chasten` enables
-**scalable** and **structure-aware** feedback that effectively supports both
-instructors and students
+**scalable** and **structure-aware** feedback that effectively **supports** both
+**instructors** and **students**
 
 :::
 
 ::: {.fragment .fade style="margin-top: 0.5em; font-size: 0.9em;"}
 
 {{< iconify fa6-solid gears >}} **Take a Step Back**: Before diving into the
-implementation of `chasten`, it's worth surveying the landscape of linting and
-checking
+implementation of `chasten`, it's worth surveying the landscape of **linting** and
+**checking**
 
 :::
 
@@ -203,7 +207,9 @@ Module(
 
 ::: {.fragment .fade style="margin-left: 1.5em; font-size: 0.9em;"}
 
-### Exploring the AST
+### Understanding the AST
+
+::: incremental
 
 - Tree representation of code
 - Nodes are syntax elements
@@ -212,14 +218,22 @@ Module(
 
 :::
 
+:::
+
 ::: {.fragment .fade style="margin-left: 1.5em; font-size: 0.9em;"}
 
-### Exploring the AST
+### AST Analysis Challenges
 
-- Tree representation of code
-- Nodes are syntax elements
-- Great for program analysis
-- Independent of code style
+::: incremental
+
+- Complex structure for code
+- Brittle regular expressions
+- False positives and negatives
+- Need easy way to query
+- Avoid bespoke solutions
+- Adopt XPATH-like queries
+
+:::
 
 :::
 
