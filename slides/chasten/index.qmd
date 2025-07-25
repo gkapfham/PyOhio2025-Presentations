@@ -207,7 +207,7 @@ Module(
 
 ::: {.fragment .fade style="margin-left: 1.5em; font-size: 0.9em;"}
 
-### Understanding the AST
+### {{< iconify fa6-solid brain >}} Understanding the AST
 
 ::: incremental
 
@@ -222,7 +222,7 @@ Module(
 
 ::: {.fragment .fade style="margin-left: 1.5em; font-size: 0.9em;"}
 
-### AST Analysis Challenges
+### {{< iconify fa6-solid tree >}} AST Analysis Challenges
 
 ::: incremental
 
