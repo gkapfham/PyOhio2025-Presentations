@@ -138,6 +138,51 @@ checking
 
 :::
 
+## Wait, what is an abstract syntax tree?
+
+::: {.columns style="margin-top: 1.25em; font-size: 0.75em;"}
+
+::: {.column .fade width="50%"}
+
+**Python Source Code**
+
+```python
+def calculate_sum(x, y):
+  """Add two numbers."""
+  return x + y
+```
+
+**Abstract Syntax Tree**
+
+```python
+Module(
+  body=[
+    FunctionDef(
+      name='calculate_sum', 
+      args=..., 
+      body=[
+        Return(
+          value=BinOp(
+            left=Name(id='x', ...), 
+            op=Add(), 
+            right=Name(id='y', ...)))], 
+      ...)], 
+  ...)
+```
+
+:::
+
+::: {.column .fade width="40%"}
+
+### Exploring the AST
+
+- more bullet points
+- more bullet points
+
+:::
+
+:::
+
 ## Avoid Time Complexity of $O(n²)$
 
 ::: {.columns}
