@@ -105,7 +105,7 @@ Scan the QR code to follow along
 
 :::
 
-::: {.fragment .fade style="margin-top: -0.25em; font-size: 0.9em;"}
+::: {.fragment .fade-down style="margin-top: -0.25em; font-size: 0.9em;"}
 
 {{< iconify fa6-solid lightbulb >}} **Project Goal**: `chasten` enables
 **scalable** and **structure-aware** feedback that effectively **supports** both
@@ -113,7 +113,7 @@ Scan the QR code to follow along
 
 :::
 
-::: {.fragment .fade style="margin-top: 0.5em; font-size: 0.9em;"}
+::: {.fragment .fade-right style="margin-top: 0.5em; font-size: 0.9em;"}
 
 {{< iconify fa6-solid gears >}} **Take a Step Back**: Before diving into the
 implementation of `chasten`, it's worth surveying the landscape of **linting** and
@@ -121,7 +121,7 @@ implementation of `chasten`, it's worth surveying the landscape of **linting** a
 
 :::
 
-::: {.fragment .fade style="margin-top: 0.5em; font-size: 0.9em;"}
+::: {.fragment .fade-down style="margin-top: 0.5em; font-size: 0.9em;"}
 
 {{< iconify mdi:code-not-equal-variant >}} **Many Trade-Offs**: Different tools
 with varying implementation, features, performance, and extensibility! Which
@@ -166,7 +166,7 @@ one(s) to pick?
 ::: {.fragment .fade style="margin-top: -0.1em; font-size: 0.9em;"}
 
 {{< iconify fa6-solid lightbulb >}} Wow, `pyastgrep` offers a novel way query a program's AST!
-Is XPATH sufficient? Can this tool support all envisioned use cases?
+Is XPath sufficient? Can this tool support all envisioned use cases? How?
 
 :::
 
@@ -232,7 +232,7 @@ Module(
 - False positives and negatives
 - Need easy way to query
 - Avoid bespoke solutions
-- Adopt XPATH-like queries
+- Adopt XPath-like queries
 
 :::
 
@@ -333,15 +333,25 @@ Python projects and save the results!
 
 ::: {.callout-note appearance="minimal" title="Click these links to preview documentation for referenced tools!" collapse="false"}
 
-- [Python `ast` module](https://docs.python.org/3/library/ast.html){.preview-link}: Python's abstract syntax tree module
-- [Pylint](https://pylint.org/){.preview-link}: A popular static code analyzer for Python
-- [Flake8](https://flake8.pycqa.org/en/latest/){.preview-link}: An extensible wrapper around PyFlakes, pycodestyle, and McCabe
-- [Ruff](https://docs.astral.sh/ruff/){.preview-link} - An extremely fast Python linter and code formatter, written in Rust
-- [Tree-sitter](https://tree-sitter.github.io/tree-sitter/){.preview-link}: A parser generator tool and incremental parsing library
-- [Ast-grep](https://ast-grep.github.io/){.preview-link}: A CLI tool for searching and rewriting code with ASTs
-- [Pyastgrep](https://pyastgrep.readthedocs.io/en/latest/){.preview-link}: A tool for searching Python code with XPath expressions
-- [Dhv](https://dhv.davep.dev/){.preview-link}: A comprehensive TUI for Python code exploration built with Textual
-- [Datasette](https://datasette.io/){.preview-link}: A SQL-based tool for exploring and publishing data to the web
+- [Python `ast`
+module](https://docs.python.org/3/library/ast.html){.preview-link}: Python's
+abstract syntax tree module
+- [Pylint](https://pylint.org/){.preview-link}: A popular static code
+analyzer for Python
+- [Flake8](https://flake8.pycqa.org/en/latest/){.preview-link}: An extensible
+wrapper around PyFlakes, pycodestyle, and McCabe
+- [Ruff](https://docs.astral.sh/ruff/){.preview-link}: An extremely fast Python
+linter and code formatter, written in Rust
+- [Tree-sitter](https://tree-sitter.github.io/tree-sitter/){.preview-link}: A
+parser generator tool and incremental parsing library
+- [Ast-grep](https://ast-grep.github.io/){.preview-link}: A CLI tool for
+searching and rewriting code with ASTs
+- [Pyastgrep](https://pyastgrep.readthedocs.io/en/latest/){.preview-link}: A
+tool for searching Python code with XPath expressions
+- [Dhv](https://dhv.davep.dev/){.preview-link}: A comprehensive TUI for
+Python code exploration built with Textual
+- [Datasette](https://datasette.io/){.preview-link}: A SQL-based tool for
+exploring and publishing data to the web
 
 :::
 
@@ -623,7 +633,7 @@ Again, very impressive!
 
 :::
 
-## Key takeaways
+## Chasten your Python program!
 
 ::: {.incremental}
 
