@@ -280,13 +280,13 @@ Gregory M. Kapfhammer
 <li class="fragment">Regex is <strong>brittle</strong> and AST-based tools are <strong>hard to prototype</strong></li>
 </ul>
 </div>
-<div class="fragment fade" style="margin-top: -0.25em; font-size: 0.9em;">
+<div class="fragment fade-down" style="margin-top: -0.25em; font-size: 0.9em;">
 <p><iconify-icon role="img" inline="" icon="fa6-solid:lightbulb" aria-label="Icon lightbulb from fa6-solid Iconify.design set." title="Icon lightbulb from fa6-solid Iconify.design set."></iconify-icon> <strong>Project Goal</strong>: <code>chasten</code> enables <strong>scalable</strong> and <strong>structure-aware</strong> feedback that effectively <strong>supports</strong> both <strong>instructors</strong> and <strong>students</strong></p>
 </div>
-<div class="fragment fade" style="margin-top: 0.5em; font-size: 0.9em;">
+<div class="fragment fade-right" style="margin-top: 0.5em; font-size: 0.9em;">
 <p><iconify-icon role="img" inline="" icon="fa6-solid:gears" aria-label="Icon gears from fa6-solid Iconify.design set." title="Icon gears from fa6-solid Iconify.design set."></iconify-icon> <strong>Take a Step Back</strong>: Before diving into the implementation of <code>chasten</code>, it’s worth surveying the landscape of <strong>linting</strong> and <strong>checking</strong></p>
 </div>
-<div class="fragment fade" style="margin-top: 0.5em; font-size: 0.9em;">
+<div class="fragment fade-down" style="margin-top: 0.5em; font-size: 0.9em;">
 <p><iconify-icon role="img" inline="" icon="mdi:code-not-equal-variant" aria-label="Icon code-not-equal-variant from mdi Iconify.design set." title="Icon code-not-equal-variant from mdi Iconify.design set."></iconify-icon> <strong>Many Trade-Offs</strong>: Different tools with varying implementation, features, performance, and extensibility! Which one(s) to pick?</p>
 </div>
 </section>
@@ -317,7 +317,7 @@ Gregory M. Kapfhammer
 </ul>
 </div></div>
 <div class="fragment fade" style="margin-top: -0.1em; font-size: 0.9em;">
-<p><iconify-icon role="img" inline="" icon="fa6-solid:lightbulb" aria-label="Icon lightbulb from fa6-solid Iconify.design set." title="Icon lightbulb from fa6-solid Iconify.design set."></iconify-icon> Wow, <code>pyastgrep</code> offers a novel way query a program’s AST! Is XPATH sufficient? Can this tool support all envisioned use cases?</p>
+<p><iconify-icon role="img" inline="" icon="fa6-solid:lightbulb" aria-label="Icon lightbulb from fa6-solid Iconify.design set." title="Icon lightbulb from fa6-solid Iconify.design set."></iconify-icon> Wow, <code>pyastgrep</code> offers a novel way query a program’s AST! Is XPath sufficient? Can this tool support all envisioned use cases? How?</p>
 </div>
 </section>
 <section id="wait-what-is-an-abstract-syntax-tree" class="slide level2">
@@ -360,7 +360,7 @@ Gregory M. Kapfhammer
 <li class="fragment">False positives and negatives</li>
 <li class="fragment">Need easy way to query</li>
 <li class="fragment">Avoid bespoke solutions</li>
-<li class="fragment">Adopt XPATH-like queries</li>
+<li class="fragment">Adopt XPath-like queries</li>
 </ul>
 </div>
 </div></div>
@@ -434,7 +434,7 @@ Gregory M. Kapfhammer
 <li><a href="https://docs.python.org/3/library/ast.html" class="preview-link">Python <code>ast</code> module</a>: Python’s abstract syntax tree module</li>
 <li><a href="https://pylint.org/" class="preview-link">Pylint</a>: A popular static code analyzer for Python</li>
 <li><a href="https://flake8.pycqa.org/en/latest/" class="preview-link">Flake8</a>: An extensible wrapper around PyFlakes, pycodestyle, and McCabe</li>
-<li><a href="https://docs.astral.sh/ruff/" class="preview-link">Ruff</a> - An extremely fast Python linter and code formatter, written in Rust</li>
+<li><a href="https://docs.astral.sh/ruff/" class="preview-link">Ruff</a>: An extremely fast Python linter and code formatter, written in Rust</li>
 <li><a href="https://tree-sitter.github.io/tree-sitter/" class="preview-link">Tree-sitter</a>: A parser generator tool and incremental parsing library</li>
 <li><a href="https://ast-grep.github.io/" class="preview-link">Ast-grep</a>: A CLI tool for searching and rewriting code with ASTs</li>
 <li><a href="https://pyastgrep.readthedocs.io/en/latest/" class="preview-link">Pyastgrep</a>: A tool for searching Python code with XPath expressions</li>
@@ -471,12 +471,15 @@ Gregory M. Kapfhammer
 <span id="cb7-5"><a></a>         <span class="kw">and</span> items[i] <span class="op">==</span> items[j]:</span>
 <span id="cb7-6"><a></a>            <span class="cf">return</span> <span class="va">True</span></span></code></pre></div>
 </div></div>
-<div class="fade" style="font-size: 0.9em; margin-top: 0.25em;">
+<div class="fade-down" style="font-size: 0.9em; margin-top: 0.25em;">
 <ul>
 <li class="fragment"><p><iconify-icon role="img" inline="" icon="fa6-solid:lightbulb" aria-label="Icon lightbulb from fa6-solid Iconify.design set." title="Icon lightbulb from fa6-solid Iconify.design set."></iconify-icon> <strong>Goal</strong>: Automatically scan the source code that students submit to confirm that there are no inefficient looping constructs</p></li>
 <li class="fragment"><p><iconify-icon role="img" inline="" icon="mdi:alert-outline" aria-label="Icon alert-outline from mdi Iconify.design set." title="Icon alert-outline from mdi Iconify.design set."></iconify-icon> <strong>Challenge</strong>: Linters like Ruff and Pylint don’t have rules to detect nested control structures that either are or are not acceptable</p></li>
 <li class="fragment"><p><iconify-icon role="img" inline="" icon="fa6-solid:gears" aria-label="Icon gears from fa6-solid Iconify.design set." title="Icon gears from fa6-solid Iconify.design set."></iconify-icon> <strong>Build</strong>: An extensible tool allowing instructors to scan for arbitrary code patterns without detailed AST knowledge</p></li>
 </ul>
+</div>
+<div class="footer">
+
 </div>
 </section>
 <section id="chasten-to-the-rescue" class="slide level2">
@@ -496,7 +499,7 @@ Gregory M. Kapfhammer
 <div class="sourceCode" id="cb8"><pre class="sourceCode numberSource yaml number-lines"><code class="sourceCode yaml"><span id="cb8-1"><a></a><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">"nested-loops"</span></span>
 <span id="cb8-2"><a></a><span class="at">  </span><span class="fu">code</span><span class="kw">:</span><span class="at"> </span><span class="st">"PERF001"</span></span>
 <span id="cb8-3"><a></a><span class="at">  </span><span class="fu">pattern</span><span class="kw">:</span><span class="at"> </span><span class="st">"//For[descendant::For]"</span></span>
-<span id="cb8-4"><a></a><span class="at">  </span><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">"Detects doubly nested for-loops (e.g., O(n²))"</span></span></code></pre></div>
+<span id="cb8-4"><a></a><span class="at">  </span><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">"Detects doubly nested for-loops that are often O(n²)"</span></span></code></pre></div>
 </div>
 </section>
 <section id="lets-run-chasten" class="slide level2">
@@ -570,8 +573,8 @@ Gregory M. Kapfhammer
 <p><iconify-icon role="img" inline="" icon="mdi:counter" aria-label="Icon counter from mdi Iconify.design set." title="Icon counter from mdi Iconify.design set."></iconify-icon> <strong>Matches</strong> → Number of times the pattern was detected in that file (e.g., <code>1</code> match)</p>
 </div>
 </section>
-<section id="exploring-a-bespoke-solution" class="slide level2">
-<h2>Exploring a bespoke solution</h2>
+<section id="exploring-a-bespoke-ast-visitor" class="slide level2">
+<h2>Exploring a bespoke AST visitor</h2>
 <div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb11-1"><a></a><span class="im">import</span> ast</span>
 <span id="cb11-2"><a></a><span class="im">import</span> json</span>
 <span id="cb11-3"><a></a><span class="im">import</span> os</span>
@@ -644,20 +647,21 @@ Gregory M. Kapfhammer
 <span id="cb11-70"><a></a></span>
 <span id="cb11-71"><a></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
 <span id="cb11-72"><a></a>    main()</span></code></pre></div>
+<div class="footer">
+
+</div>
 </section>
 <section id="what-role-should-generative-ai-play-in-program-analysis-and-chasten" class="slide level2">
 <h2>What role should generative AI play in program analysis and <code>chasten</code>?</h2>
-<div class="fragment">
 <ul>
-<li><p>The prior program was automatically generated by Gemini 2.5 Pro with <code>gemini-cli</code>. And, it works! Impressive!</p></li>
-<li><p>Similar programs can also be generated by GPT4.1 or Claude Sonnet 4 with <code>open-code</code>. Again, very impressive!</p>
+<li class="fragment"><p>The prior program was automatically generated by Gemini 2.5 Pro with <code>gemini-cli</code>. And, it works! Impressive!</p></li>
+<li class="fragment"><p>Similar programs can also be generated by GPT4.1 or Claude Sonnet 4 with <code>open-code</code>. Again, really nice!</p>
 <ul>
-<li><iconify-icon role="img" inline="" icon="fa6-solid:gears" aria-label="Icon gears from fa6-solid Iconify.design set." title="Icon gears from fa6-solid Iconify.design set."></iconify-icon> <code>npx https://github.com/google-gemini/gemini-cli</code></li>
-<li><iconify-icon role="img" inline="" icon="fa6-solid:gears" aria-label="Icon gears from fa6-solid Iconify.design set." title="Icon gears from fa6-solid Iconify.design set."></iconify-icon> <code>npx opencode-ai@latest</code></li>
+<li class="fragment"><iconify-icon role="img" inline="" icon="fa6-solid:gears" aria-label="Icon gears from fa6-solid Iconify.design set." title="Icon gears from fa6-solid Iconify.design set."></iconify-icon> <code>npx https://github.com/google-gemini/gemini-cli</code></li>
+<li class="fragment"><iconify-icon role="img" inline="" icon="fa6-solid:gears" aria-label="Icon gears from fa6-solid Iconify.design set." title="Icon gears from fa6-solid Iconify.design set."></iconify-icon> <code>npx opencode-ai@latest</code></li>
 </ul></li>
-<li><p>Or, use these tools to generate <code>chasten</code> configurations!</p></li>
+<li class="fragment"><p>Or, use these tools to generate <code>chasten</code> configurations!</p></li>
 </ul>
-</div>
 </section>
 <section id="limitations-and-future-directions" class="slide level2">
 <h2>Limitations and future directions</h2>
@@ -676,8 +680,8 @@ Gregory M. Kapfhammer
 </ul></li>
 </ul>
 </section>
-<section id="key-takeaways" class="slide level2">
-<h2>Key takeaways</h2>
+<section id="chasten-your-python-program" class="slide level2">
+<h2>Chasten your Python program!</h2>
 <ul>
 <li class="fragment"><p><iconify-icon role="img" inline="" icon="fa6-solid:lightbulb" aria-label="Icon lightbulb from fa6-solid Iconify.design set." title="Icon lightbulb from fa6-solid Iconify.design set."></iconify-icon> Help developers, researchers, students, and educators</p></li>
 <li class="fragment"><p><iconify-icon role="img" inline="" icon="mdi:pen" aria-label="Icon pen from mdi Iconify.design set." title="Icon pen from mdi Iconify.design set."></iconify-icon> Write declarative rules for AST-based code checks</p></li>
